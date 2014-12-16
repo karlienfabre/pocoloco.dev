@@ -1672,3 +1672,12 @@ footer .social-icon a:hover {
 	position: relative;
 	display: inline-block;
 }
+
+
+/***form***/
+input[type="checkbox"] {
+margin: 4px 0 0;
+margin-top: 1px \9;
+margin-right: 10px;
+line-height: normal;
+}
