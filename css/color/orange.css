@@ -31,5 +31,9 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 }/* DARK COLOR */
 
 .parallax-background-color{
-	background: rgba(204,132,0,0.9);
+	background: rgba(51,51,51,0.75);
 }/* DARK BACKGROUND COLOR(RGBA) */
+
+.pricebutton a span, .pricebutton button span{
+	background: #0019B1;
+}/* BACKGROUND STANDARD COLOR */

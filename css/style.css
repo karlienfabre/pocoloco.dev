@@ -973,6 +973,9 @@ div.mc-image {
 .cart .hidden {
 	display: none;
 }
+.cart_container{
+	padding-top: 150px;
+}
 .easyPieChart {
 	position: relative;
 	text-align: center;
@@ -1547,6 +1550,63 @@ footer .social-icon a:hover {
 }
 
 .mybutton2 a span, .mybutton2 button span {
+	color: #fff;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+}
+
+
+
+.pricebutton a:hover, .pricebutton button:hover, .pricebutton a:focus
+.pricebutton button:focus {
+	outline: none;
+}
+/*.mybutton.ultra a, .mybutton.ultra button {
+	font-size: 20px;
+	line-height: 60px;
+}
+.mybutton.ultra a span, .mybutton.ultra button span {
+	padding: 0 30px;
+}
+.mybutton.big a, .mybutton.big button {
+	font-size: 17px;
+	line-height: 50px;
+}
+.mybutton.big a span, .mybutton.big button span {
+	padding: 0 20px;
+}*/
+.pricebutton.medium a, .pricebutton.medium button {
+	font-size: 14px;
+	line-height: 40px;
+}
+.pricebutton.medium a span, .pricebutton.medium button span {
+	padding: 0 15px;
+}
+/*.mybutton.small a, .mybutton.small button {
+	font-size: 12px;
+	line-height: 35px;
+}
+.mybutton.small a span, .mybutton.small button span {
+	padding: 0 10px;
+}*/
+.pricebutton {
+	display: inline;
+	margin-right: 20px;
+}
+.pricebutton a, .pricebutton button {
+	text-transform: uppercase;
+	border: 0;
+	padding: 0;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	text-decoration: none;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	letter-spacing: 0;
+}
+.pricebutton a span, .pricebutton button span {
 	color: #fff;
 	text-align: center;
 	position: relative;
