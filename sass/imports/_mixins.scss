@@ -1,0 +1,292 @@
+/* ///////////////////////////////////////////////////////////////////////////
+ * MIXINS
+ *
+ * All mixins can be bundled together in this file.
+ *
+ * @author	remipelhate
+ * @project copii - Interactive tv remote for kids
+ * ///////////////////////////////////////////////////////////////////////////
+ */
+
+
+/*
+| ----------------------------------------------------------------------------
+| Backgrounds
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin background-size( $size ) {
+	-moz-background-size: 		$size;
+	-webkit-background-size: 	$size;
+	-o-background-size: 			$size;
+	background-size: 				$size;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Borders
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin border-radius( $radius ) {
+	-webkit-border-radius: 	$radius;
+	-moz-border-radius: 		$radius;
+	-ms-border-radius: 		$radius;
+	-o-border-radius: 		$radius;
+	border-radius: 			$radius;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Shadows
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin box-shadow( $horiz, $vert, $blur, $spread, $color ) {
+	-webkit-box-shadow: 	$horiz $vert $blur $spread $color;
+	-moz-box-shadow: 		$horiz $vert $blur $spread $color;
+	box-shadow: 			$horiz $vert $blur $spread $color;
+}
+	@mixin inner-box-shadow( $horiz, $vert, $blur, $color ) {
+		-webkit-box-shadow: 	inset $horiz $vert $blur $color;
+		-moz-box-shadow: 		inset $horiz $vert $blur $color;
+		box-shadow: 			inset $horiz $vert $blur $color;
+	}
+
+@mixin text-shadow( $horiz, $vert, $blur, $color ) {
+	-moz-text-shadow: 	$horiz $vert $blur $color;
+	-webkit-text-shadow: $horiz $vert $blur $color;
+	text-shadow: 			$horiz $vert $blur $color;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Transforms
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin transform-origin( $x, $y ) {
+	transform-origin:				$x $y;
+	-moz-transform-origin: 		$x $y;
+	-webkit-transform-origin:	$x $y;
+	-o-transform-origin:			$x $y;
+	-ms-transform-origin: 		$x $y;
+}
+
+@mixin transform-rotate( $degrees, $times ) {
+	-ms-transform: 		rotate($degrees);
+	-webkit-transform: 	rotate($degrees); 
+	-moz-transform: 		rotate($degrees);
+	-o-transform: 			rotate($degrees);
+	filter: 					progid:DXImageTransform.Microsoft.BasicImage(rotation=$times);
+}
+	@mixin animate-transform-rotate( $degrees, $times, $sec, $ease ) {
+		-ms-transform: 		rotate($degrees);
+		-webkit-transform: 	rotate($degrees); 
+		-moz-transform: 		rotate($degrees);
+		-o-transform: 			rotate($degrees);
+		filter: 					progid:DXImageTransform.Microsoft.BasicImage(rotation=$times);
+
+		@include transition( -ms-transform $sec $ease );
+		@include transition( -webkit-transform $sec $ease );
+		@include transition( -o-transform $sec $ease );
+		@include transition( transform $sec $ease );
+	}
+
+@mixin transform-scale( $x, $y ) {
+	-ms-transform: 		scale($x, $y);
+	-webkit-transform: 	scale($x, $y);
+	-o-transform: 			scale($x, $y);
+	transform: 				scale($x, $y);
+}
+	@mixin animate-transform-scale( $x, $y, $sec, $ease ) {
+		-ms-transform: 		scale($x, $y);
+		-webkit-transform: 	scale($x, $y);
+		-o-transform: 			scale($x, $y);
+		transform: 				scale($x, $y);
+
+		@include transition( -ms-transform $sec $ease );
+		@include transition( -webkit-transform $sec $ease );
+		@include transition( -o-transform $sec $ease );
+		@include transition( transform $sec $ease );
+	}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Transitions
+| ----------------------------------------------------------------------------
+|
+| If you want to make a transition for multiple attributes, you can separate
+| the different transitions with comma's and wrap them around between quotes
+| so they form 1 parameter. For example:
+|
+| @include transition((
+| 		attr1 200ms ease-out,
+|		attr2 200ms ease-out
+| ));
+|
+| The same rule applies for delays:
+|
+| @include transition-delay((
+| 		0s, // This is the delay for attr1
+| 		1s, // This is the delay for attr2
+| ))
+|
+*/
+@mixin transition( $trans ) { // attr sec ease
+	-o-transition: 		$trans;
+	-ms-transition: 		$trans;
+	-moz-transition: 		$trans;
+	-webkit-transition: 	$trans;
+	transition: 			$trans;
+}
+	@mixin transition-delay( $delay ) { // attr sec ease
+		-o-transition-delay: 		$delay;
+		-ms-transition-delay: 		$delay;
+		-moz-transition-delay: 		$delay;
+		-webkit-transition-delay: 	$delay;
+		transition-delay: 			$delay;
+	}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Animations
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin animate( $name, $duration, $iteration, $timing, $delay ) {
+	-webkit-animation-name: 				$name;
+	-webkit-animation-duration: 			$duration;
+	-webkit-animation-iteration-count: 	$iteration;
+	-webkit-animation-timing-function: 	$timing;
+	-webkit-animation-delay:				$delay;
+	-webkit-animation-fill-mode: 			forwards;
+	
+	-moz-animation-name: 					$name;
+	-moz-animation-duration: 				$duration;
+	-moz-animation-iteration-count: 		$iteration;
+	-moz-animation-timing-function: 		$timing;
+	-moz-animation-delay:					$delay;
+	-moz-animation-fill-mode: 				forwards;
+	
+	-ms-animation-name: 						$name;
+	-ms-animation-duration: 				$duration;
+	-ms-animation-iteration-count: 		$iteration;
+	-ms-animation-timing-function: 		$timing;
+	-ms-animation-delay:						$delay;
+	-ms-animation-fill-mode: 				forwards;
+
+	animation-name: 							$name;
+	animation-duration: 						$duration;
+	animation-iteration-count: 			$iteration;
+	animation-timing-function: 			$timing;
+	animation-delay:							$delay;
+	animation-fill-mode: 					forwards;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Columns
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin column-width( $width ) {
+	-webkit-column-width: 	$width;
+	-moz-column-width: 		$width;
+	-o-column-width: 			$width;
+	-ms-column-width: 		$width;
+	column-width: 				$width;
+}
+
+@mixin column-break-inside( $break ) {
+	-webkit-column-break-inside: 	$break;
+	-moz-column-break-inside: 		$break;
+	-o-column-break-inside: 		$break;
+	-ms-column-break-inside: 		$break;
+	column-break-inside: 			$break;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Element positioning
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin horiz-center-contents() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Form elements reset
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin reset-txt-input() {
+	background: 			none;
+	border: 					none;
+	outline: 				none;
+	-webkit-appearance: 	none;
+}
+
+@mixin reset-btn() {
+	background:				none;
+	border:					none;
+	outline: 				none;
+	-webkit-appearance: 	none;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Opacity
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin opacity( $opacity ) {
+	filter: 				alpha(opacity= $opacity*10 );
+	-khtml-opacity: 	$opacity;
+	-moz-opacity: 		$opacity;
+	opacity: 			$opacity;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Browser hacks
+| ----------------------------------------------------------------------------
+|
+*/
+@mixin placeholder-color( $color ) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	    color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color: $color;
+	}
+}
+
+@mixin hide-scrollbars() {
+	&::-webkit-scrollbar {
+		-webkit-appearance: 	none !important;
+		width: 					0 !important;
+		height: 					0 !important;
+	}
+}

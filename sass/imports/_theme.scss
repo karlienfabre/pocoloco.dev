@@ -1,0 +1,56 @@
+/* ///////////////////////////////////////////////////////////////////////////
+ * APP THEME
+ *
+ * This is where you can define all variables related to the global theme
+ * of the website/app, such as colorscheme, fonts, ...
+ *
+ * @author	remipelhate
+ * @project	projectname
+ * ///////////////////////////////////////////////////////////////////////////
+ */
+
+/*
+| ----------------------------------------------------------------------------
+| Fonts
+| ----------------------------------------------------------------------------
+|
+*/
+	// Font families
+	$roboto : "Roboto", sans-serif; // Import the font using the GoogleFonts API
+
+	// Font Weights
+	$thin 		: 100;
+	$light		: 300;
+	$regular		: 400;
+	$medium		: 500;
+	$bold			: 700;
+	
+	// Font Sizes
+ 	$xxl 		: 60px;
+ 	$xl 		: 50px;
+ 	$l 		: 40px;
+ 	$ml 		: 35px;
+ 	$m 		: 30px;
+ 	$ms 		: 25px;
+ 	$s 		: 20px;
+ 	$xs 		: 15px;
+ 	$xxs 		: 10px;
+
+
+/*
+| ----------------------------------------------------------------------------
+| Colors
+| ----------------------------------------------------------------------------
+|
+*/
+ 	// Flat colors
+ 	$red				: #fc1c3e;
+	$black			: #222222;
+	$grey 			: #eaeaea;
+	$grey_dark		: #dddddd;
+	$white 			: #ffffff;
+
+	// Transparant colors
+	$full_trans		: rgba(0,0,0,0);
+ 	$white_trans	: rgba(255,255,255,0.98);
+ 	$red_trans 		: rgba(252, 28, 62, 0.3);

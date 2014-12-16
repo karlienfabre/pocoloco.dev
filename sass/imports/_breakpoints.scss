@@ -1,0 +1,93 @@
+/* ///////////////////////////////////////////////////////////////////////////
+ * SASS BREAKPOINTS
+ *
+ * Contains all imported breakpoints for responsive project.
+ *
+ * @author 	remipelhate
+ * @project	projectname
+ * ///////////////////////////////////////////////////////////////////////////
+ */
+
+/*
+ * Large screens -------------------------------------------------------------
+ */
+	$i21	: 2360px;
+	$i19	: 1890px;
+	$i18 	: 1760px;
+	$i17	: 1600px;
+
+/*
+ * Laptops -------------------------------------------------------------------
+ */
+	$i15	: 1440px;
+	$i14	: 1360px;
+	$i13	: 1280px;
+
+/*
+ * Tablets -------------------------------------------------------------------
+ */
+	$i12	: 1120px;
+	$i11	: 960px;
+	$i10	: 800px;
+
+/*
+ * Smartphones ---------------------------------------------------------------
+ */
+ 	$i9 	: 640px;
+	$i8 	: 480px;
+
+
+/*
+ * A nice way to use these breakpoints is by using this more readable 
+ * predefined mixin.
+ *
+ * @info http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+ */
+	@mixin respond-to( $media ) {
+		// Handhelds & smartphones
+		@if $media == handhelds {
+			@media only screen and (max-width: $i8) { @content; }
+		}
+		@else if $media == smartphones {
+			@media only screen and (min-width: $i8 + 1) and (max-width: $i9) { @content; }
+		}
+		@else if $media == retina-smartphones {
+			@media only screen and (min-width: $i9 + 1) and (max-width: $i10) { @content; }
+		}
+
+		// Tablets
+		@else if $media == tablets {
+			@media only screen and (min-width: $i10 + 1) and (max-width: $i11) { @content; }
+		}
+		@else if $media == retina-tablets {
+			@media only screen and (min-width: $i11 + 1) and (max-width: $i12) { @content; }
+		}
+
+		// Laptops
+		@else if $media == notebooks {
+			@media only screen and (min-width: $i12 + 1) and (max-width: $i13) { @content; }
+		}
+		@else if $media == small-laptops {
+			@media only screen and (min-width: $i13 + 1) and (max-width: $i14) { @content; }
+		}
+		@else if $media == laptops {
+			@media only screen and (min-width: $i14 + 1) and (max-width: $i15) { @content; }
+		}
+		@else if $media == large-laptops {
+			@media only screen and (min-width: $i15 + 1) and (max-width: $i17) { @content; }
+		}
+
+		// Desktops
+		@else if $media == desktops {
+			@media only screen and (min-width: $i17 + 1) and (max-width: $i18) { @content; }
+		}
+		@else if $media == large-desktops {
+			@media only screen and (min-width: $i18 + 1) and (max-width: $i19) { @content; }
+		}
+		@else if $media == super-large-desktops {
+			@media only screen and (min-width: $i19 + 1) and (max-width: $i21) { @content; }
+		}
+		@else if $media == mega-desktops {
+			@media only screen and (min-width: $i18 + 1) and (max-width: $i19) { @content; }
+		}
+	}

@@ -1,0 +1,260 @@
+/* ///////////////////////////////////////////////////////////////////////////
+ * MAIN SASS FILE
+ *
+ * Sets the layout and design for the entire website/app. This file is
+ * getting compiled by grunt to /css/all.css.
+ *
+ * @author	remipelhate
+ * @project	projectname
+ * ///////////////////////////////////////////////////////////////////////////
+ */
+
+/*
+| ----------------------------------------------------------------------------
+| Global imports
+| ----------------------------------------------------------------------------
+|
+| Imports the normalize sheet, breakpoints to use in media queries, common
+| mixins and the app/sites theme.
+|
+*/
+@import "imports/_normalize", "imports/_breakpoints", "imports/_mixins", "imports/_theme";
+
+
+/*
+| ----------------------------------------------------------------------------
+| Variables
+| ----------------------------------------------------------------------------
+|
+| Place all global SASS variables here.
+|
+*/
+
+
+/*
+| ----------------------------------------------------------------------------
+| Html section tags
+| ----------------------------------------------------------------------------
+|
+| Set styles for section elements that should be styled globally throughout
+| the app/website.
+|
+*/
+html {
+	width: 100%;
+}
+
+body {
+	width: 100%;
+}
+
+nav {
+
+}
+
+header {
+
+}
+
+footer {
+
+}
+
+section {
+
+}
+
+article {
+
+}
+
+hr {
+
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Html text tags
+| ----------------------------------------------------------------------------
+|
+| Set styles for text elements that should be styled globally throughout
+| the app/website.
+|
+*/
+// Headers -------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1 {
+
+}
+h2 {
+
+}
+h3 {
+
+}
+
+// Paragraphs & links --------------------------------------------------------
+p {
+
+}
+
+a {
+
+	&:hover {
+
+	}
+}
+
+span {
+
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Html forms
+| ----------------------------------------------------------------------------
+|
+| Set styles for form elements that should be styled globally throughout
+| the app/website.
+|
+*/
+// Tags ----------------------------------------------------------------------
+button, input[type=submit] {
+
+}
+
+input[type=text], input[type=password], input[type=email] {
+
+}
+
+label {
+
+}
+
+// Classes -------------------------------------------------------------------
+.btn {
+	@include reset-btn();
+
+	&:hover {
+		
+	}
+}
+
+.txtInput {
+	@include reset-txt-input();
+
+	&:focus {
+		
+	}
+}
+
+.textarea {
+	@include reset-txt-input();
+}
+
+.dropdown {
+
+}
+
+.radioBtn {
+
+}
+
+.checkbox {
+
+}
+
+.mc-image{
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	display: none; 
+	z-index: 4; 
+	width: 1265px; 
+	height: 290px; 
+	opacity: 0;
+}
+
+#mc-image-1{
+	background-image: url("images/slide1.jpg");
+}
+#mc-image-2{
+	background-image: url("images/slide2.jpg");
+}
+#mc-image-3{
+	background-image: url("images/slide3.jpg");
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| Global classes
+| ----------------------------------------------------------------------------
+|
+| Set classes that aren't bound to a specific element.
+|
+*/
+.clearFix {
+	clear: both;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.hidden {
+	display: none;
+}
+.block {
+	display: block;
+}
+
+
+/*
+| ----------------------------------------------------------------------------
+| App/Website content
+| ----------------------------------------------------------------------------
+|
+| The part below contains styling rules for specific ID's & classes that are
+| applicable throughout the entire app/website.
+|
+| You can put about anything you want in here, but I recommend breaking it all
+| up in several stylesheets and import them at the bottom of this file to
+| maintain a clear structure.
+|
+*/
+// Notifications & Prompts ---------------------------------------------------
+.notify {
+
+}
+
+.prompt {
+
+}
+
+.overlay {
+
+}
+
+// Content -------------------------------------------------------------------
+#content {
+
+}
+
+
+
+/*
+| ----------------------------------------------------------------------------
+| Import specific stylesheet
+| ----------------------------------------------------------------------------
+|
+| Imports models, pages & plugin stylesheets.
+|
+*/
+@import "plugins/*", "pages/*", "models/*";
