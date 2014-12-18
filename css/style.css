@@ -73,6 +73,9 @@ blockquote {
 .section-content {
 	padding: 90px 0;
 }
+.section-content.page{
+	padding: 30px 0;
+}
 .bgdark {
 	background: #F3F3F3;
 }
@@ -1022,6 +1025,66 @@ div.mc-image {
 	line-height: 18px;
 }
 
+
+
+.travel-box a {
+	background: #f5f5f5;
+	padding: 30px 20px;
+	display: block;
+}
+.travel-box a:hover{
+	color: #fec200;
+}
+.travel-box a i {
+	font-size: 16px;
+	color: #8d8d8d;
+	margin-right: 5px;
+}
+.travel-box a span{
+	font-size: 14px;
+}
+.travel-box a p {
+	color: #8d8d8d;
+}
+.travel-box h4 {
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 12px 0;
+}
+.travel-box p {
+	margin: 0 10px 10px 0;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.price-overlay{
+	bottom: 323px;
+	padding: 0px 10px 7px 10px;
+	width: 70px;
+	background-color: #0019B1;
+	position: absolute;
+}
+
+.price-overlay span{
+	color: #fff;
+}
+
+.price-overlay span.price-from{
+	font-size: 9px;
+	text-align: left;
+}
+
+.travel-data{
+	/*border: 1px solid #DBDBDB;*/
+	margin: 0 0 15px 0;
+	padding: 5px;
+	font-size: 12px;
+	/*text-transform: uppercase;*/
+	letter-spacing: 0.2pt;
+	color: #fec200;
+}
+
 /* RADIAL PROGRESS BAR */
 .circular-content {
 	display: inline-block;
@@ -1699,4 +1762,8 @@ line-height: normal;
 }
 .co-operation span{
 	color: #BFBFBF;
+}
+
+.search{
+	margin-top: 30px;
 }

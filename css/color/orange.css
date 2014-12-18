@@ -37,3 +37,24 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 .pricebutton a span, .pricebutton button span{
 	background: #0019B1;
 }/* BACKGROUND STANDARD COLOR */
+
+.mybutton.non-active a span, .mybutton.non-active button span, .csstransforms3d .mybutton.non-active a:hover span::before, .csstransforms3d .mybutton.non-active button:hover span::before{
+	background: #666666
+}
+.csstransforms3d .mybutton.non-active a span::before, .csstransforms3d .mybutton.non-active button span::before {
+	background: #666666;
+}
+
+.mybutton.label.non-active a span, .mybutton.label.non-active button span, .csstransforms3d .mybutton.label.non-active a:hover span::before, .csstransforms3d .mybutton.label.non-active button:hover span::before{
+	background: #666666
+}
+.csstransforms3d .mybutton.label.non-active a span::before, .csstransforms3d .mybutton.label.non-active button span::before {
+	background: #666666;
+}
+
+.mybutton.label a span, .mybutton.label button span, .csstransforms3d .mybutton.label a:hover span::before, .csstransforms3d .mybutton.label button:hover span::before{
+	background: #0019B1
+}
+.csstransforms3d .mybutton.label a span::before, .csstransforms3d .mybutton.label button span::before {
+	background: #0019B1;
+}
