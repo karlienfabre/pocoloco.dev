@@ -1037,7 +1037,7 @@ div.mc-image {
 }
 .travel-box a i {
 	font-size: 16px;
-	color: #8d8d8d;
+	color: #222;
 	margin-right: 5px;
 }
 .travel-box a span{
@@ -1083,6 +1083,10 @@ div.mc-image {
 	/*text-transform: uppercase;*/
 	letter-spacing: 0.2pt;
 	color: #fec200;
+}
+
+.travel-data{
+	color: #222;
 }
 
 /* RADIAL PROGRESS BAR */
