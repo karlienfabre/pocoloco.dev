@@ -1818,12 +1818,35 @@ line-height: normal;
 	background-color: #F8800F;
 	padding: 2px 5px 2px 5px;
 	width: 100%;
-	height: 50px;
+	height: 70px;
 	margin: 0 0 12px 0;
 	color: #fff;
 }
 .travel-date p{
 	margin-bottom: 3px;
+}
+.travel-date i.greenflag{
+	color: green;
+	margin-right: 8px;
+}
+.travel-date i.yellowflag{
+	color: #fec200;
+	margin-right: 8px;
+}
+.travel-date i.redflag{
+	color: red;
+	margin-right: 8px;
+}
+.travel-date span.flag{
+	font-size: 10px;
+}
+.travel-date-extra{
+	background-color: #F8800F;
+	padding: 5px 5px 5px 5px;
+	width: 100%;
+	margin: 0 0 12px 0;
+	color: #fff;
+	text-align: center;	
 }
 .mybutton.medium.book{
 	float: right;
