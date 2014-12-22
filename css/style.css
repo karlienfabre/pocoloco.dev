@@ -1771,3 +1771,81 @@ line-height: normal;
 .search{
 	margin-top: 30px;
 }
+
+.yellow{
+	background-color: #fec200;
+	margin: 0 0 100px 0;
+}
+.yellow-content{
+	padding: 20px 0 20px 0;
+	text-align: justify;
+}
+.yellow-content p{
+	color: #666;
+}
+.testimonial{
+	margin-bottom: 20px;
+}
+.bgwhite{
+	background-color: #fff;
+	padding: 25px;
+}
+.border-top{
+	background-color: #fec200;
+}
+.border-top img{
+	margin-top: -1px;
+}
+.border-bottom{
+	height: 75px;
+}
+.border-bottom img{
+	margin-top: 70px;
+}
+.panel-heading {
+	padding: 10px 15px 10px 0px !important;
+}
+#travel-info{
+	margin-bottom: 75px;
+}
+#travel-info .element-line{
+	margin-top: 50px !important;
+}
+.travel-dates{
+	margin-top: 50px;
+}
+.travel-date{
+	background-color: #F8800F;
+	padding: 2px 5px 2px 5px;
+	width: 100%;
+	height: 50px;
+	margin: 0 0 12px 0;
+	color: #fff;
+}
+.travel-date p{
+	margin-bottom: 3px;
+}
+.mybutton.medium.book{
+	float: right;
+	margin-top: 3px;
+}
+.setting{
+	font-size: 110px;
+	color: #fff;
+	text-align: center;
+}
+.setting h4{
+	color: #fff;
+	text-transform: uppercase;
+}
+.setting p{
+	text-align: center;
+	font-size: 14px;
+}
+.setting ul{
+	font-size: 14px;
+	color: #666;
+	text-align: left;
+}
+/*.setting ul li:before{ content:"-"; position:relative; left:-5px;}
+.setting ul li{ text-indent:-5px; }*/

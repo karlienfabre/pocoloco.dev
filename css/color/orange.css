@@ -34,7 +34,7 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 	background: rgba(51,51,51,0.75);
 }/* DARK BACKGROUND COLOR(RGBA) */
 
-.pricebutton a span, .pricebutton button span{
+.pricebutton a span, .pricebutton button span,{
 	background: #0019B1;
 }/* BACKGROUND STANDARD COLOR */
 
@@ -56,5 +56,12 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 	background: #0019B1
 }
 .csstransforms3d .mybutton.label a span::before, .csstransforms3d .mybutton.label button span::before {
+	background: #0019B1;
+}
+
+.mybutton.book a span, .mybutton.book button span, .csstransforms3d .mybutton.book a:hover span::before, .csstransforms3d .mybutton.book button:hover span::before{
+	background: #0019B1
+}
+.csstransforms3d .mybutton.book a span::before, .csstransforms3d .mybutton.book button span::before {
 	background: #0019B1;
 }
