@@ -769,7 +769,7 @@ div.mc-image {
 }
 
 #bloglatest .blog-element .blog-inner .blog-detail .blog-content {
-	display: table-cell;
+	/*display: table-cell;*/
 	vertical-align: middle;
 	padding: 0 15px;
 	color: #898989;

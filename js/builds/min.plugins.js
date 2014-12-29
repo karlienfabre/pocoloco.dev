@@ -1,4 +1,4 @@
-/* Development Build - Mon Dec 08 2014 23:35:10 */$.fn.animateRotate=function(angle,duration,easing,complete){var args=$.speed(duration,easing,complete),step=args.step;return this.each(function(i,e){args.step=function(now){return $.style(e,"transform","rotate("+now+"deg)"),step?step.apply(this,arguments):void 0},$({deg:0}).animate({deg:angle},args)})},/*
+/* Development Build - Sun Dec 28 2014 18:28:44 */$.fn.animateRotate=function(angle,duration,easing,complete){var args=$.speed(duration,easing,complete),step=args.step;return this.each(function(i,e){args.step=function(now){return $.style(e,"transform","rotate("+now+"deg)"),step?step.apply(this,arguments):void 0},$({deg:0}).animate({deg:angle},args)})},/*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
  * Uses the built in easing capabilities added In jQuery 1.1

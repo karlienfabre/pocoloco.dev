@@ -94,7 +94,9 @@ $(document).ready(function() {
 	});
 
 	$('.flexslider').flexslider({
-		animation : "slide"
+		animation : "slide",
+		slideshowSpeed: 3200,
+		pauseOnHover: true,
 	});
 
 	$('.intro-flexslider').flexslider({
@@ -238,6 +240,12 @@ $(document).ready(function() {
 		});
 
 	}
+
+	//button action
+	$("button.linkbutton").click(function(){
+		var url = $(this).data("url");
+		$(location).attr('href','http://pocoloco.dev/'+url+".html");
+	});
 
 });
 
