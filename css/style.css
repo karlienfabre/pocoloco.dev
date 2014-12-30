@@ -974,6 +974,10 @@ div.mc-image {
 	margin-top: 50px;
 }
 
+#blog.section-content.timeline-content{
+	padding: 0px 0 90px 0 !important;
+}
+
 /* ##### PARALLAX AREA ##### */
 .parallax {
 	background-attachment: fixed !important;
