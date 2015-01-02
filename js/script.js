@@ -218,13 +218,6 @@ $(document).ready(function() {
 	  }
 	}
 
-	//blog slider
-	$('.blog_container').slick({
-	  infinite: false,
-	  slidesToShow: 3,
-	  slidesToScroll: 1
-	});
-
 	//Back To Top
 	$(window).scroll(function() {
 		if ($(window).scrollTop() > 400) {
@@ -247,6 +240,8 @@ $(document).ready(function() {
 		});
 
 	}
+
+	$('.fa-question-circle').popover();
 
 	//button action
 	$("button.linkbutton").click(function(){
