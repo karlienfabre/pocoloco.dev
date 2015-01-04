@@ -43,7 +43,7 @@ p.lead.white{
 	color: #fff;
 }
 .no-margin{ margin:0;}
-.no-padding{padding:0;}
+.no-padding{padding:0 !important;}
 
 h1, h2, h3, h4, h5, h6, .section-title, .form-group label {
 	color: #222;
@@ -88,6 +88,10 @@ blockquote {
 	display: inline-block;
 	color: #7C7C7C;
 	text-transform: uppercase;
+}
+.section-title div span.big-text{
+	font-size: 21px;
+	letter-spacing: 1px;
 }
 .section-title h1 {
 	font-size: 80px;
@@ -1796,11 +1800,11 @@ footer img{
 
 
 /***form***/
-input[type="checkbox"] {
-margin: 4px 0 0;
-margin-top: 1px \9;
-margin-right: 10px;
-line-height: normal;
+	input[type="checkbox"] {
+	margin: 4px 0 0;
+	margin-top: 1px \9;
+	margin-right: 10px;
+	line-height: normal;
 }
 
 .co-operation p{
@@ -1830,6 +1834,17 @@ line-height: normal;
 }
 .yellow-content p{
 	color: #666;
+}
+.row.center-vertical{
+	display: table;
+}
+.vertical-center-element{
+	display: table-cell;
+	vertical-align: middle;
+	float: none;
+}
+.vertical-centered-text{
+	padding-right: 60px;
 }
 .testimonial{
 	margin-bottom: 20px;
@@ -1969,7 +1984,7 @@ line-height: normal;
     font-size: 1.2em;
 }
 .wizard>.steps>ul>li {
-    width: 25%}
+    width: 20%}
 .wizard>.steps>ul>li, .wizard>.actions>ul>li {
     float: left;
 }
@@ -2044,6 +2059,10 @@ line-height: normal;
     padding: 2.5%}
 .wizard>.content>.body ul {
     list-style: disc!important;
+}
+.wizard>.content>.body ul.no-list-style-type{
+	list-style-type: none !important;
+	margin-bottom: 10px;
 }
 .wizard>.content>.body ul>li {
     display: list-item;
