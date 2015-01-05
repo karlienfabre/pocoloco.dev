@@ -1,17 +1,17 @@
 a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-content #timeline .post-body .blog-title h1 a:hover, .service-items a:hover, .service-items a:hover h3, .form-group label.error, .blog-content a:hover, .panel-group .panel-heading a, .panel-group .panel-heading a:hover, .media .media-body .lead {
-	color: #fec200;
+	color: #FBB809;
 }/* COLOR STANDARD */
 
 .section-title .lead strong, .progress .progress-bar, .nav-tabs > li > a, .parallax-box a:hover, .pager .puls > a:hover, .pricing-box .pricing-featured li.price-row, .pager .pagination li a:hover, .widget .widget-tag li a:hover, .hi-icon-effect-1 .hi-icon, .mybutton a span, .mybutton button span, .csstransforms3d .mybutton a:hover span::before, .csstransforms3d .mybutton button:hover span::before, .mybutton2 a span, .mybutton2 button span{
-	background: #fec200;
+	background: #FBB809;
 }/* BACKGROUND STANDARD COLOR */
 
 .nav-tabs > li > a, .form-group .form-control.error, .form-group .form-control.error:focus {
-	border: 1px solid #fec200;
+	border: 1px solid #FBB809;
 }/* BORDER STANDARD COLOR */
 
 .hi-icon-effect-1 .hi-icon:after {
-	box-shadow: 0 0 0 4px #fec200;
+	box-shadow: 0 0 0 4px #FBB809;
 }/* BOX-SHADOW STANDARD COLOR */
 
 .no-touch .hi-icon-effect-1 .hi-icon:hover {
@@ -19,15 +19,15 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 }/* BACKGROUND STANDARD COLOR(RGBA) */
 
 .parallax-box a:hover p, .parallax-background-color p{
-	color: #fec200;
+	color: #FBB809;
 }/* COLOR LIGHT */
 
 .csstransforms3d .mybutton a span::before, .csstransforms3d .mybutton button span::before, .mybutton2 a::before {
-	background: #fec200;
+	background: #FBB809;
 } /* BACKGROUND DARK COLOR */
 
 .pricing-box .pricing-featured li.price-row span{
-  color:#fec200;
+  color:#FBB809;
 }/* DARK COLOR */
 
 .parallax-background-color{
@@ -35,7 +35,7 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 }/* DARK BACKGROUND COLOR(RGBA) */
 
 .pricebutton a span, .pricebutton button span,{
-	background: #0019B1;
+	background: #2184be;
 }/* BACKGROUND STANDARD COLOR */
 
 .mybutton.non-active a span, .mybutton.non-active button span, .csstransforms3d .mybutton.non-active a:hover span::before, .csstransforms3d .mybutton.non-active button:hover span::before{
@@ -53,16 +53,16 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 }
 
 .mybutton.label a span, .mybutton.label button span, .csstransforms3d .mybutton.label a:hover span::before, .csstransforms3d .mybutton.label button:hover span::before{
-	background: #0019B1
+	background: #2184be
 }
 .csstransforms3d .mybutton.label a span::before, .csstransforms3d .mybutton.label button span::before {
-	background: #0019B1;
+	background: #2184be;
 }
 
 .mybutton.book a span, .mybutton.book button span, .csstransforms3d .mybutton.book a:hover span::before, .csstransforms3d .mybutton.book button:hover span::before{
-	background: #0019B1
+	background: #2184be
 }
 .csstransforms3d .mybutton.book a span::before, .csstransforms3d .mybutton.book button span::before {
-	background: #0019B1;
+	background: #2184be;
 }
 

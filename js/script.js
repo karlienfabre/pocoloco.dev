@@ -243,11 +243,69 @@ $(document).ready(function() {
 
 	$('.fa-question-circle').popover();
 
+
 	//button action
 	$("button.linkbutton").click(function(){
 		var url = $(this).data("url");
 		$(location).attr('href','http://pocoloco.dev/'+url+".html");
 	});
+
+	//choice buttons 
+	$(".choice").click(function(){
+		if( $(this).hasClass("non-active") ){
+
+			$(".choice").each(function(){
+				$(this).addClass("non-active");
+			});
+
+			$(this).removeClass("non-active");
+		}
+
+		if( $(this).hasClass("video") ){
+			$("#topslider").css("display","none");
+			$("#topvideo").css("display","block");
+		}
+
+		if( $(this).hasClass("foto") ){
+			$("#topvideo").css("display","none");
+			$("#topslider").css("display","block");			
+		}
+	});
+
+	//search lables
+	$(".label").click(function(){
+		
+		if( ($(this).attr("id") == "alleReizen") && $(this).hasClass("non-active") )
+		{
+			$(".label").each(function(){
+				inActive( $(this) );
+			});
+			setActive($(this));
+		}
+		else{
+			//set label alleReizen inactive
+			inActive( $("#alleReizen") );
+
+			if( $(this).hasClass("non-active") ){
+				setActive($(this));
+			}
+			else{
+				inActive($(this));
+			}
+		}
+	});
+
+	function setActive(el){
+		el.removeClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
+	}
+
+	function inActive(el){
+		el.addClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
+	}
 
 });
 

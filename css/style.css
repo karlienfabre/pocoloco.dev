@@ -267,7 +267,7 @@ blockquote {
 }
 
 .navbar-inner {
-	background: none repeat scroll 0 0 #fec200;
+	background: none repeat scroll 0 0 #FBB809;
 	border-bottom: medium none !important;
 	box-shadow: 0 !important;
 	transition: all 0.3s ease-out 0s;
@@ -798,14 +798,14 @@ div.mc-image {
 	color: #222 !important;
 }
 #bloglatest .blog-element .blog-inner .blog-detail .blog-content h3 a:hover{
-	color: #fec200 !important;
+	color: #FBB809 !important;
 }
 #bloglatest .blog-element .blog-inner .blog-detail .blog-content p.blog-date {
 	font-weight: 300;
 	margin: 20px 0 25px 0;
 	font-size: 15px;
 	line-height: 18px;
-	color: #fec200;
+	color: #FBB809;
 }
 #bloglatest .blog-element .blog-inner .blog-detail .blog-content p.blog-intro {
 	font-weight: 400;
@@ -1085,7 +1085,7 @@ div.mc-image {
 	display: block;
 }
 .travel-box a:hover{
-	color: #fec200;
+	color: #FBB809;
 }
 .travel-box a i {
 	font-size: 16px;
@@ -1114,7 +1114,7 @@ div.mc-image {
 	bottom: 323px;
 	padding: 0px 10px 7px 10px;
 	width: 70px;
-	background-color: #0019B1;
+	background-color: #2184be;
 	position: absolute;
 }
 
@@ -1134,7 +1134,7 @@ div.mc-image {
 	font-size: 12px;
 	/*text-transform: uppercase;*/
 	letter-spacing: 0.2pt;
-	color: #fec200;
+	color: #FBB809;
 }
 
 .travel-data{
@@ -1798,6 +1798,11 @@ footer img{
 	display: inline-block;
 }
 
+.label span i{
+	margin-right: 7px;
+	font-size: 15px;
+}
+
 
 /***form***/
 	input[type="checkbox"] {
@@ -1811,7 +1816,7 @@ footer img{
 	color: #fff !important;
 }
 .co-operation p a{
-	color: #fec200;
+	color: #FBB809;
 }
 .co-operation img{
 	margin: 20px 0 50px 0;
@@ -1823,9 +1828,11 @@ footer img{
 .search{
 	margin-top: 30px;
 }
-
+#topvideo{
+	display: none;
+}
 .yellow{
-	background-color: #fec200;
+	background-color: #FBB809;
 	margin: 0 0 100px 0;
 }
 .yellow-content{
@@ -1854,16 +1861,20 @@ footer img{
 	padding: 25px;
 }
 .border-top{
-	background-color: #fec200;
+	background-color: #FBB809;
 }
 .border-top img{
-	margin-top: -1px;
+	margin-top: -12px;
+	width: 15%;
+	height: 15%;
 }
 .border-bottom{
 	height: 75px;
 }
 .border-bottom img{
 	margin-top: 70px;
+	width: 15%;
+	height: 15%;
 }
 .panel-heading {
 	padding: 10px 15px 10px 0px !important;
@@ -1893,7 +1904,7 @@ footer img{
 	margin-right: 8px;
 }
 .travel-date i.yellowflag{
-	color: #fec200;
+	color: #FBB809;
 	margin-right: 8px;
 }
 .travel-date i.redflag{
@@ -1904,7 +1915,7 @@ footer img{
 	font-size: 11px;
 }
 .travel-date-extra{
-	background-color: #fec200;
+	background-color: #FBB809;
 	padding: 10px;
 	width: 100%;
 	margin: 0 0 12px 0;
@@ -2007,7 +2018,7 @@ footer img{
     cursor: default;
 }
 .wizard>.steps .current a, .wizard>.steps .current a:hover, .wizard>.steps .current a:active {
-    background: #fec200;
+    background: #FBB809;
     color: #666;
     cursor: default;
 }

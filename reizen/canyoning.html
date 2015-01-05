@@ -66,9 +66,13 @@
 						<li>
 							<a href="../index.html" class="int-collapse-menu">Home</a>
 						</li>
-
-						<li>
-							<a href="../reisaanbod.html" class="int-collapse-menu">Reisaanbod</a>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Reisaanbod <i class="fa fa-angle-down"></i></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="../reisaanbod.html">Overzicht</a>
+								</li>
+							</ul>
 						</li>
 						<li>
 							<a href="../blog.html" class="int-collapse-menu">Nieuws</a>
@@ -77,7 +81,7 @@
 							<a href="../carpool.html" class="int-collapse-menu">Carpool</a>
 						</li>
 						<li>
-							<a href="#contact" class="int-collapse-menu">Contact</a>
+							<a href="../contact.html" class="int-collapse-menu">Contact</a>
 						</li>
 					</ul>
 				</div>
@@ -91,17 +95,7 @@
 
 				<!-- Section title -->
 				<div class="section-title text-center">
-<!-- 					<div>
-						<span class="line big"></span>
-						<span>Wie zijn we</span>
-						<span class="line big"></span>
-					</div> -->
 					<h2 class="item_right">Actie, avontuur en canyoning in de spaanse pyreneën</h2>
-<!-- 					<div>
-						<span class="line"></span>
-						<span>We create adventures</span>
-						<span class="line"></span>
-					</div> -->
 					<p class="lead">
 Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide cess slide full pipe mute-air switch Ron Allen. Gnarly rocket air body varial Geoff Rowley masonite flail.
 					</p>
@@ -109,12 +103,12 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 				<!-- Section title -->
 
 				<div class="row text-center search">
-					<div class="mybutton small">
+					<div class="mybutton small choice foto">
 						<button id="submit" type="submit">
 							<span data-hover="Foto">Foto</span>
 						</button>
 					</div>
-					<div class="mybutton small non-active">
+					<div class="mybutton small choice video non-active">
 						<button id="submit" type="submit">
 							<span data-hover="Film">Film</span>
 						</button>
@@ -125,7 +119,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 					<div class="col-md-12">
 						<div class="element-line">
 							
-							<div class="flexslider">
+							<div id="topslider" class="flexslider">
 								<ul class="slides">
 
 									<!-- Item Slide -->
@@ -186,6 +180,12 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 
 								</ul>
 							</div>
+
+							<div id="topvideo" class="element-line">
+								<div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
+									<iframe width="420" height="315" src="//www.youtube.com/embed/X2dkm5xIJYc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -228,22 +228,6 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 									</div>
 								</div>
 							</div>
-<!-- 							<div class="row">
-								<div class="col-md-12  bgwhite">
-									<div class="row text-center">
-										<div class="col-md-6 col-md-offset-3">
-											<div class="text-center testimonial">
-												<a href=""> <img class="img-circle img-responsive" src="../img/reisaanbod/testimonials/testi_canyoning.jpg" alt=""> </a>
-											</div>
-										</div>
-									</div>
-									<div class="row text-center">
-										<div class="row-md-9">
-												<p>Tic-tac nollie bearings Ron Allen disaster. Downhill blunt no comply Kevin Jarvis slob air. Deck Brooklyn Banks indy grab slap maxwell pop shove-it.</p>
-										</div>
-									</div>
-								</div>
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -355,7 +339,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 						<div class="travel-dates">
 							<div class="travel-date">
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book">
+									<button type="link" class="linkbutton" data-url="book-wizard">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>
@@ -365,7 +349,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 							</div>
 							<div class="travel-date">
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book">
+									<button type="link" class="linkbutton" data-url="book-wizard">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>
@@ -375,7 +359,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 							</div>
 							<div class="travel-date">
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book">
+									<button type="link" class="linkbutton" data-url="book-wizard">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>
