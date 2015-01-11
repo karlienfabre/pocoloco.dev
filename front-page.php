@@ -1,126 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		<title>PocoLoco Adventures</title>
-		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
-		<meta name="description" content="Responsive One Page HTML5/CSS3 Parallax Site Template" />
-		<meta name="author" content="Creative-Ispiration">
-
-		<!-- Favicons -->
-		<link rel="shortcut icon" href="img/ico-16.ico">
-		<link rel="apple-touch-icon" href="img/ico-57.png" sizes="57x57">
-		<link rel="apple-touch-icon" href="img/ico-72.png" sizes="72x72">
-		<link rel="apple-touch-icon" href="img/ico-114.png" sizes="114x114">
-		<link rel="apple-touch-icon" href="img/ico-144.png" sizes="144x144">
-
-		<!-- Stylesheet -->
-		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<link href="css/flexslider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/style-responsive.css" rel="stylesheet">
-		<link href="css/isotope.css" rel="stylesheet">
-		<link href="css/slick.css" rel="stylesheet">
-
-		<!-- Primary color theme -->
-		<link id="primary_color_scheme" href="css/color/orange.css" rel="stylesheet">
-
-		<!-- GoogleFontFamily -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-		<![endif]-->
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	</head>
-
-	<body data-spy="scroll" data-target=".navbar" data-offset="75">
-
-		<!-- Intro loader -->
-		<div class="mask">
-			<div id="intro-loader"></div>
-		</div>
-		<!-- Intro loader -->
-
-		<!-- Home Section -->
-		<section id="home">
-
-			<div id="fullscreen-slider" class="mc-cycle">
-				<!-- Slider item -->
-				<div class="slider-item">
-					<img src="img/home/header.jpg" alt="">
-					<div class="pattern">
-						<div class="slide-content">
-
-							<!-- Section title -->
-							<div class="section-title">
-								<div class="col-md-7 col-md-offset-5 no-padding">
-									<div class="black">
-										<p>Your adventures</br> starts here</p>
-									</div>
-									<div class="yellow text-center">
-										<img class="logo" src="img/logo.png" alt="logo poco loco adventures"> 
-									</div>
-									<div class="black text-center">
-										<a href="#about" class="zoom">
-											<img class="arrow" src="img/arrow_down_white.png"/>
-										</a>										
-									</div>
-								</div>
-
-								<div class="col-md-2  black"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Slider item -->
-
-			</div>
-		</section>
-		<!-- Home Section -->
-
-
-		<!-- Navbar -->
-		<div id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="navbar-inner">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<i class="fa fa-bars fa-2x"></i>
-					</button>
-					<a id="brand" class="navbar-brand" href="#home"> 
-						<img src="img/logo.png" alt="logo poco loco adventures"> 
-					</a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="#home" class="int-collapse-menu">Home</a>
-						</li>
-
-						<li>
-							<a href="reisaanbod.html" class="int-collapse-menu">Reisaanbod</a>
-						</li>
-						<li>
-							<a href="blog.html" class="int-collapse-menu">Nieuws</a>
-						</li>
-						<li>
-							<a href="carpool.html" class="int-collapse-menu">Carpool</a>
-						</li>
-						<li>
-							<a href="#contact" class="int-collapse-menu">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Navbar -->
+<?php get_header(); ?>
 
 		<!-- About Section -->
 		<section id="about" class="section-content">
@@ -162,7 +40,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="img/home/slider_1.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php root() ?>img/home/slider_1.jpg" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
@@ -173,7 +51,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="img/home/slider_2.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php root() ?>img/home/slider_2.jpg" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
@@ -184,7 +62,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="img/home/slider_3.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php root() ?>img/home/slider_3.jpg" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
@@ -195,7 +73,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="img/home/slider_4.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php root() ?>img/home/slider_4.jpg" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
@@ -206,7 +84,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="img/home/slider_5.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php root() ?>img/home/slider_5.jpg" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
@@ -217,7 +95,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="img/home/slider_6.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php root() ?>img/home/slider_6.jpg" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
@@ -322,7 +200,7 @@
 		<!-- About Section -->
 
 		<!-- Parallax Container -->
-		<div id="one-parallax" class="parallax" style="background-image: url('img/home/background_2.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div id="one-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_2.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
 				<div class="section-content">
 					<div class="container text-center">
@@ -437,7 +315,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-7">
-													<img class="img-responsive img-center img-rounded" src="img/home/reizen_kijker_1.jpg" alt=""/>
+													<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/home/reizen_kijker_1.jpg" alt=""/>
 												</div>
 												<div class="col-md-5">
 													<h2>Canyoning in de spaanse Pyreneeën</h2>
@@ -461,7 +339,7 @@
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-7">
-													<img class="img-responsive img-center img-rounded" src="img/home/reizen_kijker_2.jpg" alt=""/>
+													<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/home/reizen_kijker_2.jpg" alt=""/>
 												</div>
 												<div class="col-md-5">
 													<h2>Catamaran zeilen in Kos</h2>
@@ -503,7 +381,7 @@
 
 
 		<!-- Parallax Container -->
-		<div id="seven-parallax" class="parallax" style="background-image: url('img/home/background_3.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div id="seven-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_3.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
 				<div class="section-content">
 					<div class="container text-center">
@@ -583,7 +461,7 @@
 													<a href="posts/1.html">Biketour dokters van de wereld</a>
 												</h3>
 												<a href="#"> 
-													<img src="img/home/blog_thumb_1.jpg" class="img-responsive" alt=""> 
+													<img src="<?php root() ?>img/home/blog_thumb_1.jpg" class="img-responsive" alt=""> 
 												</a>
 												<p class="blog-date">12 december 2014</p>
 												<p class="blog-intro">
@@ -615,7 +493,7 @@ Flypaper smith grind fakie out Rick McCrank handplant wall ride face plant. Spon
 													<a href="">Klaar voor een nieuw seizoen</a>
 												</h3>
 												<a href="#"> 
-													<img src="img/home/blog_thumb_2.jpg" class="img-responsive" alt=""> 
+													<img src="<?php root() ?>img/home/blog_thumb_2.jpg" class="img-responsive" alt=""> 
 												</a>
 												<p class="blog-date">27 november 2014</p>
 												<p class="blog-intro">
@@ -647,7 +525,7 @@ Nosebone casper launch ramp fast plant spine. Melancholy boneless deck stalefish
 													<a href="">Training begeleiders 1</a>
 												</h3>
 												<a href="#"> 
-													<img src="img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
+													<img src="<?php root() ?>img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
 												</a>
 												<p class="blog-date">1 november 2014</p>
 												<p class="blog-intro">
@@ -679,7 +557,7 @@ Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot i
 													<a href="">Training begeleiders 2</a>
 												</h3>
 												<a href="#"> 
-													<img src="img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
+													<img src="<?php root() ?>img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
 												</a>
 												<p class="blog-date">1 november 2014</p>
 												<p class="blog-intro">
@@ -711,7 +589,7 @@ Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot i
 													<a href="">Training begeleiders 3</a>
 												</h3>
 												<a href="#"> 
-													<img src="img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
+													<img src="<?php root() ?>img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
 												</a>
 												<p class="blog-date">1 november 2014</p>
 												<p class="blog-intro">
@@ -736,7 +614,7 @@ Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot i
 		<!-- Team Section -->
 
 		<!-- Parallax Container -->
-		<div id="one-parallax" class="parallax" style="background-image: url('img/home/background_4.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div id="one-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_4.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
 				<div class="section-content">
 					<div class="container text-center" style="height:437px;">
@@ -856,76 +734,4 @@ Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot i
 		</section>
 		<!-- Contact Section -->
 
-		<!-- Parallax Container -->
-		<div id="five-parallax" class="parallax" style="background-image: url('img/home/background_5.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
-			<div class="parallax-overlay parallax-background-color">
-				<div class="section-content">
-					<div class="container text-center">
-
-						<!-- Parallax title -->
-						<p class="lead white">
-							Poco Loco Adventures Traveling is een product in samenwerking met: 
-						</p>
-						<!-- Parallax title -->
-
-						<!-- Parallax content -->
-						<div class="parallax-content co-operation">
-							<p>
-								Joker reizen NV (lic 1679)</br>
-								Geerdegemvaart 96</br>
-								2800 Mechelen</br>
-								<a href="#">www.joker.be</a></br>
-								<img src="img/home/logo_joker_reizen.png" alt=""/>
-							</p>
-<span>© Copyright 2013 by Poco Loco Adventures - pocoloco@pocolocoadventures.be - +32(0)35016790 </span>
-						</div>
-						<!-- Parallax content -->
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Parallax Container -->
-
-		<footer class="text-center">
-			<img src="img/logo.png"/>
-		</footer>
-
-
-		<!-- Js Library -->
-		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="js/modernizr.js" type="text/javascript"></script>
-		<script src="js/jquery.sticky.js"></script>
-		<script src="js/jquery.fitvids.js" type="text/javascript"></script>
-		<script src="js/jquery.easing-1.3.pack.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap-modal.js" type="text/javascript"></script>
-		<script src="js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-		<script src="js/jquery-countTo.js" type="text/javascript"></script>
-		<script src="js/jquery.appear.js" type="text/javascript"></script>
-		<script src="js/jquery.easy-pie-chart.js"></script>
-		<script src="js/jquery.cycle.all.js"></script>
-		<script src="js/jquery.maximage.js"></script>
-		<script src="js/jquery.isotope.min.js"></script>
-		<script src="js/skrollr.js"></script>
-		<script src="js/jquery.flexslider.js" type="text/javascript"></script>
-		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
-		<script src="js/jquery.hoverdir.js" type="text/javascript"></script>
-		<script src="js/jquery.validate.min.js"></script>
-		<script src="js/portfolio_custom.js" type="text/javascript"></script>
-		<script src="js/script.js"></script>
-		<script src="js/retina-1.1.0.min.js"></script>
-		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-		<script src="js/google-map.js"></script>
-		<script>
-			//blog slider
-			$('.blog_container').slick({
-			  infinite: false,
-			  slidesToShow: 3,
-			  slidesToScroll: 1
-			});
-		</script>
-		<!-- Js Library -->
-
-	</body>
-</html>
+<?php get_footer(); ?>
