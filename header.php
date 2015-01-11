@@ -57,28 +57,27 @@
 			<div id="fullscreen-slider" class="mc-cycle">
 				<!-- Slider item -->
 				<div class="slider-item">
-					<img src="<?php root() ?>img/home/header.jpg" alt="">
+					<img src="img/home/header.jpg" alt="">
 					<div class="pattern">
 						<div class="slide-content">
 
 							<!-- Section title -->
-							<div class="section-title">
-								<div class="col-md-7 col-md-offset-5 no-padding">
-									<div class="black">
-										<p>Your adventures</br> starts here</p>
-									</div>
-									<div class="yellow text-center">
-										<img class="logo" src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
-									</div>
-									<div class="black text-center">
-										<a href="#about" class="zoom">
-											<img class="arrow" src="<?php root() ?>img/arrow_down_white.png"/>
-										</a>										
-									</div>
+							<div class="section-title text-center">
+								<h1>Poco loco<i>adventures</i></h1>
+								<div>
+									<span class="line big"></span>
+									<span class="big-text">Your adventure start here</span>
+									<span class="line big"></span>
 								</div>
-
-								<div class="col-md-2  black"></div>
+								<p class="lead">
+									<!-- Bank Randy Colvin tailslide full pipe flypaper boardslide feeble -->
+									<a href="#about" class="zoom">
+										<img class="arrow" src="img/arrow_down_white.png"/>
+									</a>
+								</p>
 							</div>
+							<!-- Section title -->
+
 						</div>
 					</div>
 				</div>
