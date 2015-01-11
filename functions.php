@@ -24,6 +24,7 @@ function pocoloco_scripts(){
 // Register custom post types
 $labels = array(
   'name' => __('Reizen'),
+  'all_items' => __('Alle reizen'),
   'singular_name' => __('Reis'),
   'add_new' => __('Nieuwe reis'),
   'add_new_item' => __('Nieuwe reis'),
@@ -44,7 +45,7 @@ $args = array(
   'hierarchical' => false,
   'menu_position' => null,
   'rewrite' => array( 'with_front' => false ),
-  'supports' => array('title','editor','thumbnail', 'revisions')
+  'supports' => array('title','thumbnail', 'revisions')
   ); 
 
 register_post_type( 'reizen' , $args );

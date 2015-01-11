@@ -8,11 +8,12 @@
 				<div class="section-title text-center">
 					<h2 class="item_right">Actie, avontuur en canyoning in de spaanse pyreneën</h2>
 					<p class="lead">
-Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide cess slide full pipe mute-air switch Ron Allen. Gnarly rocket air body varial Geoff Rowley masonite flail.
+						<?php echo get_field('intro_tekst'); ?>
 					</p>
 				</div>
 				<!-- Section title -->
-
+				
+				<?php if ( get_field('youtube_url') !== false ): ?>
 				<div class="row text-center search">
 					<div class="mybutton small choice foto">
 						<button id="submit" type="submit">
@@ -25,6 +26,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 						</button>
 					</div>
 				</div>
+				<?php endif ?>
 
 				<div class="row text-center">
 					<div class="col-md-12">
@@ -38,65 +40,78 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="../img/reisaanbod/canyoning/slide_1.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php echo get_field('header_afbeelding_1')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
 									</li>
 									<!-- Item Slide -->
 									<!-- Item Slide -->
+									<?php if ( get_field('header_afbeelding_2') !== false ): ?>
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="../img/reisaanbod/canyoning/slide_2.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php echo get_field('header_afbeelding_2')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
-									</li>
+									</li>										
+									<?php endif ?>
 									<!-- Item Slide -->
 									<!-- Item Slide -->
+									<?php if ( get_field('header_afbeelding_3') !== false ): ?>
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="../img/reisaanbod/canyoning/slide_3.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php echo get_field('header_afbeelding_3')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
-									</li>
+									</li>										
+									<?php endif ?>
 									<!-- Item Slide -->
 									<!-- Item Slide -->
+									<?php if ( get_field('header_afbeelding_4') !== false ): ?>
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="../img/reisaanbod/canyoning/slide_4.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php echo get_field('header_afbeelding_4')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
-									</li>
+									</li>										
+									<?php endif ?>
 									<!-- Item Slide -->
 									<!-- Item Slide -->
+									<?php if ( get_field('header_afbeelding_5') !== false ): ?>
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="../img/reisaanbod/canyoning/slide_5.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php echo get_field('header_afbeelding_5')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
-									</li>
+									</li>										
+									<?php endif ?>
 									<!-- Item Slide -->
 
 								</ul>
 							</div>
-
+							
+							<?php if ( get_field('youtube_url') !== false ): ?>
+								<?php 
+								preg_match("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",get_field('youtube_url'), $matches);
+								 ?>
 							<div id="topvideo" class="element-line">
 								<div class="fluid-width-video-wrapper" style="padding-top: 56.2%;">
-									<iframe width="420" height="315" src="//www.youtube.com/embed/X2dkm5xIJYc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+									<iframe width="420" height="315" src="//www.youtube.com/embed/<?php echo $matches[1]; ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 								</div>
 							</div>
+							<?php endif ?>
 						</div>
 					</div>
 
@@ -110,15 +125,15 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 		<section class="row yellow">
 			<div class="border-top">
 				<div class="container">
-					<img src="../img/border_top.png"/>
+					<img src="<?php root() ?>img/border_top.png"/>
 				</div>
 			</div>
 			<div class="container yellow-content">
 				<div class="row center-vertical">
 					<div class="col-md-8 vertical-center-element vertical-centered-text">
-						<h2>Actie en avontuur</h2>
+						<h2><?php get_field('subtitel'); ?></h2>
 						<p>
-							540 smith grind grind hang up launch ramp. Sponsored gnarly no comply regular footed hang-up. Quarter pipe tic-tac aerial hang ten airwalk. Deck baseplate crail grab bluntslide regular footed. Varial carve darkslide ollie hole Vans Calfornia Daze rocket air. Pivot kick-nose ollie sketchy death box Steve Rocco.
+							<?php get_field('tekst_onder_subtitel'); ?>
 						</p>
 					</div>
 					<div class="col-md-4  vertical-center-element">
@@ -128,7 +143,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 									<div class="row text-center">
 										<div class="col-md-6 col-md-offset-3">
 											<div class="text-center testimonial">
-												<a href=""> <img class="img-circle img-responsive" src="../img/reisaanbod/testimonials/testi_canyoning.jpg" alt=""> </a>
+												<a href=""> <img class="img-circle img-responsive" src="<?php root() ?>img/reisaanbod/testimonials/testi_canyoning.jpg" alt=""> </a>
 											</div>
 										</div>
 									</div>
@@ -145,7 +160,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 			</div>
 			<div class="border-bottom">
 				<div class="container">
-					<img src="../img/border_bottom.png"/>
+					<img src="<?php root() ?>img/border_bottom.png"/>
 				</div>
 			</div>
 
@@ -293,7 +308,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 		<section class="row yellow">
 			<div class="border-top">
 				<div class="container">
-					<img src="../img/border_top.png"/>
+					<img src="<?php root() ?>img/border_top.png"/>
 				</div>
 			</div>
 			<div class="container yellow-content">
@@ -336,7 +351,7 @@ Slob air egg plant rock and roll Paul Rodriguez finger flip sketchy. Rail slide 
 			</div>
 			<div class="border-bottom">
 				<div class="container">
-					<img src="../img/border_bottom.png"/>
+					<img src="<?php root() ?>img/border_bottom.png"/>
 				</div>
 			</div>
 

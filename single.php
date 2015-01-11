@@ -28,13 +28,13 @@
 							<div class="flexslider">
 								<ul class="slides">
 									<li>
-										<img class="img-responsive img-center img-rounded" src="../img/blog/1_1.jpg" alt="" />
+										<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/blog/1_1.jpg" alt="" />
 									</li>
 									<li>
-										<img class="img-responsive img-center img-rounded" src="../img/blog/1_2.jpg" alt="" />
+										<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/blog/1_2.jpg" alt="" />
 									</li>
 									<li>
-										<img class="img-responsive img-center img-rounded" src="../img/blog/1_3.jpg" alt="" />
+										<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/blog/1_3.jpg" alt="" />
 									</li>
 								</ul>
 							</div>
@@ -69,14 +69,14 @@
 									</div>
 
 									<div class="post-box first">
-										<a href="#"> <img class="img-rounded" src="../img/blog/blog_thumb_2.jpg" width="50" height="50" alt=""> </a>
+										<a href="#"> <img class="img-rounded" src="<?php root() ?>img/blog/blog_thumb_2.jpg" width="50" height="50" alt=""> </a>
 										<div>
 											<h5><a href="#">Nieuw seizoen</a></h5>
 											<small>November 27, 2014</small>
 										</div>
 									</div>
 									<div class="post-box">
-										<a href="#"> <img class="img-rounded" src="../img/blog/blog_thumb_3.jpg" width="50" height="50" alt=""> </a>
+										<a href="#"> <img class="img-rounded" src="<?php root() ?>img/blog/blog_thumb_3.jpg" width="50" height="50" alt=""> </a>
 										<div>
 											<h5>Training begeleiders</h5>
 											<small>November 1, 2014</small>
@@ -135,7 +135,7 @@
 		<a href="#" id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
 
 		<!-- <footer class="text-center">
-			<img src="../img/logo.png"/>
+			<img src="<?php root() ?>img/logo.png"/>
 		</footer> -->
 
 <?php get_footer(); ?>
