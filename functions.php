@@ -1,52 +1,39 @@
 <?php 
 
 function root(){
-	echo get_stylesheet_directory_uri() . '/';
+  echo get_stylesheet_directory_uri() . '/';
 }
 
 function get_root(){
-	return get_stylesheet_directory_uri() . '/';
+  return get_stylesheet_directory_uri() . '/';
 }
 
-if (!WP_DEBUG) {
-	define( 'ACF_LITE', true );
-}
-include_once('acf/acf.php' );
 
-add_action('wp_enqueue_scripts', 'pocoloco_scripts');
+function pocoloco_init() {
+
+  if (!WP_DEBUG) {
+    define( 'ACF_LITE', true );
+  }
+  include_once('acf/acf.php' );
+  include_once('includes/custom-post-types.php');
+  include_once('includes/custom-taxonomies.php');
+
+}
+add_action( 'after_setup_theme', 'pocoloco_init' );
+
+function pocoloco_theme_setup() {
+  add_theme_support( 'post-thumbnails' );
+}
+add_action( 'after_setup_theme', 'pocoloco_theme_setup' );
 
 function pocoloco_scripts(){
-	if (is_front_page()) {
-		wp_enqueue_script( 'poco-blog-slider', get_root() . 'js/blog-slider.js', array(), false, true );
-	}
+  if (is_front_page()) {
+    wp_enqueue_script( 'poco-blog-slider', get_root() . 'js/blog-slider.js', array(), false, true );
+  }
 }
+add_action('wp_enqueue_scripts', 'pocoloco_scripts');
 
-// Register custom post types
-$labels = array(
-  'name' => __('Reizen'),
-  'all_items' => __('Alle reizen'),
-  'singular_name' => __('Reis'),
-  'add_new' => __('Nieuwe reis'),
-  'add_new_item' => __('Nieuwe reis'),
-  'edit_item' => __('Reis bewerken'),
-  'new_item' => __('Nieuwe reis'),
-  'view_item' => __('Bekijk reis'),
-  'search_items' => __('Doorzoek reizen'),
-  'not_found' =>  __('Niets gevonden'),
-  'not_found_in_trash' => __('Niets gevonden in de prullenbak'),
-  'parent_item_colon' => ''
-);
-
-$args = array(
-  'labels' => $labels,
-  'public' => true,
-  'query_var' => true,
-  'menu_icon' => get_stylesheet_directory_uri() . '/img/reizen.png',
-  'hierarchical' => false,
-  'menu_position' => null,
-  'rewrite' => array( 'with_front' => false ),
-  'supports' => array('title','thumbnail', 'revisions')
-  ); 
-
-register_post_type( 'reizen' , $args );
-flush_rewrite_rules();
+function pocoloco_excerpt_more( $more ) {
+  return '... <p><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Lees meer</a></p>';
+}
+add_filter('excerpt_more', 'pocoloco_excerpt_more');
