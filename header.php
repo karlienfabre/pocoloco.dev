@@ -42,7 +42,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body data-spy="scroll" data-target=".navbar" data-offset="75">
+	<body data-spy="scroll" data-target=".navbar" data-offset="75" <?php body_class(); ?>>
 
 		<!-- Intro loader -->
 		<div class="mask">
@@ -96,7 +96,7 @@
 						<span class="sr-only">Toggle navigation</span>
 						<i class="fa fa-bars fa-2x"></i>
 					</button>
-					<a id="brand" class="navbar-brand" href="#home"> 
+					<a id="brand" class="navbar-brand" href="<?php echo home_url('/'); ?>"> 
 						<img src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
 					</a>
 				</div>
