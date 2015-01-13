@@ -15,11 +15,12 @@ function pocoloco_init() {
     define( 'ACF_LITE', true );
   }
   include_once('acf/acf.php' );
+  include_once('acf/acf-repeater/acf-repeater.php');
   include_once('includes/custom-post-types.php');
   include_once('includes/custom-taxonomies.php');
 
 }
-add_action( 'after_setup_theme', 'pocoloco_init' );
+add_action( 'init', 'pocoloco_init' );
 
 function pocoloco_theme_setup() {
   add_theme_support( 'post-thumbnails' );
