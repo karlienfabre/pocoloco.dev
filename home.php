@@ -58,7 +58,7 @@
 											if ( has_post_thumbnail() ):
 
 											$thumb_id = get_post_thumbnail_id();
-											$thumb_url = wp_get_attachment_image_src($thumb_id,'medium');
+											$thumb_url = wp_get_attachment_image_src($thumb_id,'large');
 										?>
 											<a href="<?php the_permalink(); ?>" class="zoom"> <img src="<?php echo $thumb_url[0]; ?>" class="img-responsive" alt=""> </a>
 										<?php endif; ?>

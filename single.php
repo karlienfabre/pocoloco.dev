@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+
 		<!-- Blog Section -->
 		<section class="section-content blog-content">
 			<div class="container">
-
-			<?php if ( have_posts() ) : ?>
-				<?php while ( have_posts() ) : the_post(); ?>
 
 				<!-- Section title -->
 				<div class="section-title text-center">
@@ -51,9 +51,6 @@
 							</div>
 						</div>
 					</div>
-
-					<?php endwhile; ?>
-				<?php endif; ?>
 
 					<?php get_sidebar('blog'); ?>
 
@@ -102,8 +99,7 @@
 		<!-- Back to top -->
 		<a href="#" id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
 
-		<!-- <footer class="text-center">
-			<img src="<?php root() ?>img/logo.png"/>
-		</footer> -->
+	<?php endwhile; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

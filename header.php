@@ -57,7 +57,7 @@
 			<div id="fullscreen-slider" class="mc-cycle">
 				<!-- Slider item -->
 				<div class="slider-item">
-					<img src="img/home/header.jpg" alt="">
+					<img src="<?php root() ?>img/home/header.jpg" alt="">
 					<div class="pattern">
 						<div class="slide-content">
 
@@ -72,7 +72,7 @@
 								<p class="lead">
 									<!-- Bank Randy Colvin tailslide full pipe flypaper boardslide feeble -->
 									<a href="#about" class="zoom">
-										<img class="arrow" src="img/arrow_down_white.png"/>
+										<img class="arrow" src="<?php root() ?>img/arrow_down_white.png"/>
 									</a>
 								</p>
 							</div>

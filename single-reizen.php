@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+
 		<!-- About Section -->
 		<section id="" class="section-content">
 			<div class="container">
@@ -35,69 +38,22 @@
 							<div id="topslider" class="flexslider">
 								<ul class="slides">
 
+								<?php
+									$slides = get_field('slides');
+									foreach($slides as $slide) :
+								?>
 									<!-- Item Slide -->
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="<?php echo get_field('header_afbeelding_1')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
+													<img src="<?php echo $slide['afbeelding']['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
 									</li>
 									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<?php if ( get_field('header_afbeelding_2') !== false ): ?>
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php echo get_field('header_afbeelding_2')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>										
-									<?php endif ?>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<?php if ( get_field('header_afbeelding_3') !== false ): ?>
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php echo get_field('header_afbeelding_3')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>										
-									<?php endif ?>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<?php if ( get_field('header_afbeelding_4') !== false ): ?>
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php echo get_field('header_afbeelding_4')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>										
-									<?php endif ?>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<?php if ( get_field('header_afbeelding_5') !== false ): ?>
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php echo get_field('header_afbeelding_5')['sizes']['large'] ?>" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>										
-									<?php endif ?>
-									<!-- Item Slide -->
+								<?php endforeach; ?>
 
 								</ul>
 							</div>
@@ -131,11 +87,13 @@
 			<div class="container yellow-content">
 				<div class="row center-vertical">
 					<div class="col-md-8 vertical-center-element vertical-centered-text">
-						<h2><?php get_field('subtitel'); ?></h2>
+						<h2><?php echo get_field('subtitel'); ?></h2>
 						<p>
-							<?php get_field('tekst_onder_subtitel'); ?>
+							<?php echo get_field('tekst_onder_subtitel'); ?>
 						</p>
 					</div>
+
+					<?php if (get_field('quote_tekst') && get_field('quote_afbeelding')): ?>
 					<div class="col-md-4  vertical-center-element">
 						<div class="testimonail_container">
 							<div class="row">
@@ -143,19 +101,20 @@
 									<div class="row text-center">
 										<div class="col-md-6 col-md-offset-3">
 											<div class="text-center testimonial">
-												<a href=""> <img class="img-circle img-responsive" src="<?php root() ?>img/reisaanbod/testimonials/testi_canyoning.jpg" alt=""> </a>
+												<a href=""> <img class="img-circle img-responsive" src="<?php echo get_field('quote_afbeelding')['sizes']['thumbnail']; ?>" alt=""> </a>
 											</div>
 										</div>
 									</div>
 									<div class="row text-center">
 										<div class="row-md-9">
-												<p>Tic-tac nollie bearings Ron Allen disaster. Downhill blunt no comply Kevin Jarvis slob air. Deck Brooklyn Banks indy grab slap maxwell pop shove-it.</p>
+												<p><?php echo get_field('quote_tekst'); ?></p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<?php endif ?>
 				</div>
 			</div>
 			<div class="border-bottom">
@@ -173,129 +132,68 @@
 						<h2>Reisomschrijving</h2>
 						<div class="element-line">
 							<div class="panel-group" id="accordion">
+								<?php
+									$reisplanning = get_field('reisplanning');
+									foreach($reisplanning as $key=>$planning) :
+								?>
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Dag 1<i class="fa fa-plus pull-right"></i></a></h4>
+										<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $key; ?>" <?php if ($key!=0) echo 'class="collapsed"'; ?>><?php echo $planning['dag']; ?><i class="fa fa-plus pull-right"></i></a></h4>
 									</div>
-									<div id="collapseOne" class="panel-collapse collapse in">
+									<div id="collapse<?php echo $key; ?>" class="panel-collapse collapse <?php if ($key==0) echo 'in'; ?>">
 										<div class="panel-body">
 											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												<?php echo $planning['dagplanning']; ?>
 											</p>
 										</div>
 									</div>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo"> Dag 2<i class="fa fa-plus pull-right"></i></a></h4>
-									</div>
-									<div id="collapseTwo" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree"> Dag 3 <i class="fa fa-plus pull-right"></i></a></h4>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFour"> Dag 4 <i class="fa fa-plus pull-right"></i></a></h4>
-									</div>
-									<div id="collapseFour" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseFive"> Dag 5 <i class="fa fa-plus pull-right"></i></a></h4>
-									</div>
-									<div id="collapseFive" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseSix"> Dag 6 <i class="fa fa-plus pull-right"></i></a></h4>
-									</div>
-									<div id="collapseSix" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseSeven"> Dag 7 <i class="fa fa-plus pull-right"></i></a></h4>
-									</div>
-									<div id="collapseSeven" class="panel-collapse collapse">
-										<div class="panel-body">
-											<p>
-												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</p>
-										</div>
-									</div>
-								</div>
+								<?php endforeach; ?>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-md-offset-1">
 						<h2>Data en prijzen</h2>
 						<div class="travel-dates">
+							<?php
+								$reisdata = get_field('reisdata');
+								foreach($reisdata as $data) :
+
+									switch ($data['aantal_beschikbare_plaatsen']) {
+										case 0:
+											$flag = 'redflag';
+											$flagtext = 'deze reis is volzet';
+											break;
+										case 1:
+										case 2:
+											$flag = 'yellowflag';
+											$flagtext = 'laatste plaatsen';
+											break;
+										default:
+											$flag = 'greenflag';
+											$flagtext = 'nog plaatsen beschikbaar';
+											break;
+									}
+
+									if($data['aantal_beschikbare_plaatsen'] == false){
+										$flag = 'greenflag';
+										$flagtext = 'nog plaatsen beschikbaar';
+									}
+							?>
 							<div class="travel-date">
 								<div class="mybutton medium book">
 									<button type="link" class="linkbutton" data-url="book-wizard">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>
-								<p>16/06 - 22/06/2015</p>
-								<span class="travel-price">€865</span></br>
-								<i class="fa fa-flag greenflag"></i><span class="flag">nog plaatsen beschikbaar</span>
+								<p><?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
+								<span class="travel-price"><?php echo $data['prijs'] ?></span></br>
+								<i class="fa fa-flag <?php echo $flag; ?>"></i><span class="flag"><?php echo $flagtext; ?></span>
 							</div>
-							<div class="travel-date">
-								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book-wizard">
-										<span data-hover="Boek">Boek</span>
-									</button>
-								</div>
-								<p>30/06 - 06/07/2015</p>
-								<span class="travel-price">€865</span></br>
-								<i class="fa fa-flag redflag"></i><span class="flag">deze reis is volzet</span>
-							</div>
-							<div class="travel-date">
-								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book-wizard">
-										<span data-hover="Boek">Boek</span>
-									</button>
-								</div>
-								<p>14/07 - 20/07/2015</p>
-								<span class="travel-price">€865</span></br>
-								<i class="fa fa-flag yellowflag"></i><span class="flag">laatste plaatsen</span>
-							</div>
+							<?php endforeach; ?>
 							<div class="travel-date-extra">
 								<p>
-									Cab flip ollie hole axle set speed wobbles layback snake. Fast plant axle set Japan air cab flip lien air tailslide. Hardware flail full pipe shoveit skate or die blunt Bullet 66.
+									<?php echo get_field('reisdata_info'); ?>
 								</p>
 							</div>
 						</div>
@@ -356,5 +254,8 @@
 			</div>
 
 		</section>
+
+	<?php endwhile; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
