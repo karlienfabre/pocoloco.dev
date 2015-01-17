@@ -4,18 +4,11 @@
 				<div class="container">
 					<div class="element-line">
 						<p class="lead text-center">
-							Heb je een vraag, wil je een reis op maat, of wat dan ook ... ? </br><a href="contact.html#contactform">Contacteer ons hier</a>
+							Heb je een vraag, wil je een reis op maat, of wat dan ook ... ? </br><a href="/pocoloco/contact/">Contacteer ons hier</a>
 						</p>
 					</div>
 				</div>
-				<footer class="text-center">
-					<div class="social-icon">
-						<a href="#"> <i class="fa fa-facebook fa-3x"></i> </a>
-						<a href="#"> <i class="fa fa-twitter fa-3x"></i> </a>
-						<a href="#"> <i class="fa fa-google-plus fa-3x"></i> </a>
-						<a href="#"> <i class="fa fa-youtube fa-3x"></i> </a>
-					</div>
-				</footer>
+				<?php get_template_part('includes/social-links'); ?>
 			</section>
 			<!-- Contact Section -->
 		<?php endif ?>

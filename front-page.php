@@ -723,14 +723,7 @@ Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot i
 					<!-- form contact -->
 				</div>
 			</div>
-			<footer class="text-center">
-				<div class="social-icon">
-					<a href="#"> <i class="fa fa-facebook fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-twitter fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-google-plus fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-youtube fa-3x"></i> </a>
-				</div>
-			</footer>
+			<?php get_template_part('includes/social-links'); ?>
 		</section>
 		<!-- Contact Section -->
 
