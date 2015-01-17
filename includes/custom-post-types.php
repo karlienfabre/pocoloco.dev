@@ -22,7 +22,6 @@ $args = array(
   'menu_icon' => get_stylesheet_directory_uri() . '/img/reizen.png',
   'hierarchical' => false,
   'menu_position' => null,
-  'has_archive' => true,
   'taxonomies' => array('reistype', 'reiscategorie'),
   'rewrite' => array( 'with_front' => false ),
   'supports' => array('title','thumbnail', 'revisions')
