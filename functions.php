@@ -8,21 +8,21 @@ function get_root(){
   return get_stylesheet_directory_uri() . '/';
 }
 
-
 function pocoloco_init() {
-
   if (!WP_DEBUG) {
     define( 'ACF_LITE', true );
   }
-  include_once('acf/acf.php' );
-  include_once('acf/acf-repeater/acf-repeater.php');
+
   include_once('includes/custom-post-types.php');
   include_once('includes/custom-taxonomies.php');
-
 }
 add_action( 'init', 'pocoloco_init' );
 
 function pocoloco_theme_setup() {
+  
+  include_once('acf/acf.php' );
+  include_once('acf-repeater/acf-repeater.php');
+
   add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'pocoloco_theme_setup' );
