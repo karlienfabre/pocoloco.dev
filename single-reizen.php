@@ -9,7 +9,7 @@
 
 				<!-- Section title -->
 				<div class="section-title text-center">
-					<h2 class="item_right">Actie, avontuur en canyoning in de spaanse pyreneën</h2>
+					<h2 class="item_right"><?php the_title(); ?></h2>
 					<p class="lead">
 						<?php echo get_field('intro_tekst'); ?>
 					</p>
@@ -187,15 +187,17 @@
 									</button>
 								</div>
 								<p><?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
-								<span class="travel-price"><?php echo $data['prijs'] ?></span></br>
+								<span class="travel-price">&euro;<?php echo number_format($data['prijs'], 2, ',', ''); ?></span></br>
 								<i class="fa fa-flag <?php echo $flag; ?>"></i><span class="flag"><?php echo $flagtext; ?></span>
 							</div>
 							<?php endforeach; ?>
-							<div class="travel-date-extra">
-								<p>
-									<?php echo get_field('reisdata_info'); ?>
-								</p>
-							</div>
+							<?php if (get_field('reisdata_info')): ?>
+								<div class="travel-date-extra">
+									<p>
+										<?php echo get_field('reisdata_info'); ?>
+									</p>
+								</div>
+							<?php endif ?>
 						</div>
 					</div>
 				</div>
@@ -215,35 +217,51 @@
 						<i class="fa fa-lock"></i>
 						<h4>inbegrepen</h4>
 						<ul>
-							<li>transfer vanaf de luchthaven</li>
-							<li>maaltijden in vol pension</li>
-							<li>nederlandstalige begeleiding</li>
+							<?php 
+								$inbegrepen = get_field('inbegrepen');
+								foreach ($inbegrepen as $incl):
+							?>
+								<li><?php echo $incl['item']; ?></li>
+							<?php endforeach; ?>
 						</ul>
 					</div>
 					<div class="col-md-3 setting">
 						<i class="fa fa-unlock-alt"></i>
 						<h4>niet inbegrepen</h4>
 						<ul>
-							<li>Tic-tac boneless roll-in half-cab</li>
-							<li>Kingpin dude skater flai</li>
-							<li>Half-cab 360 Hard Corps</li>
+							<?php 
+								$niet_inbegrepen = get_field('niet_inbegrepen');
+								foreach ($niet_inbegrepen as $nincl):
+							?>
+								<li><?php echo $nincl['item']; ?></li>
+							<?php endforeach; ?>
 						</ul>
 					</div>
 					<div class="col-md-3 setting">
 						<i class="fa fa-key"></i>
 						<h4>optioneel</h4>
 						<ul>
-							<li>Tic-tac boneless roll-in half-cab</li>
-							<li>Kingpin dude skater flai</li>
-							<li>Half-cab 360 Hard Corps</li>
+							<?php 
+								$optioneel = get_field('optioneel');
+								foreach ($optioneel as $opt):
+							?>
+								<li><?php echo $opt['item']; ?></li>
+							<?php endforeach; ?>
 						</ul>
 					</div>
 					<div class="col-md-3 setting">
 						<i class="fa fa-arrow-circle-o-down"></i>
-						<h4>download reisfiche</h4>
-						<p>
-							Deck baseplate crail grab bluntslide regular footed. Varial carve darkslide ollie hole Vans Calfornia Daze rocket air.
-						</p>
+						<?php if (get_field('reisfiche')): ?>
+							<a href="<?php echo get_field('reisfiche')['url']; ?>"><h4>download reisfiche</h4></a>
+							<p>
+								Alle info over deze reis vind je samengevat in deze reisfiche.
+							</p>
+						<?php else: ?>
+							<h4>download reisfiche</h4>
+							<p>
+								Voor deze reis is voorlopig geen reisfiche beschikbaar.
+							</p>
+						<?php endif ?>
 					</div>
 				</div>
 			</div>

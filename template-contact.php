@@ -5,13 +5,16 @@ Template Name: Contact template
 
  get_header(); ?>
 
+ <?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+
 		<!-- About Section -->
 		<section id="contact" class="section-content">
 			<div class="container">
 
 				<!-- Section title -->
 				<div class="section-title text-center">
-					<h1 class="item_right">Contact</h1>
+					<h1 class="item_right"><?php the_title(); ?></h1>
 
 					<p class="lead">
 						<?php echo get_field('intro'); ?>
@@ -62,18 +65,21 @@ Template Name: Contact template
 			</div>
 		</section>
 
-		<?php 
-			$args = array(
-				'post_type' => 'kantoren',
-				'order' => 'ASC',
-				'orderby' => 'title',
-				'nopaging' => true
-			);
-		
-			$query = new WP_Query( $args );
-		?>
+	<?php endwhile; ?>
+<?php endif; ?>
 
-		<?php if ( $query->have_posts() ) : ?>
+<?php 
+	$args = array(
+		'post_type' => 'kantoren',
+		'order' => 'ASC',
+		'orderby' => 'title',
+		'nopaging' => true
+	);
+
+	$query = new WP_Query( $args );
+?>
+
+<?php if ( $query->have_posts() ) : ?>
 
 		<section class="bgdark">
 			<div class="container">
@@ -211,14 +217,7 @@ Template Name: Contact template
 					<!-- form contact -->
 				</div>
 			</div>
-			<footer class="text-center">
-				<div class="social-icon">
-					<a href="#"> <i class="fa fa-facebook fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-twitter fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-google-plus fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-youtube fa-3x"></i> </a>
-				</div>
-			</footer>
+			<?php get_template_part('includes/social-links'); ?>
 		</section>
 		<!-- Contact Section -->
 
