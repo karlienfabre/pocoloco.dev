@@ -66,7 +66,7 @@
 								<h1>Poco loco<i>adventures</i></h1>
 								<div>
 									<span class="line big"></span>
-									<span class="big-text">Your adventure start here</span>
+									<span class="big-text">Your adventure starts here</span>
 									<span class="line big"></span>
 								</div>
 								<p class="lead">
@@ -100,24 +100,19 @@
 						<img src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
 					</a>
 				</div>
+				<?php 
+					$locations = get_nav_menu_locations();
+					$items = wp_get_nav_menu_items( $locations['main'] );
+				 ?>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="index.html" class="int-collapse-menu">Home</a>
-						</li>
 
-						<li>
-							<a href="reisaanbod.html" class="int-collapse-menu">Reisaanbod</a>
-						</li>
-						<li>
-							<a href="#blog" class="int-collapse-menu">Nieuws</a>
-						</li>
-						<li>
-							<a href="carpool.html" class="int-collapse-menu">Carpool</a>
-						</li>
-						<li>
-							<a href="#contact" class="int-collapse-menu">Contact</a>
-						</li>
+						<?php foreach ($items as $item): ?>
+							<li>
+								<a href="<?php echo $item->url; ?>" class="int-collapse-menu"><?php echo $item->title ?></a>
+							</li>
+						<?php endforeach ?>
+
 					</ul>
 				</div>
 			</div>

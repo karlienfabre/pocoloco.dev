@@ -24,6 +24,10 @@ function pocoloco_theme_setup() {
   include_once('acf-repeater/acf-repeater.php');
 
   add_theme_support( 'post-thumbnails' );
+
+  register_nav_menus( array(
+    'main' => 'Hoofdmenu',
+  ) );
 }
 add_action( 'after_setup_theme', 'pocoloco_theme_setup' );
 
