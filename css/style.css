@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 @font-face {
-	font-family: 'DIN-BlackAlternate';
+	font-family: 'DIN-MediumAlternate';
 	src: url('../fonts/DIN/DIN-MediumAlternate.ttf');
 }
 html, body {
@@ -416,7 +416,7 @@ blockquote {
 	color: inherit;
 	margin: 25px 0;
 	color: #fff;
-	font-family: "DIN-BlackAlternate";
+	font-family: "DIN-MediumAlternate";
 }
 #home p.lead {
 	margin: 75px 0 50px 0;
@@ -434,7 +434,7 @@ blockquote {
 	height: 7%;
 }
 #fullscreen-slider {
-	display: none;
+	display: block;
 }
 #fullscreen-slider .pattern {
 	background: url("../img/pattern.png") repeat;
@@ -516,7 +516,7 @@ div.mc-image {
 }
 
 /* ##### PORTFOLIO ##### */
-#filters {
+/*#filters {
 	display: block;
 	text-align: center;
 	margin: 0 0 50px 0;
@@ -526,7 +526,7 @@ div.mc-image {
 }
 #filters a.active span {
 	background: #222;
-}
+}*/
 
 #portfolio-wrap {
 	list-style: none;
@@ -1072,12 +1072,29 @@ div.mc-image {
 	margin: 3px 7px 0 0;
 }
 
+#travel-wrap{
+	padding-top: 50px;
+	overflow: visible !important;
+	margin-bottom: 100px;
+}
+#no-results{
+	display: none;
+	margin-top: 75px;
+}
+#travel-wrap .col-sm-3 {
+    margin-right: -1px;
+}
 
+.travel-box{
+	margin-bottom: 20px;
+	min-height: 423px !important;
+}
 
 .travel-box a {
 	background: #f5f5f5;
 	padding: 30px 20px;
 	display: block;
+	min-height: 423px !important;
 }
 .travel-box a:hover{
 	color: #FBB809;
@@ -1103,10 +1120,11 @@ div.mc-image {
 	margin: 0 10px 10px 0;
 	font-size: 14px;
 	line-height: 18px;
+	min-height: 54px;
 }
 
 .price-overlay{
-	bottom: 323px;
+	bottom: 78.3%;
 	padding: 0px 10px 7px 10px;
 	width: 70px;
 	background-color: #2184be;

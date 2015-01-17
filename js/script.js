@@ -132,62 +132,94 @@ $(document).ready(function() {
 	});
 
 	// Portfolio Isotope
-	var container = $('#portfolio-wrap');
+	var container = $('#travel-wrap');
 	container.isotope({
 		animationEngine : 'best-available',
+		itemSelector: '.travel-box ',
 		animationOptions : {
 			duration : 200,
 			queue : false
 		},
 	});
-	$('#filters a').click(function() {
-		$('#filters a').removeClass('active');
-		$(this).addClass('active');
+	//container.isotope('reLayout', noResultsCheck);
+	$('.filters span').click(function() {
 		var selector = $(this).attr('data-filter');
 		container.isotope({
-			filter : selector
-		});
-		setProjects();
+			filter : selector,
+		}, function noResultsCheck(){
+			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
+			    console.log(numItems);
+			    if (numItems == 0) {
+			        $("#no-results").fadeIn();
+			        $("#no-results").css("display", "block");
+			    }
+			    else{
+			    	$("#no-results").fadeOut();
+			    	$("#no-results").css("display", "none");
+			    }				
+			});
+
+		var elfilters = $(this).parents().eq(1);
+
+		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
+		{
+			$(".label").each(function(){
+				inActive( $(this) );
+			});
+			setActive(elfilters);
+		}
+		else{
+			//set label alleReizen inactive
+			inActive( $("#alleReizen") );
+			console.log(elfilters);
+			if( elfilters.hasClass("non-active") ){
+				console.log("set active label non alle reizen");
+				setActive(elfilters);
+			}
+			else{
+				inActive(elfilters);
+			}
+		}
 		return false;
 	});
-	function splitColumns() {
-		var winWidth = $(window).width() + 15, columnNumb = 1;
-		if (winWidth > 1200) {
-			columnNumb = 4;
-		} else if (winWidth > 992) {
-			columnNumb = 2;
-		} else if (winWidth > 767) {
-			columnNumb = 2;
-		} else if (winWidth < 767) {
-			columnNumb = 1;
-		}
-		return columnNumb;
+	function setActive(el){
+		console.log("active");
+		el.removeClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
 	}
 
-	function setColumns() {
-		var winWidth = $(window).width(), columnNumb = splitColumns(), postWidth = Math.floor(winWidth / columnNumb);
-		container.find('.portfolio-item').each(function() {
-			$(this).css({
-				width : postWidth + 'px'
-			});
-		});
+	function inActive(el){
+		console.log("inactive");
+		el.addClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
 	}
-
-	function setProjects() {
-		setColumns();
-		container.isotope('reLayout');
+	function noResultsCheck() {
+	    var numItems = $('.item:not(.isotope-hidden)').length;
+	    if (numItems == 0) {
+	        //do something here, like turn on a div, or insert a msg with jQuery's .html() function
+	        alert("There are no results");
+	    }
 	}
+	// function setColumns() {
+	// 	container.find('.travel-box').each(function() {
+	// 		$(this).addClass("col-md-3 col-sm-2 col-xs-12");
+	// 	});
+	// }
+
+	// function setProjects() {
+	// 	setColumns();
+	// 	// container.isotope('reLayout');
+	// }
 
 
-	container.imagesLoaded(function() {
-		setColumns();
-	});
-	$(window).bind('resize', function() {
-		setProjects();
-	});
-	$('#portfolio-wrap .portfolio-item .portfolio').each(function() {
-		$(this).hoverdir();
-	});
+	// container.imagesLoaded(function() {
+	// 	setColumns();
+	// });
+	// $(window).bind('resize', function() {
+	// 	setProjects();
+	// });
 
 	//Navigation Scrolling
 	$(function() {
@@ -272,40 +304,6 @@ $(document).ready(function() {
 		}
 	});
 
-	//search lables
-	$(".label").click(function(){
-		
-		if( ($(this).attr("id") == "alleReizen") && $(this).hasClass("non-active") )
-		{
-			$(".label").each(function(){
-				inActive( $(this) );
-			});
-			setActive($(this));
-		}
-		else{
-			//set label alleReizen inactive
-			inActive( $("#alleReizen") );
-
-			if( $(this).hasClass("non-active") ){
-				setActive($(this));
-			}
-			else{
-				inActive($(this));
-			}
-		}
-	});
-
-	function setActive(el){
-		el.removeClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
-	}
-
-	function inActive(el){
-		el.addClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
-	}
 
 });
 
