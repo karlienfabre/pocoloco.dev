@@ -5,7 +5,6 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
-
 	// Contact Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
@@ -131,63 +130,140 @@ $(document).ready(function() {
 		});
 	});
 
-	// Portfolio Isotope
-	var container = $('#portfolio-wrap');
+	// Travel Isotope
+	var container = $('#travel-wrap');
 	container.isotope({
 		animationEngine : 'best-available',
+		itemSelector: '.travel-box ',
 		animationOptions : {
 			duration : 200,
 			queue : false
 		},
 	});
-	$('#filters a').click(function() {
-		$('#filters a').removeClass('active');
-		$(this).addClass('active');
-		var selector = $(this).attr('data-filter');
-		container.isotope({
-			filter : selector
-		});
-		setProjects();
+
+	$('.filters span').click(function() {
+		
+		
+		var elfilters = $(this).parents().eq(1);
+
+		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
+		{
+			$(".label").each(function(){
+				inActive( $(this) );
+			});
+			setActive(elfilters);
+		}
+		else{
+			//set label alleReizen inactive
+			inActive( $("#alleReizen") );
+			if( elfilters.hasClass("non-active") ){
+				setActive(elfilters);
+			}
+			else{
+				inActive(elfilters);
+			}
+		}
+		checkFilter();
 		return false;
 	});
-	function splitColumns() {
-		var winWidth = $(window).width() + 15, columnNumb = 1;
-		if (winWidth > 1200) {
-			columnNumb = 4;
-		} else if (winWidth > 992) {
-			columnNumb = 2;
-		} else if (winWidth > 767) {
-			columnNumb = 2;
-		} else if (winWidth < 767) {
-			columnNumb = 1;
-		}
-		return columnNumb;
-	}
 
-	function setColumns() {
-		var winWidth = $(window).width(), columnNumb = splitColumns(), postWidth = Math.floor(winWidth / columnNumb);
-		container.find('.portfolio-item').each(function() {
-			$(this).css({
-				width : postWidth + 'px'
-			});
+
+
+	
+	$(".filters span").click(function(){
+		var filters=[];
+		console.log("filters before adding "+filters);
+
+		$(".search.filters").children().each(function(){
+			var filter = $(this).children().children().attr("data-filter");
+
+			if( $(this).hasClass("non-active") ){
+
+				filters = jQuery.grep(filters, function(value){
+					return value != filter;
+				}); 
+
+			}
+			else{
+				if(jQuery.inArray(filter,filters) == -1){
+				    filters.push(filter);
+				}
+			}
+
+
 		});
+
+		filters = filters.join("");
+		filterItems(filters);
+		console.log("filters after adding "+filters);
+
+	});
+
+
+	function filterItems(filters){
+		console.log("filter items with filters:" + filters);
+		container.isotope({
+			filter : filters,
+		}, function noResultsCheck(){
+			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
+			    if (numItems == 0) {
+			        $("#no-results").fadeIn();
+			        $("#no-results").css("display", "block");
+			    }
+			    else{
+			    	$("#no-results").fadeOut();
+			    	$("#no-results").css("display", "none");
+			    }				
+			});		
 	}
 
-	function setProjects() {
-		setColumns();
-		container.isotope('reLayout');
+	function setActive(el){
+		el.removeClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
 	}
 
+	function inActive(el){
+		el.addClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
+	}
+	function checkFilter(){
 
-	container.imagesLoaded(function() {
-		setColumns();
+		var filterdivs = $('.filters span').parent().parent();
+
+		if( filterdivs.not('.non-active').length == 0 ){
+			setActive( $("#alleReizen") );
+		}
+
+		var filterLabels = $(".filters .label");
+
+		if( filterLabels.not('.non-active').length == 0){
+			setActive( $("#alleReizen") );
+		}
+
+	}
+	function noResultsCheck() {
+	    var numItems = $('.item:not(.isotope-hidden)').length;
+	    if (numItems == 0) {
+	        //do something here, like turn on a div, or insert a msg with jQuery's .html() function
+	        alert("There are no results");
+	    }
+	}
+
+	$(".short-text").each(function(){
+		var newP = shorten( $(this).text(), 200 );
+		$(this).text(newP);
 	});
-	$(window).bind('resize', function() {
-		setProjects();
-	});
-	$('#portfolio-wrap .portfolio-item .portfolio').each(function() {
-		$(this).hoverdir();
-	});
+
+	//shorten travel text
+	function shorten(text, maxLength) {
+	    var ret = text;
+	    if (ret.length > maxLength) {
+	        ret = ret.substr(0,maxLength-3) + "...";
+	    }
+	    return ret;
+	}
 
 	//Navigation Scrolling
 	$(function() {
@@ -272,40 +348,6 @@ $(document).ready(function() {
 		}
 	});
 
-	//search lables
-	$(".label").click(function(){
-		
-		if( ($(this).attr("id") == "alleReizen") && $(this).hasClass("non-active") )
-		{
-			$(".label").each(function(){
-				inActive( $(this) );
-			});
-			setActive($(this));
-		}
-		else{
-			//set label alleReizen inactive
-			inActive( $("#alleReizen") );
-
-			if( $(this).hasClass("non-active") ){
-				setActive($(this));
-			}
-			else{
-				inActive($(this));
-			}
-		}
-	});
-
-	function setActive(el){
-		el.removeClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
-	}
-
-	function inActive(el){
-		el.addClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
-	}
 
 });
 
