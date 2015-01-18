@@ -1,12 +1,6 @@
 <?php 
 
-function root(){
-  echo get_stylesheet_directory_uri() . '/';
-}
-
-function get_root(){
-  return get_stylesheet_directory_uri() . '/';
-}
+include_once('includes/helpful-functions.php');
 
 function pocoloco_init() {
   if (!WP_DEBUG) {
@@ -24,6 +18,8 @@ function pocoloco_theme_setup() {
   include_once('acf-repeater/acf-repeater.php');
 
   add_theme_support( 'post-thumbnails' );
+
+  add_image_size( 'homepage-thumb', 330, 196, true );
 
   register_nav_menus( array(
     'main' => 'Hoofdmenu',

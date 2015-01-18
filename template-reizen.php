@@ -107,33 +107,25 @@ Template Name: Reizen template
 									<a href="<?php the_permalink(); ?>">
 
 										<?php
-											//if ( has_post_thumbnail() ):
-
 											$thumb_id = get_post_thumbnail_id();
 											$thumb_url = wp_get_attachment_image_src($thumb_id,'medium');
 										?>
-												<img src="<?php echo $thumb_url[0]; ?>" width="222" height="153" /> 
-										<?php //endif; ?>
+										<img src="<?php echo $thumb_url[0]; ?>" width="222" height="153" />
 
 										<div class="price-overlay">
 											<span class="price-from">vanaf</span></br>
 											
 											<?php 
 												$minprice = 9999;
+												$aantalData = 0;
 												$reisdatas = get_field('reisdata');
 												if (is_array($reisdatas)) {
 													$aantalData = count($reisdatas);
-												}
-												
-												foreach ($reisdatas as $reisdata) {
-													$price = floatval(str_replace(',', '.', $reisdata['prijs']));
-													if ($price < $minprice) {
-														$minprice = $price;
-													}
+													$minprice = get_minPrice($reisdatas);
 												}
 											 ?>
 
-											<span class="muted">&euro;<?php echo number_format($minprice, 2, ',', ''); ?></span>
+											<span class="muted">&euro;<?php echo $minprice; ?></span>
 										</div>
 										<h4><?php the_title(); ?></h4>
 										<p>
@@ -151,7 +143,7 @@ Template Name: Reizen template
 										</div> 
 
 										<div class="mybutton small">
-											<button type="link" class="linkbutton" data-url="reizen/canyoning">
+											<button type="link" class="linkbutton" data-url="<?php the_permalink(); ?>">
 												<span data-hover="Bekijken">Bekijken</span>
 											</button>
 										</div>

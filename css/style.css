@@ -1777,6 +1777,7 @@ footer img{
 .pricebutton.medium a, .pricebutton.medium button {
 	font-size: 14px;
 	line-height: 40px;
+	background-color: #2184be;
 }
 .pricebutton.medium a span, .pricebutton.medium button span {
 	padding: 0 15px;

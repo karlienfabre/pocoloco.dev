@@ -20,7 +20,7 @@
 						<span class="line"></span>
 					</div>
 					<p class="lead">
-						<?php echo get_field('korte_intro') ?>
+						<?php echo get_field('intro') ?>
 					</p>
 				</div>
 				<!-- Section title -->
@@ -90,7 +90,7 @@
 		<!-- Blog Section -->
 		<div class="row text-center">
 			<div class="mybutton big">
-				<button type="link" class="linkbutton" data-url="blog">
+				<button type="link" class="linkbutton" data-url="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">
 					<span data-hover="Overzicht">Terug naar het</span>
 				</button>
 			</div>

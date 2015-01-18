@@ -279,7 +279,7 @@ $(document).ready(function() {
 	//button action
 	$("button.linkbutton").click(function(){
 		var url = $(this).data("url");
-		$(location).attr('href','http://pocoloco.dev/'+url+".html");
+		$(location).attr('href', url);
 	});
 
 	//choice buttons 

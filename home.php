@@ -64,7 +64,7 @@
 										<?php endif; ?>
 										<div class="post-text">
 											<p class="lead">
-												<?php echo get_field('korte_intro'); ?>
+												<?php echo get_field('intro'); ?>
 											</p>
 											<?php if (!has_post_thumbnail()): ?>
 												<p><?php the_excerpt(); ?></p>
