@@ -1,4 +1,4 @@
-		<?php if (!is_front_page() && !is_page_template('template-contact.php')): ?>
+		<?php if (!is_page_template('template-contact.php')): ?>
 			<!-- Contact Section -->
 			<section id="" class="section-content no-padding">
 				<div class="container">

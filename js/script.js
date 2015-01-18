@@ -10,7 +10,7 @@ $(document).ready(function() {
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
 		$.ajax({
-			url : 'contact/send_mail.php',
+			url : 'http://dev.design311.com/pocoloco/wp-content/themes/pocoloco/mailscripts/send_mail.php',
 			type : 'post',
 			dataType : 'json',
 			data : $(this).serialize(),
