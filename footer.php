@@ -1,22 +1,17 @@
-		<!-- Contact Section -->
-		<section id="" class="section-content no-padding">
-			<div class="container">
-				<div class="element-line">
-					<p class="lead text-center">
-						Heb je een vraag, wil je een reis op maat, of wat dan ook ... ? </br><a href="contact.html#contactform">Contacteer ons hier</a>
-					</p>
+		<?php if (!is_page_template('template-contact.php')): ?>
+			<!-- Contact Section -->
+			<section id="" class="section-content no-padding">
+				<div class="container">
+					<div class="element-line">
+						<p class="lead text-center">
+							Heb je een vraag, wil je een reis op maat, of wat dan ook ... ? </br><a href="/pocoloco/contact/">Contacteer ons hier</a>
+						</p>
+					</div>
 				</div>
-			</div>
-			<footer class="text-center">
-				<div class="social-icon">
-					<a href="#"> <i class="fa fa-facebook fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-twitter fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-google-plus fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-youtube fa-3x"></i> </a>
-				</div>
-			</footer>
-		</section>
-		<!-- Contact Section -->
+				<?php get_template_part('includes/social-links'); ?>
+			</section>
+			<!-- Contact Section -->
+		<?php endif ?>
 
 		<!-- Parallax Container -->
 		<div id="five-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_5.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">

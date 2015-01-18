@@ -1,4 +1,5 @@
 <?php
+
 	$send = false;
 	
   if (count($_POST)>0) {
@@ -7,7 +8,7 @@
     $phone=addslashes(strip_tags($_POST["phone"]));
     $message=addslashes(strip_tags($_POST["message"]));
     
-    $recipient  	= "you@domain.com";
+    $recipient  	= "hello@design311.com";
     $object 			= "Request from :: Alpine :: Responsive One Page HTML5/CSS3 Parallax Site Template";
     $htmlmessage 	= <<<MESSAGE
     <html>

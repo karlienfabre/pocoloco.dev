@@ -443,7 +443,7 @@ blockquote {
 	height: 7%;
 }
 #fullscreen-slider {
-	display: none;
+	display: block;
 }
 #fullscreen-slider .pattern {
 	background: url("../img/pattern.png") repeat;
@@ -1129,11 +1129,15 @@ div.mc-image {
 	margin: 0 10px 10px 0;
 	font-size: 14px;
 	line-height: 18px;
+<<<<<<< HEAD
 	height: 110px;
 }
 .travel-box img{
 	width: 222px;
 	height: 153px;
+=======
+	min-height: 54px;
+>>>>>>> FETCH_HEAD
 }
 .price-overlay{
 	bottom: 78.3%;
@@ -2297,4 +2301,8 @@ ol.linenums li {
     color: #bebec5;
     line-height: 20px;
     text-shadow: 0 1px 0 #fff;
+}
+
+.logged-in.admin-bar .sticky-wrapper.is-sticky .navbar{
+	top:32px !important;
 }

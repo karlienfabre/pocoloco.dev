@@ -1,129 +1,4 @@
-<<<<<<< HEAD:index.html
-<!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		<title>PocoLoco Adventures</title>
-		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
-		<meta name="description" content="Responsive One Page HTML5/CSS3 Parallax Site Template" />
-		<meta name="author" content="Creative-Ispiration">
-
-		<!-- Favicons -->
-		<link rel="shortcut icon" href="img/ico-16.ico">
-		<link rel="apple-touch-icon" href="img/ico-57.png" sizes="57x57">
-		<link rel="apple-touch-icon" href="img/ico-72.png" sizes="72x72">
-		<link rel="apple-touch-icon" href="img/ico-114.png" sizes="114x114">
-		<link rel="apple-touch-icon" href="img/ico-144.png" sizes="144x144">
-
-		<!-- Stylesheet -->
-		<link href="css/normalize.css" rel="stylesheet" type="text/css" />
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<link href="css/flexslider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/style-responsive.css" rel="stylesheet">
-		<link href="css/isotope.css" rel="stylesheet">
-		<link href="css/slick.css" rel="stylesheet">
-
-		<!-- Primary color theme -->
-		<link id="primary_color_scheme" href="css/color/orange.css" rel="stylesheet">
-
-		<!-- GoogleFontFamily -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-		<![endif]-->
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	</head>
-
-	<body data-spy="scroll" data-target=".navbar" data-offset="75">
-
-		<!-- Intro loader -->
-		<div class="mask">
-			<div id="intro-loader"></div>
-		</div>
-		<!-- Intro loader -->
-
-		<!-- Home Section -->
-		<section id="home">
-
-			<div id="fullscreen-slider" class="mc-cycle">
-				<!-- Slider item -->
-				<div class="slider-item">
-					<img src="img/home/header.jpg" alt="">
-					<div class="pattern">
-						<div class="slide-content">
-
-							<!-- Section title -->
-							<div class="section-title text-center">
-								<h1>Poco loco<i>adventures</i></h1>
-								<div>
-									<span class="line big"></span>
-									<span class="big-text">Your adventure start here</span>
-									<span class="line big"></span>
-								</div>
-								<p class="lead">
-									<!-- Bank Randy Colvin tailslide full pipe flypaper boardslide feeble -->
-									<a href="#about" class="zoom">
-										<img class="arrow" src="img/arrow_down_white.png"/>
-									</a>
-								</p>
-							</div>
-							<!-- Section title -->
-
-						</div>
-					</div>
-				</div>
-				<!-- Slider item -->
-
-			</div>
-		</section>
-		<!-- Home Section -->
-
-
-		<!-- Navbar -->
-		<div id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="navbar-inner">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<i class="fa fa-bars fa-2x"></i>
-					</button>
-					<a id="brand" class="navbar-brand" href="#home"> 
-						<img src="img/logo.png" alt="logo poco loco adventures"> 
-					</a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="#home" class="int-collapse-menu">Home</a>
-						</li>
-
-						<li>
-							<a href="reisaanbod.html" class="int-collapse-menu">Reisaanbod</a>
-						</li>
-						<li>
-							<a href="blog.html" class="int-collapse-menu">Nieuws</a>
-						</li>
-						<li>
-							<a href="carpool.html" class="int-collapse-menu">Carpool</a>
-						</li>
-						<li>
-							<a href="#contact" class="int-collapse-menu">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Navbar -->
-=======
 <?php get_header(); ?>
->>>>>>> FETCH_HEAD:front-page.php
 
 		<!-- About Section -->
 		<section id="about" class="section-content">
@@ -143,10 +18,10 @@
 						<span class="line"></span>
 					</div> -->
 					<p class="lead">
-						Poco Loco Adventures is je reisspecialist voor avontuurlijke outdoor reizen waarin één of meer outdoor sporten centraal staan.
+						<?php echo get_field('over_ons_tekst'); ?>
 					</p></br></br>
 					<div class="mybutton ultra">
-						<button type="link" class="linkbutton" data-url="reisaanbod">
+						<button type="link" class="linkbutton" data-url="<?php echo get_post_type_archive_link( 'reizen' ); ?>">
 							<span data-hover="Ontdekken">Alle reizen</span>
 						</button>
 					</div>
@@ -160,72 +35,22 @@
 							<div class="flexslider">
 								<ul class="slides">
 
+								<?php
+									$slides = get_field('slides');
+									foreach($slides as $slide) :
+								?>
 									<!-- Item Slide -->
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-12">
-													<img src="<?php root() ?>img/home/slider_1.jpg" class="img-responsive img-center" alt="">
+													<img src="<?php echo $slide['afbeelding']['sizes']['large'] ?>" class="img-responsive img-center" alt="">
 												</div>
 											</div>
 										</div>
 									</li>
 									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php root() ?>img/home/slider_2.jpg" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php root() ?>img/home/slider_3.jpg" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php root() ?>img/home/slider_4.jpg" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php root() ?>img/home/slider_5.jpg" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-12">
-													<img src="<?php root() ?>img/home/slider_6.jpg" class="img-responsive img-center" alt="">
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- Item Slide -->
+								<?php endforeach; ?>
 
 								</ul>
 							</div>
@@ -240,7 +65,7 @@
 									<div class="media-body">
 										<h3 class="media-heading">Joker Reizen</h3>
 										<p>
-											Griptape baseplate lipslide invert Rick McCrank rad. Mute-air death box 540 hang ten hardware. Vert Saran Wrap hang ten deck alley oop. Hang ten Rodney Mullen indy grab nose blunt fastplant lip. Soul skate judo air stalefish pool heel flip.
+											<?php echo get_field('joker_reizen_tekst'); ?>
 										</p>
 									</div>
 								</div>
@@ -256,7 +81,7 @@
 									<div class="media-body">
 										<h3 class="media-heading">Poco Loco Adventures</h3>
 										<p>
-											Slide 360 speed wobbles no comply John Cardiel boardslide. Egg plant crail grab deck boardslide salad grind. Kickturn indy grab Transworld 900 ho-ho nosegrind. Front foot impossible frontside air rip grip griptape ollie hole.
+											<?php echo get_field('pocoloco_adventures_tekst'); ?>
 										</p>
 									</div>
 								</div>
@@ -272,7 +97,7 @@
 						<div class="element-line">
 							<div class="item_top">
 								<div class="hi-icon-effect-1">
-									<a href="#" class=""> <i class="hi-icon fa fa-facebook fa-4x"></i> </a>
+									<a href="https://www.facebook.com/pocolocoadventures" class="" target="_blank"> <i class="hi-icon fa fa-facebook fa-4x"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -284,7 +109,7 @@
 						<div class="element-line">
 							<div class="item_bottom">
 								<div class="hi-icon-effect-1">
-									<a href="#" class=""> <i class="hi-icon fa fa-twitter fa-4x"></i> </a>
+									<a href="https://twitter.com/PocoLocoAdv" class="" target="_blank"> <i class="hi-icon fa fa-twitter fa-4x"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -296,7 +121,7 @@
 						<div class="element-line">
 							<div class="item_top">
 								<div class="hi-icon-effect-1">
-									<a href="#" class=""> <i class="hi-icon fa fa-google-plus fa-4x"></i> </a>
+									<a href="https://plus.google.com/u/0/+PocolocoadventuresBeoutdoorTravel/posts" class="" target="_blank"> <i class="hi-icon fa fa-google-plus fa-4x"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -308,7 +133,7 @@
 						<div class="element-line">
 							<div class="item_bottom">
 								<div class="hi-icon-effect-1">
-									<a href="#" class=""> <i class="hi-icon fa fa-youtube fa-4x"></i> </a>
+									<a href="https://www.youtube.com/channel/UCfDq31iyXK1Tl7vyPovIvfw" class="" target="_blank"> <i class="hi-icon fa fa-youtube fa-4x"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -331,7 +156,7 @@
 					<div class="container text-center">
 
 						<!-- Parallax title -->
-						<h1>Grensverlegend avontuur voor iedereen</h1>
+						<h1><?php echo get_field('titel'); ?></h1>
 <!-- 						<p class="lead">
 							Our main Skills
 						</p> -->
@@ -348,12 +173,10 @@
 													<div class="circular-item hidden">
 														<div class="circ_counter_desc">
 															<p class="lead">
-																Avontuur
+																<?php echo get_field('subtitel_1'); ?>
 															</p>
 															<p>
-																Contrary to popular belief, Lorem Ipsum
-																<br>
-																is not simply random text.
+																<?php echo get_field('tekst_1'); ?>
 															</p>
 														</div>
 													</div>
@@ -366,12 +189,10 @@
 													<div class="circular-item hidden">
 														<div class="circ_counter_desc">
 															<p class="lead">
-																Afwisselend
+																<?php echo get_field('subtitel_2'); ?>
 															</p>
 															<p>
-																Contrary to popular belief, Lorem Ipsum
-																<br>
-																is not simply random text.
+																<?php echo get_field('tekst_2'); ?>
 															</p>
 														</div>
 													</div>
@@ -384,12 +205,10 @@
 													<div class="circular-item hidden">
 														<div class="circ_counter_desc">
 															<p class="lead">
-																Uitdagend
+																<?php echo get_field('subtitel_3'); ?>
 															</p>
 															<p>
-																Contrary to popular belief, Lorem Ipsum
-																<br>
-																is not simply random text.
+																<?php echo get_field('tekst_3'); ?>
 															</p>
 														</div>
 													</div>
@@ -435,54 +254,43 @@
 							<div class="flexslider">
 								<ul class="slides">
 
+								<?php
+									$reizen = get_field('reizen_in_de_kijker');
+									foreach($reizen as $post) : setup_postdata( $post );
+								?>
 									<!-- Item Slide -->
 									<li>
 										<div class="slide-item">
 											<div class="row">
 												<div class="col-md-7">
-													<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/home/reizen_kijker_1.jpg" alt=""/>
+													<?php
+														$thumb_id = get_post_thumbnail_id();
+														$thumb_url = wp_get_attachment_image_src($thumb_id,'large');
+													?>
+													<img class="img-responsive img-center img-rounded" src="<?php echo $thumb_url[0]; ?>" alt=""/>
 												</div>
 												<div class="col-md-5">
-													<h2>Canyoning in de spaanse Pyreneeën</h2>
+													<h2><?php the_title(); ?></h2>
 													<p class="lead">
-														Lorem ipsum dolor amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer neque lementum posuere purus. Nam convallis ipsum. Maecenas a vulputate ipsum.
+														<?php echo get_field('intro'); ?>
 													</p>
 													<br />
 													<div class="pricebutton medium">
-														<a href="#"> <span data-hover="Vanaf €399 pp">Vanaf €399 pp</span> </a>
+														<?php 
+															$reisdata = get_field('reisdata');
+															$minprice = get_minPrice($reisdata);
+														?>
+														<a href="<?php the_permalink(); ?>"><span data-hover="Vanaf €<?php echo $minprice; ?> pp">Vanaf €<?php echo $minprice; ?> pp</span></a>
 													</div>
 													<div class="mybutton medium">
-														<a href="http://themeforest.net/item/alpine-responsive-one-page-parallax-template/6480453?ref=creativeispiration"> <span data-hover="Ontdek deze reis">Ontdek deze reis</span> </a>
+														<a href="<?php the_permalink(); ?>"> <span data-hover="Ontdek deze reis">Ontdek deze reis</span> </a>
 													</div>
 												</div>
 											</div>
 										</div>
 									</li>
 									<!-- Item Slide -->
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-7">
-													<img class="img-responsive img-center img-rounded" src="<?php root() ?>img/home/reizen_kijker_2.jpg" alt=""/>
-												</div>
-												<div class="col-md-5">
-													<h2>Catamaran zeilen in Kos</h2>
-													<p class="lead">
-														Lorem ipsum dolor amet, consectetur adipiscing elit. Pellentesque ut lacus at velit consequat sodales. Ut posuere neque in molestie gravida. Integer neque lementum posuere purus. Nam convallis ipsum. Maecenas a vulputate ipsum.
-													</p>
-													<br />
-													<div class="pricebutton medium">
-														<a href="#"> <span data-hover="Vanaf €399 pp">Vanaf €499 pp</span> </a>
-													</div>
-													<div class="mybutton medium">
-														<a href="http://themeforest.net/item/alpine-responsive-one-page-parallax-template/6480453?ref=creativeispiration"> <span data-hover="Ontdek deze reis">Ontdek deze reis</span> </a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<!-- Item Slide -->
+								<?php endforeach; ?>
 								</ul>
 							</div>
 						</div>
@@ -492,7 +300,7 @@
 					<div class="col-md-10 col-md-offset-1">
 						<div class="element-line">
 							<div class="mybutton ultra">
-								<button type="link" class="linkbutton" data-url="reisaanbod">
+								<button type="link" class="linkbutton" data-url="<?php echo get_post_type_archive_link( 'reizen' ); ?>">
 									<span data-hover="Ontdekken">Alle reizen</span>
 								</button>
 							</div>
@@ -552,6 +360,18 @@
 		</div>
 		<!-- Parallax Container -->
 
+		<?php 
+			$args = array(
+				'post_type' => 'post',
+				'order' => 'DESC',
+				'orderby' => 'date',
+				'posts_per_page' => 5,
+				'category_name' => 'uitgelicht'
+			);
+			$query = new WP_Query( $args );
+		 ?>
+		<?php if ( $query->have_posts() ) : ?>
+
 		<!-- Team Section -->
 		<section id="bloglatest" class="section-content">
 			<div class="container">
@@ -574,6 +394,8 @@
 
 				<div class="row blog_container">
 
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
 					<!-- Blog item -->
 					<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
 						<div class="element-line">
@@ -583,17 +405,23 @@
 										<div class="blog-detail">
 											<div class="blog-content">
 												<h3>
-													<a href="posts/1.html">Biketour dokters van de wereld</a>
+													<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 												</h3>
-												<a href="#"> 
-													<img src="<?php root() ?>img/home/blog_thumb_1.jpg" class="img-responsive" alt=""> 
+												<a href="<?php the_permalink(); ?>"> 
+												<?php
+												if (has_post_thumbnail()):
+													$thumb_id = get_post_thumbnail_id();
+													$thumb_url = wp_get_attachment_image_src($thumb_id,'homepage-thumb');
+												?>
+													<img src="<?php echo $thumb_url[0]; ?>" class="img-responsive" alt="">
+												<?php endif; ?>
 												</a>
-												<p class="blog-date">12 december 2014</p>
+												<p class="blog-date"><?php the_time('j F Y'); ?></p>
 												<p class="blog-intro">
-Flypaper smith grind fakie out Rick McCrank handplant wall ride face plant. Sponsored mini ramp nose-bump kick-nose 180 regular footed. Griptape rails axle set half-cab shinner boneless. Hard flip Fiesta Mall heel flip g-turn acid drop helipop alley oop. Crooked grind gnarly flail varial ollie north front foot impossible. Snake steps half-cab Saran Wrap nose blunt ollie.
+													<?php echo get_field('intro'); ?>
 												</p>
 												<div class="mybutton medium">
-													<button type="link" class="linkbutton" data-url="posts/1">
+													<button type="link" class="linkbutton" data-url="<?php the_permalink(); ?>">
 														<span data-hover="Lees meer">Lees meer</span>
 													</button>
 												</div>
@@ -606,137 +434,15 @@ Flypaper smith grind fakie out Rick McCrank handplant wall ride face plant. Spon
 					</div>
 					<!-- Blog item -->
 
-					<!-- Blog item -->
-					<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
-						<div class="element-line">
-							<div class="item_top">
-								<div class="blog-element">
-									<div class="blog-inner">
-										<div class="blog-detail">
-											<div class="blog-content">
-												<h3>
-													<a href="">Klaar voor een nieuw seizoen</a>
-												</h3>
-												<a href="#"> 
-													<img src="<?php root() ?>img/home/blog_thumb_2.jpg" class="img-responsive" alt=""> 
-												</a>
-												<p class="blog-date">27 november 2014</p>
-												<p class="blog-intro">
-Nosebone casper launch ramp fast plant spine. Melancholy boneless deck stalefish coping Rune Glifberg. Crailtap steps Eric Koston full pipe invert wall ride. Mini ramp tic-tac ollie hole heel flip flypaper. Roll-in 720 front foot impossible bail helipop Santa Monica Beach. Freestyle invert flypaper frigid air bail. 
-												</p>
-												<div class="mybutton medium">
-													<button id="go" type="submit">
-														<span data-hover="Lees meer">Lees meer</span>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Blog item -->
+				<?php endwhile; ?>
 
-					<!-- Blog item -->
-					<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
-						<div class="element-line">
-							<div class="item_top">
-								<div class="blog-element">
-									<div class="blog-inner">
-										<div class="blog-detail">
-											<div class="blog-content">
-												<h3>
-													<a href="">Training begeleiders 1</a>
-												</h3>
-												<a href="#"> 
-													<img src="<?php root() ?>img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
-												</a>
-												<p class="blog-date">1 november 2014</p>
-												<p class="blog-intro">
-Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot impossible bail helipop Santa Monica Beach. Freestyle invert flypaper frigid air bail. Griptape Skateboard Shuffle hanger half-flip rail boardslide. Yeah Kevin Harris snake full pipe Wes Humpston masonite. Skater rails egg plant 540 grind. Bail layback pivot Primo slide hard flip.
-												</p>
-												<div class="mybutton medium">
-													<button id="go" type="submit">
-														<span data-hover="Lees meer">Lees meer</span>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Blog item -->
-
-					<!-- Blog item -->
-					<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
-						<div class="element-line">
-							<div class="item_top">
-								<div class="blog-element">
-									<div class="blog-inner">
-										<div class="blog-detail">
-											<div class="blog-content">
-												<h3>
-													<a href="">Training begeleiders 2</a>
-												</h3>
-												<a href="#"> 
-													<img src="<?php root() ?>img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
-												</a>
-												<p class="blog-date">1 november 2014</p>
-												<p class="blog-intro">
-Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot impossible bail helipop Santa Monica Beach. Freestyle invert flypaper frigid air bail. Griptape Skateboard Shuffle hanger half-flip rail boardslide. Yeah Kevin Harris snake full pipe Wes Humpston masonite. Skater rails egg plant 540 grind. Bail layback pivot Primo slide hard flip.
-												</p>
-												<div class="mybutton medium">
-													<button id="go" type="submit">
-														<span data-hover="Lees meer">Lees meer</span>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Blog item -->
-
-					<!-- Blog item -->
-					<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
-						<div class="element-line">
-							<div class="item_top">
-								<div class="blog-element">
-									<div class="blog-inner">
-										<div class="blog-detail">
-											<div class="blog-content">
-												<h3>
-													<a href="">Training begeleiders 3</a>
-												</h3>
-												<a href="#"> 
-													<img src="<?php root() ?>img/home/blog_thumb_3.jpg" class="img-responsive" alt=""> 
-												</a>
-												<p class="blog-date">1 november 2014</p>
-												<p class="blog-intro">
-Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot impossible bail helipop Santa Monica Beach. Freestyle invert flypaper frigid air bail. Griptape Skateboard Shuffle hanger half-flip rail boardslide. Yeah Kevin Harris snake full pipe Wes Humpston masonite. Skater rails egg plant 540 grind. Bail layback pivot Primo slide hard flip.
-												</p>
-												<div class="mybutton medium">
-													<button id="go" type="submit">
-														<span data-hover="Lees meer">Lees meer</span>
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Blog item -->
 				</div>
 			</div>
 		</section>
 		<!-- Team Section -->
+
+		<?php endif; ?>
+		<?php wp_reset_query(); ?>
 
 		<!-- Parallax Container -->
 		<div id="one-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_4.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
@@ -748,115 +454,5 @@ Baseplate kickturn Baker tuna-flip Saran Wrap flypaper. Roll-in 720 front foot i
 			</div>
 		</div>
 		<!-- Parallax Container -->
-
-		<!-- Contact Section -->
-		<section id="" class="section-content">
-			<div class="container">
-
-				<!-- Section title -->
-				<div class="section-title text-center">
-<!-- 					<div>
-						<span class="line big"></span>
-						<span>And now</span>
-						<span class="line big"></span>
-					</div> -->
-					<h1 class="item_left">Contacteer ons</h1>
-<!-- 					<div>
-						<span class="line"></span>
-						<span>Is time to do it</span>
-						<span class="line"></span>
-					</div> -->
-				</div>
-				<!-- Section title -->
-
-			</div>
-
-			<div class="container">
-				<div class="element-line">
-					<p class="lead text-center">
-						Heb je een vraag, wil je een reis op maat, of wat dan ook ... ?
-					</p>
-
-					<!-- form contact -->
-					<form method="post" name="contactform" id="contactform" class="element-line validate" role="form">
-						<div class="form-respond text-center"></div>
-						<div class="row">
-							<div class="col-md-6 col-sm-6 col-md-6 col-xs-12">
-								<div class="item_top">
-
-									<!-- Form group -->
-									<div class="form-group">
-										<label for="name">Naam</label>
-										<input type="text" name="name" id="name" class="form-control input-lg required" placeholder="jouw naam">
-									</div>
-									<!-- Form group -->
-
-									<!-- Form group -->
-									<div class="form-group">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" class="form-control input-lg required email" placeholder="jouw email">
-									</div>
-									<!-- Form group -->
-
-									<!-- Form group -->
-									<div class="form-group">
-										<label for="phone">Telefoon</label>
-										<input type="text" name="phone" id="phone" class="form-control input-lg required" placeholder="jouw telefoonnummer">
-									</div>
-									<!-- Form group -->
-
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-md-6 col-xs-12">
-								<div class="item_bottom">
-
-									<!-- Form group -->
-									<div class="form-group">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" class="form-control input-lg required" rows="9" placeholder="jouw vraag, bericht, ..."></textarea>
-									</div>
-									<!-- Form group -->
-
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 text-center">
-									<!-- Form group -->
-									<div class="form-group">
-									    <label>
-									      <input type="checkbox"> Ik wil de nieuwsbrief ontvangen
-									    </label>
-									</div>
-									<!-- Form group -->
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 text-center">
-								<div class="action form-button medium">
-
-									<div class="mybutton medium">
-										<button id="submit" type="submit">
-											<span data-hover="Verzenden">Verzenden</span>
-										</button>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</form>
-					<!-- form contact -->
-				</div>
-			</div>
-			<footer class="text-center">
-				<div class="social-icon">
-					<a href="#"> <i class="fa fa-facebook fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-twitter fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-google-plus fa-3x"></i> </a>
-					<a href="#"> <i class="fa fa-youtube fa-3x"></i> </a>
-				</div>
-			</footer>
-		</section>
-		<!-- Contact Section -->
 
 <?php get_footer(); ?>

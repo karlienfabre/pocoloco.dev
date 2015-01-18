@@ -42,7 +42,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body data-spy="scroll" data-target=".navbar" data-offset="75">
+	<body data-spy="scroll" data-target=".navbar" data-offset="75" <?php body_class(); ?>>
 
 		<!-- Intro loader -->
 		<div class="mask">
@@ -62,23 +62,22 @@
 						<div class="slide-content">
 
 							<!-- Section title -->
-							<div class="section-title">
-								<div class="col-md-7 col-md-offset-5 no-padding">
-									<div class="black">
-										<p>Your adventures</br> starts here</p>
-									</div>
-									<div class="yellow text-center">
-										<img class="logo" src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
-									</div>
-									<div class="black text-center">
-										<a href="#about" class="zoom">
-											<img class="arrow" src="<?php root() ?>img/arrow_down_white.png"/>
-										</a>										
-									</div>
+							<div class="section-title text-center">
+								<h1>Poco loco<i>adventures</i></h1>
+								<div>
+									<span class="line big"></span>
+									<span class="big-text">Your adventure starts here</span>
+									<span class="line big"></span>
 								</div>
-
-								<div class="col-md-2  black"></div>
+								<p class="lead">
+									<!-- Bank Randy Colvin tailslide full pipe flypaper boardslide feeble -->
+									<a href="#about" class="zoom">
+										<img class="arrow" src="<?php root() ?>img/arrow_down_white.png"/>
+									</a>
+								</p>
 							</div>
+							<!-- Section title -->
+
 						</div>
 					</div>
 				</div>
@@ -97,28 +96,23 @@
 						<span class="sr-only">Toggle navigation</span>
 						<i class="fa fa-bars fa-2x"></i>
 					</button>
-					<a id="brand" class="navbar-brand" href="#home"> 
+					<a id="brand" class="navbar-brand" href="<?php echo home_url('/'); ?>"> 
 						<img src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
 					</a>
 				</div>
+				<?php 
+					$locations = get_nav_menu_locations();
+					$items = wp_get_nav_menu_items( $locations['main'] );
+				 ?>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="index.html" class="int-collapse-menu">Home</a>
-						</li>
 
-						<li>
-							<a href="reisaanbod.html" class="int-collapse-menu">Reisaanbod</a>
-						</li>
-						<li>
-							<a href="#blog" class="int-collapse-menu">Nieuws</a>
-						</li>
-						<li>
-							<a href="carpool.html" class="int-collapse-menu">Carpool</a>
-						</li>
-						<li>
-							<a href="#contact" class="int-collapse-menu">Contact</a>
-						</li>
+						<?php foreach ($items as $item): ?>
+							<li>
+								<a href="<?php echo $item->url; ?>" class="int-collapse-menu"><?php echo $item->title ?></a>
+							</li>
+						<?php endforeach ?>
+
 					</ul>
 				</div>
 			</div>
