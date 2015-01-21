@@ -58,12 +58,25 @@
 					</div>
 
 					<!-- item media -->
+					<div class="col-md-12">
+						<div class="element-line">
+							<div class="item_left">
+								<div class="media info-text">
+									<div class="media-body">
+										<h3 class="media-heading">Poco Loco Adventures en Joker Reizen</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- item media -->
+
+					<!-- item media -->
 					<div class="col-md-6">
 						<div class="element-line">
 							<div class="item_left">
 								<div class="media info-text">
 									<div class="media-body">
-										<h3 class="media-heading">Joker Reizen</h3>
 										<p>
 											<?php echo get_field('joker_reizen_tekst'); ?>
 										</p>
@@ -79,7 +92,6 @@
 							<div class="item_right">
 								<div class="media info-text">
 									<div class="media-body">
-										<h3 class="media-heading">Poco Loco Adventures</h3>
 										<p>
 											<?php echo get_field('pocoloco_adventures_tekst'); ?>
 										</p>
