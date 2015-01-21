@@ -1,7 +1,7 @@
 //Page Preloader
 $(window).load(function() {
-	$("#intro-loader").delay(500).fadeOut();
-	$(".mask").delay(1000).fadeOut("slow");
+	$("#intro-loader").delay(50).fadeOut();
+	$(".mask").delay(100).fadeOut("slow");
 	
 	// Travel Isotope
 	var container = $('#travel-wrap');
@@ -13,6 +13,115 @@ $(window).load(function() {
 			queue : false
 		},
 	});
+
+	$('.filters span').click(function() {
+		
+		var elfilters = $(this).parents().eq(1);
+
+		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
+		{
+			$(".label").each(function(){
+				inActive( $(this) );
+			});
+			setActive(elfilters);
+		}
+		else{
+			//set label alleReizen inactive
+			inActive( $("#alleReizen") );
+			if( elfilters.hasClass("non-active") ){
+				setActive(elfilters);
+			}
+			else{
+				inActive(elfilters);
+			}
+		}
+		checkFilter();
+		return false;
+	});
+
+
+
+	
+	$(".filters span").click(function(){
+		var filters=[];
+		console.log("filters before adding "+filters);
+
+		$(".search.filters").children().each(function(){
+			var filter = $(this).children().children().attr("data-filter");
+
+			if( $(this).hasClass("non-active") ){
+
+				filters = jQuery.grep(filters, function(value){
+					return value != filter;
+				}); 
+
+			}
+			else{
+				if(jQuery.inArray(filter,filters) == -1){
+				    filters.push(filter);
+				}
+			}
+
+
+		});
+
+		filters = filters.join("");
+		filterItems(filters);
+		console.log("filters after adding "+filters);
+
+	});
+
+
+	function filterItems(filters){
+		console.log("filter items with filters:" + filters);
+		container.isotope({
+			filter : filters,
+		}, function noResultsCheck(){
+			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
+			    if (numItems == 0) {
+			        $("#no-results").fadeIn();
+			        $("#no-results").css("display", "block");
+			    }
+			    else{
+			    	$("#no-results").fadeOut();
+			    	$("#no-results").css("display", "none");
+			    }				
+			});		
+	}
+
+	function setActive(el){
+		el.removeClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
+	}
+
+	function inActive(el){
+		el.addClass("non-active");
+		var span = el.find('i');
+		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
+	}
+	function checkFilter(){
+
+		var filterdivs = $('.filters span').parent().parent();
+
+		if( filterdivs.not('.non-active').length == 0 ){
+			setActive( $("#alleReizen") );
+		}
+
+		var filterLabels = $(".filters .label");
+
+		if( filterLabels.not('.non-active').length == 0){
+			setActive( $("#alleReizen") );
+		}
+
+	}
+	function noResultsCheck() {
+	    var numItems = $('.item:not(.isotope-hidden)').length;
+	    if (numItems == 0) {
+	        //do something here, like turn on a div, or insert a msg with jQuery's .html() function
+	        alert("There are no results");
+	    }
+	}
 });
 
 $(document).ready(function() {
@@ -180,116 +289,6 @@ $(document).ready(function() {
 			}));
 		});
 	});
-
-	$('.filters span').click(function() {
-		
-		
-		var elfilters = $(this).parents().eq(1);
-
-		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
-		{
-			$(".label").each(function(){
-				inActive( $(this) );
-			});
-			setActive(elfilters);
-		}
-		else{
-			//set label alleReizen inactive
-			inActive( $("#alleReizen") );
-			if( elfilters.hasClass("non-active") ){
-				setActive(elfilters);
-			}
-			else{
-				inActive(elfilters);
-			}
-		}
-		checkFilter();
-		return false;
-	});
-
-
-
-	
-	$(".filters span").click(function(){
-		var filters=[];
-		console.log("filters before adding "+filters);
-
-		$(".search.filters").children().each(function(){
-			var filter = $(this).children().children().attr("data-filter");
-
-			if( $(this).hasClass("non-active") ){
-
-				filters = jQuery.grep(filters, function(value){
-					return value != filter;
-				}); 
-
-			}
-			else{
-				if(jQuery.inArray(filter,filters) == -1){
-				    filters.push(filter);
-				}
-			}
-
-
-		});
-
-		filters = filters.join("");
-		filterItems(filters);
-		console.log("filters after adding "+filters);
-
-	});
-
-
-	function filterItems(filters){
-		console.log("filter items with filters:" + filters);
-		container.isotope({
-			filter : filters,
-		}, function noResultsCheck(){
-			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
-			    if (numItems == 0) {
-			        $("#no-results").fadeIn();
-			        $("#no-results").css("display", "block");
-			    }
-			    else{
-			    	$("#no-results").fadeOut();
-			    	$("#no-results").css("display", "none");
-			    }				
-			});		
-	}
-
-	function setActive(el){
-		el.removeClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
-	}
-
-	function inActive(el){
-		el.addClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
-	}
-	function checkFilter(){
-
-		var filterdivs = $('.filters span').parent().parent();
-
-		if( filterdivs.not('.non-active').length == 0 ){
-			setActive( $("#alleReizen") );
-		}
-
-		var filterLabels = $(".filters .label");
-
-		if( filterLabels.not('.non-active').length == 0){
-			setActive( $("#alleReizen") );
-		}
-
-	}
-	function noResultsCheck() {
-	    var numItems = $('.item:not(.isotope-hidden)').length;
-	    if (numItems == 0) {
-	        //do something here, like turn on a div, or insert a msg with jQuery's .html() function
-	        alert("There are no results");
-	    }
-	}
 
 	$(".short-text").each(function(){
 		var newP = shorten( $(this).text(), 200 );

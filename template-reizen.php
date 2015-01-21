@@ -55,7 +55,7 @@ Template Name: Reizen template
 					<?php foreach ($terms as $term): ?>
 						<div class="mybutton small non-active label">
 							<button>
-								<span data-filter="<?php echo $term->slug ?>" data-hover="<?php echo $term->name ?>"><i class="fa fa-check-circle-o"></i><?php echo $term->name ?></span>
+								<span data-filter=".<?php echo $term->slug ?>" data-hover="<?php echo $term->name ?>"><i class="fa fa-check-circle-o"></i><?php echo $term->name ?></span>
 							</button>
 						</div>
 					<?php endforeach ?>
