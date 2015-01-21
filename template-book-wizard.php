@@ -50,6 +50,7 @@ $query = new WP_Query( $args );
  		 ?>
 
 		<section>
+		<form method="post" name="bookform" id="bookform" class="element-line validate" role="form">
 			<div class="container">
 				<div class="row">
 					<div id="book-wizard">
@@ -166,7 +167,7 @@ $query = new WP_Query( $args );
 											<div id="collapseOne" class="panel-collapse in" style="height: auto;">
 												<div class="panel-body">
 
-													<form class="form-horizontal">
+													<div class="form-horizontal">
 													  <div class="form-group">
 													    <label for="Voornaam" class="col-sm-2 col-md-2control-label">Voornaam</label>
 													    <div class="col-sm-3 col-md-3">
@@ -283,7 +284,7 @@ $query = new WP_Query( $args );
 													      <input type="text" class="form-control" id="verwantschap" placeholder="verwantschap">
 													    </div>
 													  </div>													  		  
-													</form>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -293,7 +294,7 @@ $query = new WP_Query( $args );
 											</div>
 											<div id="collapseTwo" class="panel-collapse collapse">
 												<div class="panel-body">
-													<form class="form-horizontal">
+													<div class="form-horizontal">
 													  													  <div class="form-group">
 													    <label for="Voornaam" class="col-sm-2 col-md-2control-label">Voornaam</label>
 													    <div class="col-sm-3 col-md-3">
@@ -410,134 +411,7 @@ $query = new WP_Query( $args );
 													      <input type="text" class="form-control" id="verwantschap" placeholder="verwantschap">
 													    </div>
 													  </div>													  													  
-													</form>
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseThree"> Reiziger 3 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseThree" class="panel-collapse collapse">
-												<div class="panel-body">
-													<form class="form-horizontal">
-													  													  <div class="form-group">
-													    <label for="Voornaam" class="col-sm-2 col-md-2control-label">Voornaam</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Voornaam" placeholder="Voornaam">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Achternaam" class="col-sm-2 col-md-2control-label">Achternaam</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Achternaam" placeholder="Achternaam">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="geslacht" class="col-sm-2 col-md-2 control-label">Geslacht</label>
-													    <div class="col-sm-2 col-md-2">
-															<select class="form-control input-m required">
-																<option>Man</option>
-																<option>Vrouw</option>
-															</select>
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Geboortedatum" class="col-sm-2 col-md-2control-label">Geboortedatum</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Geboortedatum" placeholder="xx/xx/xxxx">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Telefoonnummer" class="col-sm-2 col-md-2control-label">Telefoonnummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Telefoonnummer" placeholder="Telefoonnummer">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="gsm" class="col-sm-2 col-md-2control-label">gsm nummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="gsm" placeholder="gsm">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="email" class="col-sm-2 col-md-2control-label">email</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="email" class="form-control" id="email" placeholder="email">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Land" class="col-sm-2 col-md-2 control-label">Land</label>
-													    <div class="col-sm-2 col-md-2">
-															<select class="form-control input-m required">
-																<option>België</option>
-																<option>Nederland</option>
-																<option>...</option>
-															</select>
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Woonplaats" class="col-sm-2 col-md-2control-label">Woonplaats</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Woonplaats" placeholder="Woonplaats">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Postcode" class="col-sm-2 col-md-2control-label">Postcode</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Postcode" placeholder="Postcode">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Straat" class="col-sm-2 col-md-2control-label">Straat + Nummer + Bus</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="straat" placeholder="Straat + Nummer + Bus">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="extra" class="col-sm-2 col-md-2control-label">Heb je bepaalde medische voorgeschiedenis die je deelname aan de reis zou belemmeren?</label>
-													    <div class="col-sm-3 col-md-3">
-													      <textarea type="text" class="form-control" id="extra" placeholder="licht toe"></textarea>
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="extra" class="col-sm-2 col-md-2control-label">Heb je bepaalde verwachtingen wat betreft maaltijden? (vegetarisch/andere)</label>
-													    <div class="col-sm-3 col-md-3">
-													      <textarea type="text" class="form-control" id="extra" placeholder="licht toe"></textarea>
-													    </div>
-													  </div>
-													  <h4>contactpersoon bij noodgevallen</h4>	
-													  <div class="form-group">
-													    <label for="naam" class="col-sm-2 col-md-2control-label">Naam</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Naam" placeholder="Naam">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Telefoonnummer" class="col-sm-2 col-md-2control-label">Telefoonnummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="Telefoonnummer" placeholder="Telefoonnummer">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="gsm" class="col-sm-2 col-md-2control-label">gsm nummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="gsm" placeholder="gsm">
-													    </div>
-													  </div>													  													  											
-													  <div class="form-group">
-													    <label for="email" class="col-sm-2 col-md-2control-label">email</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="email" class="form-control" id="email" placeholder="email">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="verwantschap" class="col-sm-2 col-md-2control-label">verwantschap</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" id="verwantschap" placeholder="verwantschap">
-													    </div>
-													  </div>													  													  													  
-													</form>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -563,40 +437,35 @@ $query = new WP_Query( $args );
 											</div>
 											<div id="collapseinsuranceOne" class="panel-collapse in" style="height: auto;">
 												<div class="panel-body">
-
-													<form>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> Reisongevallen & Annulatie & Reisbagage - €3,25/dag (min. €20) 
+													    </label>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox">Ik verklaar te beschikken over een eigen reisongevallenverzekering en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen				  
+													    </label>
+													</div>
+													<div class="form-horizontal">
 														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> Reisongevallen & Annulatie & Reisbagage - €3,25/dag (min. €20) 
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox">Ik verklaar te beschikken over een eigen reisongevallenverzekering
-en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen				  
-														    </label>
-														</div>
-														<div class="form-horizontal">
-															<div class="form-group">
-														    <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label>
-														    <div class="col-sm-3 col-md-3">
-														      <input type="text" class="form-control" id="email" placeholder="Naam maatschappij">
-														    </div>
-														  </div>
-														  <div class="form-group">
-														    <label for="email" class="col-sm-2 col-md-2control-label">Polisnummer</label>
-														    <div class="col-sm-3 col-md-3">
-														      <input type="text" class="form-control" id="email" placeholder="Polisnummer">
-														    </div>
-														  </div>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox">"Ik wens een andere formule van reisongevallen verzekering, 
-contacteer me voor de verschillende mogelijkheden"							  
-														    </label>
-														</div>																										  																											  		  
-													</form>
+													    <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label>
+													    <div class="col-sm-3 col-md-3">
+													      <input type="text" class="form-control" id="email" placeholder="Naam maatschappij">
+													    </div>
+													  </div>
+													  <div class="form-group">
+													    <label for="email" class="col-sm-2 col-md-2control-label">Polisnummer</label>
+													    <div class="col-sm-3 col-md-3">
+													      <input type="text" class="form-control" id="email" placeholder="Polisnummer">
+													    </div>
+													  </div>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox">"Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden"
+													    </label>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -606,81 +475,35 @@ contacteer me voor de verschillende mogelijkheden"
 											</div>
 											<div id="collapseinsuranceTwo" class="panel-collapse collapse">
 												<div class="panel-body">
-													<form>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> Reisongevallen &amp; Annulatie &amp; Reisbagage - €3,25/dag (min. €20) 
+													    </label>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox">Ik verklaar te beschikken over een eigen reisongevallenverzekering en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen				  
+													    </label>
+													</div>
+													<div class="form-horizontal">
 														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> Reisongevallen & Annulatie & Reisbagage - €3,25/dag (min. €20) 
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox">Ik verklaar te beschikken over een eigen reisongevallenverzekering
-en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen				  
-														    </label>
-														</div>
-														<div class="form-horizontal">
-															<div class="form-group">
-														    <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label>
-														    <div class="col-sm-3 col-md-3">
-														      <input type="text" class="form-control" id="email" placeholder="Naam maatschappij">
-														    </div>
-														  </div>
-														  <div class="form-group">
-														    <label for="email" class="col-sm-2 col-md-2control-label">Polisnummer</label>
-														    <div class="col-sm-3 col-md-3">
-														      <input type="text" class="form-control" id="email" placeholder="Polisnummer">
-														    </div>
-														  </div>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox">"Ik wens een andere formule van reisongevallen verzekering, 
-contacteer me voor de verschillende mogelijkheden"							  
-														    </label>
-														</div>																										  																											  		  
-													</form>
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseinsuranceThree"> Verzekeringen 3 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseinsuranceThree" class="panel-collapse collapse">
-												<div class="panel-body">
-													<form>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> Reisongevallen & Annulatie & Reisbagage - €3,25/dag (min. €20) 
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox">Ik verklaar te beschikken over een eigen reisongevallenverzekering
-en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen				  
-														    </label>
-														</div>
-														<div class="form-horizontal">
-															<div class="form-group">
-														    <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label>
-														    <div class="col-sm-3 col-md-3">
-														      <input type="text" class="form-control" id="email" placeholder="Naam maatschappij">
-														    </div>
-														  </div>
-														  <div class="form-group">
-														    <label for="email" class="col-sm-2 col-md-2control-label">Polisnummer</label>
-														    <div class="col-sm-3 col-md-3">
-														      <input type="text" class="form-control" id="email" placeholder="Polisnummer">
-														    </div>
-														  </div>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox">"Ik wens een andere formule van reisongevallen verzekering, 
-contacteer me voor de verschillende mogelijkheden"							  
-														    </label>
-														</div>																										  																											  		  
-													</form>
+													    <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label>
+													    <div class="col-sm-3 col-md-3">
+													      <input type="text" class="form-control" id="email" placeholder="Naam maatschappij">
+													    </div>
+													  </div>
+													  <div class="form-group">
+													    <label for="email" class="col-sm-2 col-md-2control-label">Polisnummer</label>
+													    <div class="col-sm-3 col-md-3">
+													      <input type="text" class="form-control" id="email" placeholder="Polisnummer">
+													    </div>
+													  </div>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox">"Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden"							  
+													    </label>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -706,23 +529,22 @@ contacteer me voor de verschillende mogelijkheden"
 											<div id="collapseoptionsOne" class="panel-collapse in" style="height: auto;">
 												<div class="panel-body">
 
-													<form>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 1 (+ €25)
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 2  (+ €10)
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 3 (+ €0)
-														    </label>
-														</div>																								  																											  		  
-													</form>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> optie 1 (+ €25)
+													    </label>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> optie 2  (+ €10)
+													    </label>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> optie 3 (+ €0)
+													    </label>
+													</div>
+
 												</div>
 											</div>
 										</div>
@@ -732,49 +554,21 @@ contacteer me voor de verschillende mogelijkheden"
 											</div>
 											<div id="collapseoptionsTwo" class="panel-collapse collapse">
 												<div class="panel-body">
-													<form>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 1 (+ €25)
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 2  (+ €10)
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 3 (+ €0)
-														    </label>
-														</div>																								  																											  		  
-													</form>
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseoptionsThree"> Opties 3 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseoptionsThree" class="panel-collapse collapse">
-												<div class="panel-body">
-													<form>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 1 (+ €25)
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 2  (+ €10)
-														    </label>
-														</div>
-														<div class="form-group">
-														    <label>
-														      <input type="checkbox"> optie 3 (+ €0)
-														    </label>
-														</div>																								  																											  		  
-													</form>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> optie 1 (+ €25)
+													    </label>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> optie 2  (+ €10)
+													    </label>
+													</div>
+													<div class="form-group">
+													    <label>
+													      <input type="checkbox"> optie 3 (+ €0)
+													    </label>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -791,7 +585,7 @@ contacteer me voor de verschillende mogelijkheden"
 							</div>
 					    	<div class="row">
 								<div class="col-md-12">
-						    		<strong>Duur</strong> 8 dagen</br>
+						    		<strong><?php the_title(); ?></strong></br>
 						    		<strong>Periode</strong>01/07/15 - 07/07/15</br>
 						    		<strong>Aantal reizigers</strong>3
 								</div>
@@ -853,46 +647,17 @@ contacteer me voor de verschillende mogelijkheden"
 												</div>
 											</div>
 										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseovervieuwThree"> Overzicht 3 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseovervieuwThree" class="panel-collapse collapse">
-												<div class="panel-body">
-													<div class="col-md-6">
-													Naam reiziger 3</br>
-													Adres reiziger 3</br>
-													Postcode + gemeente </br>
-													email</br>
-													telefoon</br>
-													gsm</br>
-													opmerking 1 </br>
-													opmerking 1 </br></br>														
-													</div>
-													<div class="col-md-6">
-
-													<strong>Prijs:€699</strong></br>
-													gekozen verzekering (+€)</br>
-													gekozen optiets (+€)</br></br>
-													<strong>totaal reiziger 3:€785</strong>												
-													</div>													
-
-												</div>
-											</div>
-										</div>
 									</div>
 									<h5>Totaal voor alle reizigers samen: </h5> <h2>€1250</h2>
 
 									<a href="#">algemene reisvoorwaarden (pdf)</a></br>
 						    		<a href="#">verkoopsvoorwaarden (pdf)</a></br>
 						    		<a href="#">technische fiche reis (pdf)</a></br></br>
-									<form>
-										<div class="form-group">
-										    <label>
-										      <input type="checkbox"> ik aanvaard de reisvoorwaarden. Ik heb de infofiche van de reis gelezen.
-										    </label>
-										</div>																							  																											  		  
-									</form>
+									<div class="form-group">
+									    <label>
+									      <input type="checkbox"> ik aanvaard de reisvoorwaarden. Ik heb de infofiche van de reis gelezen.
+									    </label>
+									</div>
 								</div>
 					        </div>
 					    </section>
@@ -900,6 +665,7 @@ contacteer me voor de verschillende mogelijkheden"
 
 				</div>
 			</div>
+		</form><!-- #bookform -->
 		</section>
 
 	<?php endwhile; ?>
