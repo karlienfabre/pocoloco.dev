@@ -370,8 +370,7 @@ background: #CC0000 !important;
                                 Beste <?php echo $voornaam; ?>, <br /><br />
 
                                 Bedankt voor je reservatie van je reis bij Poco Loco Adventures.
-                                Het <?php echo $gekozenkantoor; ?> zal je boeking veder opvolgen en je een bevestigingsfactuur bezorgen via mail, 
-                                waarna we je vragen het voorschot te betalen.
+                                Het <?php echo $gekozenkantoor; ?> kantoor zal je boeking veder opvolgen en je een bevestigingsfactuur bezorgen via mail, waarna we je vragen het voorschot te betalen.
                               </p>
                               <p class="left big yellow" style="color: #FBB809; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 13px; margin: 0; padding: 7px 0 20px;" align="left">
                                 <?php echo $gekozenkantoor; ?><br />
@@ -379,7 +378,7 @@ background: #CC0000 !important;
                                 <a href="mailto:<?php echo $emailkantoor; ?>" style="color: #FBB809; text-decoration: none;"><?php echo $emailkantoor; ?></a><br /></p>
                               <p class="left big" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 13px; margin: 0; padding: 7px 0 20px;" align="left">
                                 <a href="<?php echo $reisfiche; ?>" style="color: #FBB809; text-decoration: none;">Hier</a> vind je de productfiche om je voor te bereiden op je avontuur. <br /> 
-                                Deze fiche vind je ook op <a href="<?php echo $reisurl; ?>" style="color: #FBB809; text-decoration: none;"><?php echo $reisurl; ?></a>
+                                Deze fiche vind je ook op <a href="<?php echo $reisurl; ?>" style="color: #FBB809; text-decoration: none;">de bijhorende reispagina</a>.
                               </p>
                               <p class="left big" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 13px; margin: 0; padding: 7px 0 20px;" align="left">
                                 De <a href="<?php echo $verkoopsvoorwaarden; ?>" style="color: #FBB809; text-decoration: none;">verkoopsvoorwaarden</a> en de <a href="<?php echo $reisvoorwaarden; ?>" style="color: #FBB809; text-decoration: none;">reisvoorwaarden</a> waarmee je je bij bestelling akkoord verklaarde, vind je ook op onze website.
@@ -416,18 +415,30 @@ background: #CC0000 !important;
 
                               <?php foreach ($reizigers as $reiziger): ?>
                               <p class="left" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 12px; margin: 0; padding: 7px 0 20px;" align="left">
-                                <?php echo $reiziger[1]; ?> <br />
+                                <strong><?php echo $reiziger[0]; ?> <?php echo $reiziger[1]; ?></strong> <br />
                                 <?php echo $reiziger[2]; ?> <br />
                                 <?php echo $reiziger[3]; ?>  <br />
                                 <?php echo $reiziger[4]; ?> <br />
                                 <?php echo $reiziger[5]; ?> <br />
                                 <?php echo $reiziger[6]; ?> <br />
-                                <?php echo $reiziger[7]; ?>  <br />
-                                <?php echo $reiziger[8]; ?> <br />
-                                <?php echo $reiziger[9]; ?> <br />
-                                <?php foreach ($reiziger[10] as $optie): ?>
-                                   <?php echo $optie; ?><br />
-                                 <?php endforeach ?></p>
+                                <?php echo $reiziger[10]; ?> <br /> <?php //straat + nr + postbus ?>
+                                <?php echo $reiziger[9]; ?> <?php echo $reiziger[8]; ?> <br /> <?php //postcode + woonplaats ?>
+                                <?php echo $reiziger[7]; ?> <br /> <?php //land ?>
+                                Medisch: <?php echo $reiziger[11]; ?> <br />
+                                Eetgewoonte: <?php echo $reiziger[12]; ?> <br /><br />
+                                <?php echo $reiziger['verzekering'][0]; ?> <br />
+                                <?php if (!empty($reiziger['verzekering']['eigen'][0])): ?>
+                                  <?php echo $reiziger['verzekering']['eigen'][0] ?> <br />
+                                  <?php echo $reiziger['verzekering']['eigen'][1] ?> <br /><br />
+                                <?php endif ?>
+                                <?php if (isset($reiziger['opties'])): ?>
+                                  <?php foreach ($reiziger['opties'] as $optie): ?>
+                                     <?php echo $optie; ?><br />
+                                   <?php endforeach ?>
+                                <?php else: ?>
+                                  Geen opties geselecteerd <br />
+                                <?php endif ?>
+                              </p>
                               <?php endforeach ?>
                               <h4 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 12px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Prijsbestek</h4>
                               <p class="left" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 12px; margin: 0; padding: 7px 0 20px;" align="left">
@@ -442,7 +453,6 @@ background: #CC0000 !important;
                                     <h3 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 15px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Follow us</h3>
                                     <ul style="text-align: left; margin: 0; padding: 7px 0 30px; list-style: none;"><li style="float: left; font-size: 10px; padding-right: 10px;"><a href="#" style="color: #FBB809; text-decoration: none;">Friend on facebook</a></li>
                                       <li style="float: left; font-size: 10px; padding-right: 10px;"><a href="#" style="color: #FBB809; text-decoration: none;">Follow on twitter</a></li>
-                                      <li style="float: left; font-size: 10px; padding-right: 10px;"><a href="[FORWARDTOFRIEND]" style="color: #FBB809; text-decoration: none;">Forward to a friend</a></li>
                                     </ul><h3 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 15px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Contact us</h3>
                                     <p class="left" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 12px; margin: 0; padding: 7px 0 20px;" align="left">
                                       <a href="mailto:pocoloco@pocolocoadventures.be" style="color: #FBB809; text-decoration: none;">pocoloco@pocolocoadventures.be</a> <br />
@@ -458,7 +468,7 @@ background: #CC0000 !important;
                                       Poco Loco Adventures is een product in samenwerking met: <br /> 
                                       Joker <br />
                                       Geerdegemvaart 96/98 <br />
-                                      2800 Mechelen <br /><a hfref="#" style="color: #FBB809; text-decoration: none;">www.joker.be</a>
+                                      2800 Mechelen <br /><a hfref="http://www.joker.be/" style="color: #FBB809; text-decoration: none;">www.joker.be</a>
                                     </p>
                                   </td>
                                 </tr></table></td>

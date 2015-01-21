@@ -245,7 +245,7 @@
 								$optioneel = get_field('optioneel');
 								foreach ($optioneel as $opt):
 							?>
-								<li><?php echo $opt['item']; ?></li>
+								<li><?php echo $opt['item']; ?> - &euro;<?php echo $opt['item_prijs']; ?></li>
 							<?php endforeach; ?>
 						</ul>
 					</div>
