@@ -1,105 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+/*
+Template Name: Boek wizard template
+*/
 
-	<head>
-		<title>PocoLoco Adventures</title>
-		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
-		<meta name="description" content="Responsive One Page HTML5/CSS3 Parallax Site Template" />
-		<meta name="author" content="Creative-Ispiration">
+ get_header(); ?>
 
-		<!-- Favicons -->
-		<link rel="shortcut icon" href="<?php root() ?>img/ico-16.ico">
-		<link rel="apple-touch-icon" href="<?php root() ?>img/ico-57.png" sizes="57x57">
-		<link rel="apple-touch-icon" href="<?php root() ?>img/ico-72.png" sizes="72x72">
-		<link rel="apple-touch-icon" href="<?php root() ?>img/ico-114.png" sizes="114x114">
-		<link rel="apple-touch-icon" href="<?php root() ?>img/ico-144.png" sizes="144x144">
-
-		<!-- Stylesheet -->
-		<link href="<?php root() ?>css/normalize.css" rel="stylesheet" type="text/css" />
-		<link href="<?php root() ?>css/bootstrap.min.css" rel="stylesheet">
-		<link href="<?php root() ?>css/font-awesome.min.css" rel="stylesheet">
-		<link href="<?php root() ?>css/flexslider.css" rel="stylesheet">
-		<link href="<?php root() ?>css/style.css" rel="stylesheet">
-		<link href="<?php root() ?>css/style-responsive.css" rel="stylesheet">
-		<link href="<?php root() ?>css/isotope.css" rel="stylesheet">
-
-		<!-- Primary color theme -->
-		<link id="primary_color_scheme" href="<?php root() ?>css/color/orange.css" rel="stylesheet">
-
-		<!-- GoogleFontFamily -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-		<![endif]-->
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	</head>
-
-	<body data-spy="scroll" data-target=".navbar" data-offset="75">
-
-		<!-- Intro loader -->
-		<div class="mask">
-			<div id="intro-loader"></div>
-		</div>
-		<!-- Intro loader -->
-
-
-		<!-- Navbar -->
-		<div id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="navbar-inner">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<i class="fa fa-bars fa-2x"></i>
-					</button>
-					<a id="brand" class="navbar-brand" href="#home"> 
-						<img src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
-					</a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="index.html" class="int-collapse-menu">Home</a>
-						</li>
-
-						<li>
-							<a href="reisaanbod.html" class="int-collapse-menu">Reisaanbod</a>
-						</li>
-						<li>
-							<a href="#blog" class="int-collapse-menu">Nieuws</a>
-						</li>
-						<li>
-							<a href="carpool.html" class="int-collapse-menu">Carpool</a>
-						</li>
-						<li>
-							<a href="#contact" class="int-collapse-menu">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Navbar -->
+ <?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
 		<!-- About Section -->
-		<section id="blog" class="section-content">
+		<section id="contact" class="section-content">
 			<div class="container">
 
 				<!-- Section title -->
 				<div class="section-title text-center">
-					<h1 class="item_right">Boek een reis</h1>
+					<h1 class="item_right"><?php the_title(); ?></h1>
 
 					<p class="lead">
-Fakie disaster Mike Vallely hard flip nose blunt poseur hang-up. Japan air varial transition hurricane rock and roll pressure flip. Manual salad grind yeah Saran Wrap goofy footed spine.
+						<?php echo get_field('intro'); ?>
 					</p>
 				</div>
 				<!-- Section title -->
 			</div>
 		</section>
 		<!-- About Section -->
+
+	<?php endwhile; ?>
+<?php endif; ?>
+
+<?php 
+	$args = array(
+		'p'             => $_GET['reis'],
+		'post_type'   => 'reizen',
+		'post_status' => 'publish',
+	);
+
+$query = new WP_Query( $args );
+ ?>
+
+ <?php if ( !$query->have_posts() ) {
+ 		wp_redirect(get_post_type_archive_link( 'reizen' ));
+ 	} ?>
+
+ 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+ 		<?php 
+ 			$reisdatas = get_field('reisdata');
+ 			$reisdata = $reisdatas[$_GET['id']];
+ 		 ?>
 
 		<section>
 			<div class="container">
@@ -109,37 +57,52 @@ Fakie disaster Mike Vallely hard flip nose blunt poseur hang-up. Japan air varia
 					    <section>
 					    	<div class="row">
 						    	<div class="col-md-12 col-sm-12 col-md-12 col-xs-12">
-						    		<h2>Canyoning en multimix in de spaanse pyreneën</h2>
+						    		<h2><?php the_title(); ?></h2>
 						    	</div>
 					    	</div>
 					    	<div class="row">
 					    		<div class="col-md-6 col-sm-6 col-md-6 col-xs-12">
 									<div class="form-group">
 					    				<label>Algemene info</label></br>
-						    			<strong>Basisprijs per persoon</strong> €688<i class="fa fa-question-circle fa-4x" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></i></br>
-						    			<strong>Budget per persoon</strong> €60<i class="fa fa-question-circle fa-4x" id="test" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></i></br></br>
+						    			<strong>Basisprijs per persoon</strong> €<?php echo $reisdata['prijs']; ?><!-- <i class="fa fa-question-circle fa-4x" data-toggle="tooltip" title="Here's some amazing content. It's very engaging. Right?"></i> --></br></br>
+						    			<!-- <strong>Budget per persoon</strong> €60<i class="fa fa-question-circle fa-4x" id="test" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></i></br></br> -->
 						    			<strong>Inbegrepen</strong></br>
 						    			<ul class="no-list-style-type">
-						    				<li>Transfer vanaf de luchthaven</li>
-						    				<li>maaltijden in vol pension</li>
-						    				<li>nederlandstalige begeleiding</li>
+										<?php 
+											$inbegrepen = get_field('inbegrepen');
+											foreach ($inbegrepen as $incl):
+										?>
+											<li><?php echo $incl['item']; ?></li>
+										<?php endforeach; ?>
 						    			</ul>
 
 						    			<strong>Niet inbegrepen</strong></br>
 						    			<ul class="no-list-style-type">
-						    				<li>Tic-tac boneless roll-in half-cab</li>
-						    				<li>Kingpin dude skater fla</li>
-						    			</ul>
+										<?php 
+											$niet_inbegrepen = get_field('niet_inbegrepen');
+											foreach ($niet_inbegrepen as $nincl):
+										?>
+											<li><?php echo $nincl['item']; ?></li>
+										<?php endforeach; ?>
+										</ul>
 
 						    			<strong>Optioneel</strong></br>
 						    			<ul class="no-list-style-type">
-						    				<li>Tic-tac boneless roll-in half-cab</li>
-						    				<li>Kingpin dude skater fla</li>
+										<?php 
+											$optioneel = get_field('optioneel');
+											foreach ($optioneel as $opt):
+										?>
+											<li><?php echo $opt['item']; ?></li>
+										<?php endforeach; ?>
 						    			</ul>
 
 						    			<a href="#">algemene reisvoorwaarden (pdf)</a></br>
 						    			<a href="#">verkoopsvoorwaarden (pdf)</a></br>
-						    			<a href="#">technische fiche reis (pdf)</a>
+						    			<?php if (get_field('reisfiche')): ?>
+											<a href="<?php echo get_field('reisfiche')['url']; ?>">technische fiche reis (pdf)</a>
+										<?php else: ?>
+											<a href="#">technische fiche reis (niet beschikbaar)</a>
+										<?php endif ?>
 					    			</div>
 					    		</div>
 						    	<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
@@ -156,7 +119,7 @@ Fakie disaster Mike Vallely hard flip nose blunt poseur hang-up. Japan air varia
 										</select>
 									</div>
 
-							        <div class="form-group">
+							        <!-- <div class="form-group">
 										<label for="name">Reisperiode</label>
 										<select class="form-control input-m required">
 											<optgroup label="Juli">
@@ -168,7 +131,7 @@ Fakie disaster Mike Vallely hard flip nose blunt poseur hang-up. Japan air varia
 									            <option>12/08/2015 - 19/08/2015</option>
 									        </optgroup>
 										</select>
-									</div>
+									</div> -->
 
 							        <div class="form-group">
 										<label for="name">Selecteer je joker reiskantoor</label>
@@ -939,84 +902,6 @@ contacteer me voor de verschillende mogelijkheden"
 			</div>
 		</section>
 
+	<?php endwhile; ?>
 
-
-
-		<!-- Parallax Container -->
-		<div id="five-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_5.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
-			<div class="parallax-overlay parallax-background-color">
-				<div class="section-content">
-					<div class="container text-center">
-
-						<!-- Parallax title -->
-						<p class="lead white">
-							Poco Loco Adventures Traveling is een product in samenwerking met: 
-						</p>
-						<!-- Parallax title -->
-
-						<!-- Parallax content -->
-						<div class="parallax-content co-operation">
-							<p>
-								Joker reizen NV (lic 1679)</br>
-								Geerdegemvaart 96</br>
-								2800 Mechelen</br>
-								<a href="#">www.joker.be</a></br>
-								<img src="<?php root() ?>img/home/logo_joker_reizen.png" alt=""/>
-							</p>
-<span>© Copyright 2013 by Poco Loco Adventures - pocoloco@pocolocoadventures.be - +32(0)35016790 </span>
-						</div>
-						<!-- Parallax content -->
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Parallax Container -->
-
-		<footer class="text-center">
-			<img src="<?php root() ?>img/logo.png"/>
-		</footer>
-
-
-		<!-- Js Library -->
-		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="<?php root() ?>js/modernizr.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.sticky.js"></script>
-		<script src="<?php root() ?>js/jquery.fitvids.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.easing-1.3.pack.js"></script>
-		<script src="<?php root() ?>js/bootstrap.min.js"></script>
-		<script src="<?php root() ?>js/bootstrap-modal.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery-countTo.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.appear.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.easy-pie-chart.js"></script>
-		<script src="<?php root() ?>js/jquery.cycle.all.js"></script>
-		<script src="<?php root() ?>js/jquery.maximage.js"></script>
-		<script src="<?php root() ?>js/jquery.isotope.min.js"></script>
-		<script src="<?php root() ?>js/skrollr.js"></script>
-		<script src="<?php root() ?>js/jquery.flexslider-min.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.hoverdir.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.steps.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/jquery.validate.min.js"></script>
-		<script src="<?php root() ?>js/portfolio_custom.js" type="text/javascript"></script>
-		<script src="<?php root() ?>js/script.js"></script>
-		<script src="<?php root() ?>js/retina-1.1.0.min.js"></script>
-		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-		<script src="<?php root() ?>js/google-map.js"></script>
-		<script>
-			//Booking wizard
-			$("#book-wizard").steps({
-			    headerTag: "h3",
-			    bodyTag: "section",
-			    transitionEffect: "slideLeft",
-			    labels:{
-			    	next: "volgende",
-			   		previous: "vorige",
-			   		finish: "boeken"
-			    }
-			});
-		</script>
-		<!-- Js Library -->
-
-	</body>
-</html>
+<?php get_footer(); ?>

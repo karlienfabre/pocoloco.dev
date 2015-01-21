@@ -157,7 +157,7 @@
 						<div class="travel-dates">
 							<?php
 								$reisdata = get_field('reisdata');
-								foreach($reisdata as $data) :
+								foreach($reisdata as $key => $data) :
 
 									switch ($data['aantal_beschikbare_plaatsen']) {
 										case 0:
@@ -182,7 +182,7 @@
 							?>
 							<div class="travel-date">
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis">
+									<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>

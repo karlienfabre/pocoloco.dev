@@ -68,6 +68,7 @@
 		<script src="<?php root() ?>js/jquery.flexslider-min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
 		<script src="<?php root() ?>js/jquery.hoverdir.js" type="text/javascript"></script>
+		<script src="<?php root() ?>js/jquery.steps.js" type="text/javascript"></script>
 		<script src="<?php root() ?>js/jquery.validate.min.js"></script>
 		<script src="<?php root() ?>js/portfolio_custom.js" type="text/javascript"></script>
 		<script src="<?php root() ?>js/script.js"></script>

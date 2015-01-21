@@ -317,7 +317,7 @@ $(document).ready(function() {
 
 	}
 
-	$('.fa-question-circle').popover();
+	$('.fa-question-circle').tooltip();
 
 
 	//button action
