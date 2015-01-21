@@ -1,6 +1,8 @@
 <?php
 
-	$send = false;
+echo json_encode($_POST);
+
+	/*$send = false;
 	
   //if (count($_POST)>0) {
 
@@ -19,10 +21,10 @@
     $reizigers = array();
     $totalprice = 1235;
 
-    /*$name=addslashes(strip_tags($_POST["name"]));
+    $name=addslashes(strip_tags($_POST["name"]));
     $email=addslashes(strip_tags($_POST["email"]));
     $phone=addslashes(strip_tags($_POST["phone"]));
-    $message=addslashes(strip_tags($_POST["message"]));*/
+    $message=addslashes(strip_tags($_POST["message"]));
     
     $recipient  	= "hello@design311.com";
     $object 			= "Bevestiging Poco Loco Adventures";
@@ -37,4 +39,4 @@
       $send = true;
     }
   //}
-  echo json_encode($send);
+  echo json_encode($send);*/

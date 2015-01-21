@@ -50,7 +50,7 @@ $query = new WP_Query( $args );
  		 ?>
 
 		<section>
-		<form method="post" name="bookform" id="bookform" class="element-line validate" role="form">
+		<form method="post" name="bookingform" id="bookingform" class="element-line validate" role="form">
 			<div class="container">
 				<div class="row">
 					<div id="book-wizard">
@@ -663,10 +663,10 @@ $query = new WP_Query( $args );
 					        </div>
 					    </section>
 					</div>
-
 				</div>
+				<div class="form-respond text-center"></div>
 			</div>
-		</form><!-- #bookform -->
+		</form><!-- #bookingform -->
 		</section>
 
 	<?php endwhile; ?>

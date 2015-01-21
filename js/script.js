@@ -5,6 +5,7 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
+
 	//random background image
 	var images = [
 					'0',
@@ -16,6 +17,7 @@ $(document).ready(function() {
 				];
 
 	$("#bgimg").attr('src',$("#bgimg").attr('src').replace(/[0-9]+(?!.*[0-9])/,images[Math.floor(Math.random() * images.length)]));
+	
 	// Contact Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
@@ -30,6 +32,31 @@ $(document).ready(function() {
 				} else {
 					$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending</h2> <p>Try again later.</p> </div>");
 				}
+			},
+			error : function(xhr, err) {
+				$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending</h2> <p>Try again later.</p> </div>");
+			}
+		});
+		return false;
+	});
+
+	//booking form
+	$('.actions a[href$="#finish"]').click(function(){
+		$('#bookingform').submit();
+	});
+	$(document).on('submit', '#bookingform', function() {
+		$.ajax({
+			url : 'http://dev.design311.com/pocoloco/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
+			type : 'post',
+			dataType : 'json',
+			data : $(this).serialize(),
+			success : function(data) {
+				//if (data == true) {
+					$('.form-respond').html("<div class='content-message'> <i class='fa fa-rocket fa-4x'></i> <h2>Email Sent Successfully</h2> <p>Your message has been submitted.</p> </div>");
+					console.log(data);
+				//} else {
+				//	$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending</h2> <p>Try again later.</p> </div>");
+				//}
 			},
 			error : function(xhr, err) {
 				$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending</h2> <p>Try again later.</p> </div>");
