@@ -1866,6 +1866,9 @@ footer img{
 	padding: 20px 0 20px 0;
 	text-align: justify;
 }
+.yellow-content h2{
+	text-align: left;
+}
 .yellow-content p{
 	color: #666;
 }
@@ -1912,8 +1915,8 @@ footer img{
 #travel-info .element-line{
 	margin-top: 50px !important;
 }
-.travel-dates{
-	margin-top: 50px;
+h2.group{
+	margin-bottom: 20px;
 }
 .travel-date{
 	background-color: #F3F3F3;
@@ -1953,6 +1956,25 @@ footer img{
 	float: right;
 	margin-top: 13px;
 	margin-right: 10px;
+}
+.travel-date.individueel{
+	height: 100%;
+	padding-bottom: 10px;
+}
+.travel-date.individueel p{
+	font-size: 12px;
+}
+h4.individueel{
+	margin: 8px 0 20px 0;
+	padding: 0 0 8px 0;
+	text-transform: uppercase;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+	color: #222 !important;
+}
+.travel-date.individueel .mybutton.medium.book{
+	margin-top: -40px;
 }
 .setting{
 	font-size: 110px;

@@ -326,7 +326,7 @@
 
 
 		<!-- Parallax Container -->
-		<div id="seven-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_3.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div id="nieuwsbrief" class="parallax" style="background-image: url('<?php root() ?>img/home/background_3.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
 				<div class="section-content">
 					<div class="container text-center">
