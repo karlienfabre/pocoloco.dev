@@ -57,7 +57,7 @@
 			<div id="fullscreen-slider" class="mc-cycle">
 				<!-- Slider item -->
 				<div class="slider-item">
-					<img id="bgimg" src="<?php root() ?>img/home/header.jpg" alt="">
+					<img id="bgimg" src="<?php root() ?>img/home/background_header_0.jpg" alt="">
 					<div class="pattern">
 						<div class="slide-content">
 

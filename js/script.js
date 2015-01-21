@@ -7,15 +7,15 @@ $(window).load(function() {
 $(document).ready(function() {
 	//random background image
 	var images = [
-					'background_header_0.jpg',
-					'background_header_1.jpg',
-					'background_header_2.jpg',
-					'background_header_3.jpg',
-					'background_header_4.jpg',
-					'background_header_5.jpg'
+					'0',
+					'1',
+					'2',
+					'3',
+					'4',
+					'5'
 				];
 
-	$("#bgimg").attr("src", 'img/home/' + images[Math.floor(Math.random() * images.length)] );
+	$("#bgimg").attr('src',$("#bgimg").attr('src').replace(/[0-9]+(?!.*[0-9])/,images[Math.floor(Math.random() * images.length)]));
 	// Contact Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
