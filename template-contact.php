@@ -95,16 +95,16 @@ Template Name: Contact template
 								<div class="contact-box office">
 									<h4><?php the_title(); ?></h4>
 									<p>
-										<?php echo get_field('adresregel_1') ?></br>
-										<?php echo get_field('adresregel_2') ?></br></br>
-										<i class="fa fa-phone fa-4x"></i><?php echo get_field('telefoonnummer') ?></br>
-										<i class="fa fa-print fa-4x"></i><?php echo get_field('fax') ?></br>
-										<i class="fa fa-envelope fa-4x"></i><a href="mailto:<?php echo get_field('emailadres') ?>"><?php echo get_field('emailadres') ?></a></br>
+										<?php echo get_field('adresregel_1') ?><br />
+										<?php echo get_field('adresregel_2') ?><br /><br />
+										<i class="fa fa-phone fa-4x"></i><?php echo get_field('telefoonnummer') ?><br />
+										<i class="fa fa-print fa-4x"></i><?php echo get_field('fax') ?><br />
+										<i class="fa fa-envelope fa-4x"></i><a href="mailto:<?php echo get_field('emailadres') ?>"><?php echo get_field('emailadres') ?></a><br />
 										<?php
 											$openingsuren = get_field('openingsuren');
 											foreach($openingsuren as $openingsuur) :
 										?>
-											<i class="fa fa-calendar fa-4x"></i><?php echo $openingsuur['item']; ?></br>
+											<i class="fa fa-calendar fa-4x"></i><?php echo $openingsuur['item']; ?><br />
 										<?php endforeach ?>
 									</p>
 								</div>

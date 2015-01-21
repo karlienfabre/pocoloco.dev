@@ -64,10 +64,10 @@ $query = new WP_Query( $args );
 					    	<div class="row">
 					    		<div class="col-md-6 col-sm-6 col-md-6 col-xs-12">
 									<div class="form-group">
-					    				<label>Algemene info</label></br>
-						    			<strong>Basisprijs per persoon</strong> €<?php echo $reisdata['prijs']; ?><!-- <i class="fa fa-question-circle fa-4x" data-toggle="tooltip" title="Here's some amazing content. It's very engaging. Right?"></i> --></br></br>
-						    			<!-- <strong>Budget per persoon</strong> €60<i class="fa fa-question-circle fa-4x" id="test" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></i></br></br> -->
-						    			<strong>Inbegrepen</strong></br>
+					    				<label>Algemene info</label><br />
+						    			<strong>Basisprijs per persoon</strong> €<?php echo $reisdata['prijs']; ?><!-- <i class="fa fa-question-circle fa-4x" data-toggle="tooltip" title="Here's some amazing content. It's very engaging. Right?"></i> --><br /><br />
+						    			<!-- <strong>Budget per persoon</strong> €60<i class="fa fa-question-circle fa-4x" id="test" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?"></i><br /><br /> -->
+						    			<strong>Inbegrepen</strong><br />
 						    			<ul class="no-list-style-type">
 										<?php 
 											$inbegrepen = get_field('inbegrepen');
@@ -77,7 +77,7 @@ $query = new WP_Query( $args );
 										<?php endforeach; ?>
 						    			</ul>
 
-						    			<strong>Niet inbegrepen</strong></br>
+						    			<strong>Niet inbegrepen</strong><br />
 						    			<ul class="no-list-style-type">
 										<?php 
 											$niet_inbegrepen = get_field('niet_inbegrepen');
@@ -87,7 +87,7 @@ $query = new WP_Query( $args );
 										<?php endforeach; ?>
 										</ul>
 
-						    			<strong>Optioneel</strong></br>
+						    			<strong>Optioneel</strong><br />
 						    			<ul class="no-list-style-type">
 										<?php 
 											$optioneel = get_field('optioneel');
@@ -97,8 +97,8 @@ $query = new WP_Query( $args );
 										<?php endforeach; ?>
 						    			</ul>
 
-						    			<a href="#" target="_blank">algemene reisvoorwaarden (pdf)</a></br>
-						    			<a href="#" target="_blank">verkoopsvoorwaarden (pdf)</a></br>
+						    			<a href="#" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
+						    			<a href="#" target="_blank">verkoopsvoorwaarden (pdf)</a><br />
 						    			<?php if (get_field('reisfiche')): ?>
 											<a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">technische fiche reis (pdf)</a>
 										<?php else: ?>
@@ -587,8 +587,8 @@ $query = new WP_Query( $args );
 							</div>
 					    	<div class="row">
 								<div class="col-md-12">
-						    		<strong><?php the_title(); ?></strong></br>
-						    		<strong>Periode</strong> 01/07/15 - 07/07/15</br>
+						    		<strong><?php the_title(); ?></strong><br />
+						    		<strong>Periode</strong> 01/07/15 - 07/07/15<br />
 						    		<strong>Aantal reizigers</strong> 3
 								</div>
 							</div>
@@ -602,20 +602,20 @@ $query = new WP_Query( $args );
 											<div id="collapseovervieuwOne" class="panel-collapse collapse" style="height: 0px;">
 												<div class="panel-body">
 													<div class="col-md-6">
-													Naam hoofdreiziger</br>
-													Adres hoofdreiziger</br>
-													Postcode + gemeente </br>
-													email</br>
-													telefoon</br>
-													gsm</br>
-													opmerking 1 </br>
-													opmerking 1 </br></br>
+													Naam hoofdreiziger<br />
+													Adres hoofdreiziger<br />
+													Postcode + gemeente <br />
+													email<br />
+													telefoon<br />
+													gsm<br />
+													opmerking 1 <br />
+													opmerking 1 <br /><br />
 													</div>
 													<div class="col-md-6">
 
-													<strong>Prijs:€<?php echo $reisdata['prijs']; ?></strong></br>
-													gekozen verzekering (+€)</br>
-													gekozen opties (+€)</br></br>
+													<strong>Prijs:€<?php echo $reisdata['prijs']; ?></strong><br />
+													gekozen verzekering (+€)<br />
+													gekozen opties (+€)<br /><br />
 													<strong>totaal reiziger 1:€785</strong>
 													</div>
 
@@ -629,20 +629,20 @@ $query = new WP_Query( $args );
 											<div id="collapseovervieuwTwo" class="panel-collapse collapse">
 												<div class="panel-body">
 													<div class="col-md-6">
-													Naam reiziger 2</br>
-													Adres reiziger 2</br>
-													Postcode + gemeente </br>
-													email</br>
-													telefoon</br>
-													gsm</br>
-													opmerking 1 </br>
-													opmerking 1 </br></br>
+													Naam reiziger 2<br />
+													Adres reiziger 2<br />
+													Postcode + gemeente <br />
+													email<br />
+													telefoon<br />
+													gsm<br />
+													opmerking 1 <br />
+													opmerking 1 <br /><br />
 													</div>
 													<div class="col-md-6">
 
-													<strong>Prijs:€699</strong></br>
-													gekozen verzekering (+€)</br>
-													gekozen optiets (+€)</br></br>
+													<strong>Prijs:€699</strong><br />
+													gekozen verzekering (+€)<br />
+													gekozen optiets (+€)<br /><br />
 													<strong>totaal reiziger 2:€785</strong>
 													</div>
 												</div>
@@ -651,9 +651,9 @@ $query = new WP_Query( $args );
 									</div>
 									<h5>Totaal voor alle reizigers samen: </h5> <h2>€1250</h2>
 
-									<a href="#">algemene reisvoorwaarden (pdf)</a></br>
-						    		<a href="#">verkoopsvoorwaarden (pdf)</a></br>
-						    		<a href="#">technische fiche reis (pdf)</a></br></br>
+									<a href="#">algemene reisvoorwaarden (pdf)</a><br />
+						    		<a href="#">verkoopsvoorwaarden (pdf)</a><br />
+						    		<a href="#">technische fiche reis (pdf)</a><br /><br />
 									<div class="form-group">
 									    <label>
 									      <input type="checkbox"> ik aanvaard de reisvoorwaarden. Ik heb de infofiche van de reis gelezen.

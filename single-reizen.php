@@ -187,7 +187,7 @@
 									</button>
 								</div>
 								<p><?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
-								<span class="travel-price">&euro;<?php echo number_format($data['prijs'], 2, ',', ''); ?></span></br>
+								<span class="travel-price">&euro;<?php echo number_format($data['prijs'], 2, ',', ''); ?></span><br />
 								<i class="fa fa-flag <?php echo $flag; ?>"></i><span class="flag"><?php echo $flagtext; ?></span>
 							</div>
 							<?php endforeach; ?>

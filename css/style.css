@@ -1096,14 +1096,14 @@ div.mc-image {
 
 .travel-box{
 	margin-bottom: 20px;
-	min-height: 423px !important;
+	/* min-height: 423px !important; */
 }
 
 .travel-box a {
 	background: #f5f5f5;
 	padding: 30px 20px;
 	display: block;
-	min-height: 423px !important;
+	/* min-height: 423px !important; */
 }
 .travel-box a:hover{
 	color: #FBB809;

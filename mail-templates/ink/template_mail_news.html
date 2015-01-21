@@ -1209,10 +1209,10 @@
 
                                     <h3>Contact us</h3>
                                     <p class="left">
-                                      <a HREF="mailto:pocoloco@pocolocoadventures.be">pocoloco@pocolocoadventures.be</a></br>
-                                      +32 (0)3 5016790</br>
-                                      ma - do: 9u tot 14u</br>
-                                      di, wo en vr: 9u tot 13u</br>
+                                      <a HREF="mailto:pocoloco@pocolocoadventures.be">pocoloco@pocolocoadventures.be</a><br />
+                                      +32 (0)3 5016790<br />
+                                      ma - do: 9u tot 14u<br />
+                                      di, wo en vr: 9u tot 13u<br />
                                     </p>
                                   </td>
                                 </tr>
@@ -1224,9 +1224,9 @@
                                   <td class="left">
                                     <h3>Our partners</h3>
                                     <p class="left partners">
-                                      <a href="#">joker.be</a></br>
-                                      <a href="#">...</a></br>
-                                      <a href="#">...</a></br>
+                                      <a href="#">joker.be</a><br />
+                                      <a href="#">...</a><br />
+                                      <a href="#">...</a><br />
                                     </p>
                                     <p>
                                       <img src="http://staging.pocolocoadventures.be/pocoloco/email/img/logo_mail.png"/>

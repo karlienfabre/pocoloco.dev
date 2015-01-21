@@ -1,10 +1,10 @@
 		<?php if (!is_page_template('template-contact.php')): ?>
 			<!-- Contact Section -->
-			<section id="" class="section-content no-padding">
+			<section class="section-content no-padding">
 				<div class="container">
 					<div class="element-line">
 						<p class="lead text-center">
-							Heb je een vraag, wil je een reis op maat, of wat dan ook ... ? </br><a href="/pocoloco/contact/">Contacteer ons hier</a>
+							Heb je een vraag, wil je een reis op maat, of wat dan ook ... ? <br /><a href="/pocoloco/contact/">Contacteer ons hier</a>
 						</p>
 					</div>
 				</div>
@@ -28,10 +28,10 @@
 						<!-- Parallax content -->
 						<div class="parallax-content co-operation">
 							<p>
-								Joker reizen NV (lic 1679)</br>
-								Geerdegemvaart 96</br>
-								2800 Mechelen</br>
-								<a href="#">www.joker.be</a></br>
+								Joker reizen NV (lic 1679)<br />
+								Geerdegemvaart 96<br />
+								2800 Mechelen<br />
+								<a href="#">www.joker.be</a><br />
 								<img src="<?php root() ?>img/home/logo_joker_reizen.png" alt=""/>
 							</p>
 <span>© Copyright 2013 by Poco Loco Adventures - pocoloco@pocolocoadventures.be - +32(0)35016790 </span>
@@ -45,7 +45,7 @@
 		<!-- Parallax Container -->
 
 		<footer class="text-center">
-			<img src="<?php root() ?>img/logo.png"/>
+			<img src="<?php root() ?>img/logo.png" alt="" />
 		</footer>
 
 

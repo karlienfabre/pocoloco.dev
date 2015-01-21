@@ -2,6 +2,17 @@
 $(window).load(function() {
 	$("#intro-loader").delay(500).fadeOut();
 	$(".mask").delay(1000).fadeOut("slow");
+	
+	// Travel Isotope
+	var container = $('#travel-wrap');
+	container.isotope({
+		animationEngine : 'best-available',
+		itemSelector: '.travel-box ',
+		animationOptions : {
+			duration : 200,
+			queue : false
+		},
+	});
 });
 
 $(document).ready(function() {
@@ -168,17 +179,6 @@ $(document).ready(function() {
 				}
 			}));
 		});
-	});
-
-	// Travel Isotope
-	var container = $('#travel-wrap');
-	container.isotope({
-		animationEngine : 'best-available',
-		itemSelector: '.travel-box ',
-		animationOptions : {
-			duration : 200,
-			queue : false
-		},
 	});
 
 	$('.filters span').click(function() {

@@ -19,7 +19,7 @@
 					</div> -->
 					<p class="lead">
 						<?php echo get_field('over_ons_tekst'); ?>
-					</p></br></br>
+					</p><br /><br />
 					<div class="mybutton ultra">
 						<button type="link" class="linkbutton" data-url="<?php echo get_post_type_archive_link( 'reizen' ); ?>">
 							<span data-hover="Ontdekken">Alle reizen</span>
