@@ -6,16 +6,18 @@ $(window).load(function() {
 
 $(document).ready(function() {
 	//random background image
-	var images = [
-					'0',
-					'1',
-					'2',
-					'3',
-					'4',
-					'5'
-				];
+	if ($('#bgimg').length){
+		var images = [
+						'0',
+						'1',
+						'2',
+						'3',
+						'4',
+						'5'
+					];
 
-	$("#bgimg").attr('src',$("#bgimg").attr('src').replace(/[0-9]+(?!.*[0-9])/,images[Math.floor(Math.random() * images.length)]));
+		$("#bgimg").attr('src',$("#bgimg").attr('src').replace(/[0-9]+(?!.*[0-9])/,images[Math.floor(Math.random() * images.length)]));
+	}
 	// Contact Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
