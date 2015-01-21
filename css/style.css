@@ -97,7 +97,7 @@ blockquote {
 	letter-spacing: 1px;
 }
 .section-title h1 {
-	font-size: 80px;
+	font-size: 50px;
 }
 
 .section-title h1, .section-title h2, .section-title h3 {
@@ -443,7 +443,7 @@ blockquote {
 	height: 7%;
 }
 #fullscreen-slider {
-	display: block;
+	display: none;
 }
 #fullscreen-slider .pattern {
 	background: url("../img/pattern.png") repeat;
@@ -1120,24 +1120,22 @@ div.mc-image {
 	color: #8d8d8d;
 }
 .travel-box h4 {
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 600;
 	text-transform: uppercase;
 	margin: 12px 0;
+	min-height: 40px;
+	max-height: 40px;
 }
 .travel-box p {
 	margin: 0 10px 10px 0;
 	font-size: 14px;
 	line-height: 18px;
-<<<<<<< HEAD
 	height: 110px;
 }
 .travel-box img{
 	width: 222px;
 	height: 153px;
-=======
-	min-height: 54px;
->>>>>>> FETCH_HEAD
 }
 .price-overlay{
 	bottom: 78.3%;
@@ -2301,8 +2299,4 @@ ol.linenums li {
     color: #bebec5;
     line-height: 20px;
     text-shadow: 0 1px 0 #fff;
-}
-
-.logged-in.admin-bar .sticky-wrapper.is-sticky .navbar{
-	top:32px !important;
 }
