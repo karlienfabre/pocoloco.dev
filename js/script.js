@@ -5,6 +5,17 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
+	//random background image
+	var images = [
+					'background_header_0.jpg',
+					'background_header_1.jpg',
+					'background_header_2.jpg',
+					'background_header_3.jpg',
+					'background_header_4.jpg',
+					'background_header_5.jpg'
+				];
+
+	$("#bgimg").attr("src", 'img/home/' + images[Math.floor(Math.random() * images.length)] );
 	// Contact Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
