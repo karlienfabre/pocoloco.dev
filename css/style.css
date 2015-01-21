@@ -1090,7 +1090,7 @@ div.mc-image {
 	display: none;
 	margin-top: 75px;
 }
-#travel-wrap .col-sm-3 {
+#travel-wrap .col-lg-3, #travel-wrap .col-md-4, #travel-wrap .col-sm-4, #travel-wrap .col-xs-12 {
     margin-right: -1px;
 }
 
@@ -1134,8 +1134,7 @@ div.mc-image {
 	height: 110px;
 }
 .travel-box img{
-	width: 222px;
-	height: 153px;
+	width: 100%;
 }
 .price-overlay{
 	bottom: 78.3%;

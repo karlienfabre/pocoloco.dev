@@ -1,10 +1,9 @@
 /*
-Theme Name: Alpine
-Theme URI: http://www.creative-ispiration.com/themes/alpine/
+Theme Name: PocoLoco Adventures
+Theme URI: http://www.pocolocoadventures.be
 Description: Responsive One Page HTML5/CSS3 Parallax Site Template
 Version: 1.0
-Author: Creative-Ispiration
-Author URI: http://themeforest.net/user/creativeispiration
+Author: Karlien Fabré
 */
 
 
@@ -188,6 +187,15 @@ Author URI: http://themeforest.net/user/creativeispiration
 		height: 350px;
 	}
 
+	.travel-box p {
+		height: 75px;	
+	}
+
+	.travel-box h4 {
+		min-height: 35px;
+		max-height: 35px;
+	}
+
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -204,6 +212,15 @@ Author URI: http://themeforest.net/user/creativeispiration
 		line-height:80px;
 		font-weight: 600;
 	}
+
+	.travel-box p {
+		height: 140px;	
+	}
+
+	.travel-box h4 {
+		min-height: 50px;
+		max-height: 50px;
+	}	
 
 
 }

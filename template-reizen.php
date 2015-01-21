@@ -102,15 +102,15 @@ Template Name: Reizen template
 						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 						
 							<!-- travel item -->
-							<div class="travel-box individueel multi col-md-3 col-sm-3 col-xs-12">
+							<div class="travel-box groepreis bergsport  col-lg-3 col-md-4 col-sm-4 col-xs-12">
 								<div class="">
 									<a href="<?php the_permalink(); ?>">
 
 										<?php
 											$thumb_id = get_post_thumbnail_id();
-											$thumb_url = wp_get_attachment_image_src($thumb_id,'medium');
+											$thumb_url = wp_get_attachment_image_src($thumb_id,'full');
 										?>
-										<img src="<?php echo $thumb_url[0]; ?>" width="222" height="153" />
+										<img src="<?php echo $thumb_url[0]; ?>"/>
 
 										<div class="price-overlay">
 											<span class="price-from">vanaf</span></br>
