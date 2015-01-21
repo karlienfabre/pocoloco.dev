@@ -182,7 +182,7 @@
 							?>
 							<div class="travel-date">
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book-wizard">
+									<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>

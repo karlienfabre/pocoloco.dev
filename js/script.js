@@ -323,7 +323,7 @@ $(document).ready(function() {
 	//button action
 	$("button.linkbutton").click(function(){
 		var url = $(this).data("url");
-		$(location).attr('href','http://pocoloco.dev/'+url+".html");
+		$(location).attr('href', url);
 	});
 
 	//choice buttons 
@@ -444,3 +444,22 @@ function parallaxInit() {
 	};
 	Core.initialize();
 })();
+
+//blog slider / homepage
+jQuery('.blog_container').slick({
+  infinite: false,
+  slidesToShow: 3,
+  slidesToScroll: 1
+});
+
+//Booking wizard
+jQuery("#book-wizard").steps({
+    headerTag: "h3",
+    bodyTag: "section",
+    transitionEffect: "slideLeft",
+    labels:{
+    	next: "volgende",
+   		previous: "vorige",
+   		finish: "boeken"
+    }
+});
