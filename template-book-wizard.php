@@ -670,5 +670,5 @@ $query = new WP_Query( $args );
 		</section>
 
 	<?php endwhile; ?>
-
+	
 <?php get_footer(); ?>
