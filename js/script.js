@@ -130,11 +130,7 @@ $(document).ready(function() {
 		});
 	});
 
-<<<<<<< HEAD
 	// Travel Isotope
-=======
-	// Portfolio Isotope
->>>>>>> FETCH_HEAD
 	var container = $('#travel-wrap');
 	container.isotope({
 		animationEngine : 'best-available',
@@ -144,31 +140,10 @@ $(document).ready(function() {
 			queue : false
 		},
 	});
-<<<<<<< HEAD
 
 	$('.filters span').click(function() {
 		
 		
-=======
-	//container.isotope('reLayout', noResultsCheck);
-	$('.filters span').click(function() {
-		var selector = $(this).attr('data-filter');
-		container.isotope({
-			filter : selector,
-		}, function noResultsCheck(){
-			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
-			    console.log(numItems);
-			    if (numItems == 0) {
-			        $("#no-results").fadeIn();
-			        $("#no-results").css("display", "block");
-			    }
-			    else{
-			    	$("#no-results").fadeOut();
-			    	$("#no-results").css("display", "none");
-			    }				
-			});
-
->>>>>>> FETCH_HEAD
 		var elfilters = $(this).parents().eq(1);
 
 		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
@@ -181,20 +156,13 @@ $(document).ready(function() {
 		else{
 			//set label alleReizen inactive
 			inActive( $("#alleReizen") );
-<<<<<<< HEAD
 			if( elfilters.hasClass("non-active") ){
-=======
-			console.log(elfilters);
-			if( elfilters.hasClass("non-active") ){
-				console.log("set active label non alle reizen");
->>>>>>> FETCH_HEAD
 				setActive(elfilters);
 			}
 			else{
 				inActive(elfilters);
 			}
 		}
-<<<<<<< HEAD
 		checkFilter();
 		return false;
 	});
@@ -253,37 +221,8 @@ $(document).ready(function() {
 		el.removeClass("non-active");
 		var span = el.find('i');
 		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
-=======
-		return false;
-	});
-	function setActive(el){
-		console.log("active");
-		el.removeClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
 	}
 
-	function inActive(el){
-		console.log("inactive");
-		el.addClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
-	}
-	function noResultsCheck() {
-	    var numItems = $('.item:not(.isotope-hidden)').length;
-	    if (numItems == 0) {
-	        //do something here, like turn on a div, or insert a msg with jQuery's .html() function
-	        alert("There are no results");
-	    }
->>>>>>> FETCH_HEAD
-	}
-	// function setColumns() {
-	// 	container.find('.travel-box').each(function() {
-	// 		$(this).addClass("col-md-3 col-sm-2 col-xs-12");
-	// 	});
-	// }
-
-<<<<<<< HEAD
 	function inActive(el){
 		el.addClass("non-active");
 		var span = el.find('i');
@@ -316,20 +255,6 @@ $(document).ready(function() {
 		var newP = shorten( $(this).text(), 200 );
 		$(this).text(newP);
 	});
-=======
-	// function setProjects() {
-	// 	setColumns();
-	// 	// container.isotope('reLayout');
-	// }
-
-
-	// container.imagesLoaded(function() {
-	// 	setColumns();
-	// });
-	// $(window).bind('resize', function() {
-	// 	setProjects();
-	// });
->>>>>>> FETCH_HEAD
 
 	//shorten travel text
 	function shorten(text, maxLength) {
@@ -398,7 +323,7 @@ $(document).ready(function() {
 	//button action
 	$("button.linkbutton").click(function(){
 		var url = $(this).data("url");
-		$(location).attr('href', url);
+		$(location).attr('href','http://pocoloco.dev/'+url+".html");
 	});
 
 	//choice buttons 
