@@ -2135,7 +2135,7 @@ h4.individueel{
     display: block;
     border: 1px solid #ccc;
 }
-.wizard>.content>.body input[type="checkbox"] {
+.wizard>.content>.body input[type="checkbox"], .wizard>.content>.body input[type="radio"] {
     display: inline-block;
 }
 .wizard>.content>.body input.error {

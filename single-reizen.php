@@ -211,13 +211,18 @@
 						?>
 
 							<div class="travel-date individueel">
-								<p>Data naar keuze tussen <?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
+								<p>
+									Data naar keuze tussen <?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?>
+									<?php if ($data['beschrijving']): ?>
+										(<?php echo $data['beschrijving']; ?>)
+									<?php endif ?>
+								</p>
 								<span class="travel-price">
 									<?php echo ($data['aantal_dagen'] == 1) ? '1 dag' : $data['aantal_dagen'] . ' dagen'; ?></br>
 									€<?php echo get_price($data['prijs']); ?></br>
 								</span>
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="book-wizard">
+									<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>&amp;di=1">
 										<span data-hover="Boek">Boek</span>
 									</button>
 								</div>

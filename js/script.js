@@ -428,6 +428,15 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.eigenverzekering').change(function(){
+		if($(this).is(':checked')) {
+
+		}
+		else{
+
+		}
+	})
+
 
 });
 
