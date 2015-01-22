@@ -16,7 +16,8 @@
 				</div>
 				<!-- Section title -->
 				
-				<?php if ( get_field('youtube_url') !== false ): ?>
+				<?php $youtube_url = get_field('youtube_url'); ?>
+				<?php if ( !empty($youtube_url) ): ?>
 				<div class="row text-center search">
 					<div class="mybutton small choice foto">
 						<button id="submit" type="submit">
@@ -57,8 +58,8 @@
 
 								</ul>
 							</div>
-							
-							<?php if ( get_field('youtube_url') !== false ): ?>
+
+							<?php if (!empty($youtube_url)): ?>
 								<?php 
 								preg_match("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",get_field('youtube_url'), $matches);
 								 ?>
@@ -187,19 +188,59 @@
 									</button>
 								</div>
 								<p><?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
-								<span class="travel-price">&euro;<?php echo number_format($data['prijs'], 2, ',', ''); ?></span><br />
+								<span class="travel-price">&euro;<?php echo get_price($data['prijs']); ?></span><br />
 								<i class="fa fa-flag <?php echo $flag; ?>"></i><span class="flag"><?php echo $flagtext; ?></span>
 							</div>
 							<?php endforeach; ?>
-							<?php if (get_field('reisdata_info')): ?>
-								<div class="travel-date-extra">
-									<p>
-										<?php echo get_field('reisdata_info'); ?>
-									</p>
-								</div>
-							<?php endif ?>
+
 						</div>
 					</div>
+							
+
+					<?php if (get_field('reisdata_individueel')): ?>
+
+					<div class="col-md-3 col-md-offset-1">
+						<h4 class="individueel">Individueel reizen</h4>
+						<div class="travel-dates">
+
+						<?php 
+							$reisdata = get_field('reisdata_individueel');
+							foreach($reisdata as $key => $data) :
+						?>
+
+							<div class="travel-date individueel">
+								<p>Data naar keuze tussen <?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
+								<span class="travel-price">
+									<?php echo ($data['aantal_dagen'] == 1) ? '1 dag' : $data['aantal_dagen'] . ' dagen'; ?></br>
+									€<?php echo get_price($data['prijs']); ?></br>
+								</span>
+								<div class="mybutton medium book">
+									<button type="link" class="linkbutton" data-url="book-wizard">
+										<span data-hover="Boek">Boek</span>
+									</button>
+								</div>
+							</div>
+
+						<?php endforeach; ?>
+
+						</div>
+					</div>
+
+					<?php endif ?>
+
+					<?php if (get_field('reisdata_info')): ?>
+
+					<div class="col-md-3 col-md-offset-8">
+						<div class="travel-dates">
+							<div class="travel-date-extra">
+								<p>
+									<?php echo get_field('reisdata_info'); ?>
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<?php endif ?>
 				</div>
 			</div>
 		</section>
@@ -245,7 +286,7 @@
 								$optioneel = get_field('optioneel');
 								foreach ($optioneel as $opt):
 							?>
-								<li><?php echo $opt['item']; ?> - &euro;<?php echo $opt['item_prijs']; ?></li>
+								<li><?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?></li>
 							<?php endforeach; ?>
 						</ul>
 					</div>

@@ -19,3 +19,8 @@ function get_minPrice($reisdatas){
 
 	return number_format($minprice, 2, ',', '');
 }
+
+function get_price($price){
+	$price = floatval(str_replace(',', '.', $price));
+	return number_format($price, 2, ',', '');
+}

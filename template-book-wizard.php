@@ -89,12 +89,12 @@ $query = new WP_Query( $args );
 
 						    			<strong>Optioneel</strong><br />
 						    			<ul class="no-list-style-type">
-										<?php 
-											$optioneel = get_field('optioneel');
-											foreach ($optioneel as $opt):
-										?>
-											<li><?php echo $opt['item']; ?> - &euro;<?php echo $opt['item_prijs']; ?></li>
-										<?php endforeach; ?>
+											<?php 
+												$optioneel = get_field('optioneel');
+												foreach ($optioneel as $opt):
+											?>
+												<li><?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?></li>
+											<?php endforeach; ?>
 						    			</ul>
 
 						    			<a href="#" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
@@ -548,7 +548,7 @@ $query = new WP_Query( $args );
 												?>
 													<div class="form-group">
 													    <label>
-													      <input type="checkbox" name="reizigers[2][opties][]" data-price="<?php echo $opt['item_prijs']; ?>" value="<?php echo $opt['item']; ?> - <?php echo $opt['item_prijs']; ?>"> <?php echo $opt['item']; ?> - &euro;<?php echo $opt['item_prijs']; ?>
+													      <input type="checkbox" name="reizigers[1][opties][]" value="<?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?>" data-price="<?php echo $opt['item_prijs']; ?><?php endif ?>"> <?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?>
 													    </label>
 													</div>
 												<?php endforeach; ?>
@@ -567,7 +567,7 @@ $query = new WP_Query( $args );
 												?>
 													<div class="form-group">
 													    <label>
-													      <input type="checkbox" name="reizigers[2][opties][]" value="<?php echo $opt['item_prijs']; ?>"> <?php echo $opt['item']; ?> - &euro;<?php echo $opt['item_prijs']; ?>
+													      <input type="checkbox" name="reizigers[2][opties][]" value="<?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?>" data-price="<?php echo $opt['item_prijs']; ?><?php endif ?>"> <?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?>
 													    </label>
 													</div>
 												<?php endforeach; ?>
