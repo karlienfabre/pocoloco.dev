@@ -109,7 +109,7 @@ $query = new WP_Query( $args );
 						    	<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
 							        <div class="form-group">
 										<label for="aantalreizigers">Selecteer het aantal reizigers</label>
-										<select class="form-control input-m required" name="aantalreizigers">
+										<select class="form-control input-m required aantal-reizigers" name="aantalreizigers">
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
