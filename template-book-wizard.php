@@ -172,7 +172,7 @@ $query = new WP_Query( $args );
 					        
 					        <div class="row">
 								<div class="col-md-12">
-									<div class="panel-group" id="accordion">
+									<div class="panel-group reizigers-data" id="accordion">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class=""> Gegevens hoofdreiziger<i class="fa fa-plus pull-right"></i></a></h4>
@@ -301,134 +301,6 @@ $query = new WP_Query( $args );
 												</div>
 											</div>
 										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo"> Reiziger 2 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseTwo" class="panel-collapse collapse">
-												<div class="panel-body">
-
-													<div class="form-horizontal">
-													  <div class="form-group">
-													    <label for="Voornaam" class="col-sm-2 col-md-2control-label">Voornaam</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="Voornaam" value="test-Voornaam">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Achternaam" class="col-sm-2 col-md-2control-label">Achternaam</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="Achternaam" value="test-Achternaam">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="geslacht" class="col-sm-2 col-md-2 control-label">Geslacht</label>
-													    <div class="col-sm-2 col-md-2">
-															<select class="form-control input-m required" name="reizigers[2][]">
-																<option value="Man">Man</option>
-																<option value="Vrouw">Vrouw</option>
-															</select>
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Geboortedatum" class="col-sm-2 col-md-2control-label">Geboortedatum</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="Geboortedatum" value="test-xx/xx/xxxx">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Telefoonnummer" class="col-sm-2 col-md-2control-label">Telefoonnummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="Telefoonnummer" value="test-Telefoonnummer">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="gsm" class="col-sm-2 col-md-2control-label">gsm nummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="gsm" value="test-gsm">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="email" class="col-sm-2 col-md-2control-label">email</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="email" class="form-control" name="reizigers[2][]" id="email" value="test-email">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Land" class="col-sm-2 col-md-2 control-label">Land</label>
-													    <div class="col-sm-2 col-md-2">
-															<select class="form-control input-m required" name="reizigers[2][]">
-																<option value="België">België</option>
-																<option value="Nederland">Nederland</option>
-																<option value="Andere">Andere</option>
-															</select>
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Woonplaats" class="col-sm-2 col-md-2control-label">Woonplaats</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="Woonplaats" value="test-Woonplaats">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Postcode" class="col-sm-2 col-md-2control-label">Postcode</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="Postcode" value="test-Postcode">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Straat" class="col-sm-2 col-md-2control-label">Straat + Nummer + Bus</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][]" id="straat" value="test-Straat + Nummer + Bus">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="extra" class="col-sm-2 col-md-2control-label">Heb je bepaalde medische voorgeschiedenis die je deelname aan de reis zou belemmeren?</label>
-													    <div class="col-sm-3 col-md-3">
-													      <textarea type="text" class="form-control" name="reizigers[2][]" id="extra" value="test-licht toe"></textarea>
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="extra" class="col-sm-2 col-md-2control-label">Heb je bepaalde verwachtingen wat betreft maaltijden? (vegetarisch/andere)</label>
-													    <div class="col-sm-3 col-md-3">
-													      <textarea type="text" class="form-control" name="reizigers[2][]" id="extra" value="test-licht toe"></textarea>
-													    </div>
-													  </div>
-													  <h4>contactpersoon bij noodgevallen</h4>	
-													  <div class="form-group">
-													    <label for="naam" class="col-sm-2 col-md-2control-label">Naam</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][noodgevallen][]" id="Naam" value="test-Naam">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="Telefoonnummer" class="col-sm-2 col-md-2control-label">Telefoonnummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][noodgevallen][]" id="Telefoonnummer" value="test-Telefoonnummer">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="gsm" class="col-sm-2 col-md-2control-label">gsm nummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][noodgevallen][]" id="gsm" value="test-gsm">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="email" class="col-sm-2 col-md-2control-label">email</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="email" class="form-control" name="reizigers[2][noodgevallen][]" id="email" value="test-email">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="verwantschap" class="col-sm-2 col-md-2control-label">verwantschap</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][noodgevallen][]" id="verwantschap" value="test-verwantschap">
-													    </div>
-													  </div>
-													</div>
-												</div>
-											</div>
-										</div>
 									</div>
 								</div>
 					        </div>
@@ -444,7 +316,7 @@ $query = new WP_Query( $args );
 					        
 					        <div class="row">
 								<div class="col-md-12">
-									<div class="panel-group" id="accordion">
+									<div class="panel-group reizigers-verzekeringen" id="accordion">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseinsuranceOne" class=""> Verzekeringen hoofdreiziger<i class="fa fa-plus pull-right"></i></a></h4>
@@ -483,44 +355,6 @@ $query = new WP_Query( $args );
 												</div>
 											</div>
 										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseinsuranceTwo"> Verzekeringen 2 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseinsuranceTwo" class="panel-collapse collapse">
-												<div class="panel-body">
-													<div class="form-group">
-													    <label>
-													      <input type="radio" name="reizigers[2][verzekering][]" value="Reisongevallen &amp; Annulatie &amp; Reisbagage - €3,25/dag (min. €20)"> Reisongevallen &amp; Annulatie &amp; Reisbagage - €3,25/dag (min. €20) 
-													    </label>
-													</div>
-													<div class="form-group">
-													    <label>
-													      <input type="radio" name="reizigers[2][verzekering][]" value="Ik verklaar te beschikken over een eigen reisongevallenverzekering en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen">Ik verklaar te beschikken over een eigen reisongevallenverzekering en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen
-													    </label>
-													</div>
-													<div class="form-horizontal">
-														<div class="form-group">
-													    <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][verzekering][eigen][]" id="email" value="test-Naam maatschappij">
-													    </div>
-													  </div>
-													  <div class="form-group">
-													    <label for="polisnummer" class="col-sm-2 col-md-2control-label">Polisnummer</label>
-													    <div class="col-sm-3 col-md-3">
-													      <input type="text" class="form-control" name="reizigers[2][verzekering][eigen][]" id="polisnummer" value="test-Polisnummer">
-													    </div>
-													  </div>
-													</div>
-													<div class="form-group">
-													    <label>
-													      <input type="radio" name="reizigers[2][verzekering][]" value="Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden">"Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden"
-													    </label>
-													</div>
-												</div>
-											</div>
-										</div>
 									</div>
 								</div>
 					        </div>
@@ -535,7 +369,7 @@ $query = new WP_Query( $args );
 					        
 					        <div class="row">
 								<div class="col-md-12">
-									<div class="panel-group" id="accordion">
+									<div class="panel-group reizigers-options" id="accordion">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseoptionsOne" class=""> Opties hoofdreiziger<i class="fa fa-plus pull-right"></i></a></h4>
@@ -549,25 +383,6 @@ $query = new WP_Query( $args );
 													<div class="form-group">
 													    <label>
 													      <input type="checkbox" name="reizigers[1][opties][]" value="<?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?>" data-price="<?php echo $opt['item_prijs']; ?><?php endif ?>"> <?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?>
-													    </label>
-													</div>
-												<?php endforeach; ?>
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title"><a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseoptionsTwo"> Opties 2 <i class="fa fa-plus pull-right"></i></a></h4>
-											</div>
-											<div id="collapseoptionsTwo" class="panel-collapse collapse">
-												<div class="panel-body">
-												<?php 
-													$optioneel = get_field('optioneel');
-													foreach ($optioneel as $opt):
-												?>
-													<div class="form-group">
-													    <label>
-													      <input type="checkbox" name="reizigers[2][opties][]" value="<?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?>" data-price="<?php echo $opt['item_prijs']; ?><?php endif ?>"> <?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?>
 													    </label>
 													</div>
 												<?php endforeach; ?>
