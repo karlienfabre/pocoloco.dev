@@ -2,48 +2,6 @@
 $(window).load(function() {
 	$("#intro-loader").delay(50).fadeOut();
 	$(".mask").delay(100).fadeOut("slow");
-	
-	// Booking addClient
-	$(".aantal-reizigers").change(function(){
-	
-		$(".reizigers-data").empty();
-		$(".reizigers-verzekeringen").empty();
-
-		var htmlTemplateData = '<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseID" class=""> Gegevens [TITLE]<i class="fa fa-plus pull-right"></i></a></h4></div>[openclose]<div class="panel-body"><div class="form-horizontal"> <div class="form-group"> <label for="Voornaam" class="col-sm-2 col-md-2control-label">Voornaam</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="Voornaam" value="test-Voornaam"> </div> </div> <div class="form-group"> <label for="Achternaam" class="col-sm-2 col-md-2control-label">Achternaam</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="Achternaam" value="test-Achternaam"> </div> </div> <div class="form-group"> <label for="geslacht" class="col-sm-2 col-md-2 control-label">Geslacht</label> <div class="col-sm-2 col-md-2"><select class="form-control input-m required" name="reizigers[ID][]"><option value="Man">Man</option><option value="Vrouw">Vrouw</option></select> </div> </div> <div class="form-group"> <label for="Geboortedatum" class="col-sm-2 col-md-2control-label">Geboortedatum</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="Geboortedatum" value="test-xx/xx/xxxx"> </div> </div> <div class="form-group"> <label for="Telefoonnummer" class="col-sm-2 col-md-2control-label">Telefoonnummer</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="Telefoonnummer" value="test-Telefoonnummer"> </div> </div> <div class="form-group"> <label for="gsm" class="col-sm-2 col-md-2control-label">gsm nummer</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="gsm" value="test-gsm"> </div> </div> <div class="form-group"> <label for="email" class="col-sm-2 col-md-2control-label">email</label> <div class="col-sm-3 col-md-3"> <input type="email" class="form-control" name="reizigers[ID][]" id="email" value="test-email"> </div> </div> <div class="form-group"> <label for="Land" class="col-sm-2 col-md-2 control-label">Land</label> <div class="col-sm-2 col-md-2"><select class="form-control input-m required" name="reizigers[ID][]"><option value="België">België</option><option value="Nederland">Nederland</option><option value="Andere">Andere</option></select> </div> </div> <div class="form-group"> <label for="Woonplaats" class="col-sm-2 col-md-2control-label">Woonplaats</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="Woonplaats" value="test-Woonplaats"> </div> </div> <div class="form-group"> <label for="Postcode" class="col-sm-2 col-md-2control-label">Postcode</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="Postcode" value="test-Postcode"> </div> </div> <div class="form-group"> <label for="Straat" class="col-sm-2 col-md-2control-label">Straat + Nummer + Bus</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][]" id="straat" value="test-Straat + Nummer + Bus"> </div> </div> <div class="form-group"> <label for="extra" class="col-sm-2 col-md-2control-label">Heb je bepaalde medische voorgeschiedenis die je deelname aan de reis zou belemmeren?</label> <div class="col-sm-3 col-md-3"> <textarea type="text" class="form-control" name="reizigers[ID][]" id="extra" value="test-licht toe"></textarea> </div> </div> <div class="form-group"> <label for="extra" class="col-sm-2 col-md-2control-label">Heb je bepaalde verwachtingen wat betreft maaltijden? (vegetarisch/andere)</label> <div class="col-sm-3 col-md-3"> <textarea type="text" class="form-control" name="reizigers[ID][]" id="extra" value="test-licht toe"></textarea> </div> </div> <h4>contactpersoon bij noodgevallen</h4> <div class="form-group"> <label for="naam" class="col-sm-2 col-md-2control-label">Naam</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][noodgevallen][]" id="Naam" value="test-Naam"> </div> </div> <div class="form-group"> <label for="Telefoonnummer" class="col-sm-2 col-md-2control-label">Telefoonnummer</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][noodgevallen][]" id="Telefoonnummer" value="test-Telefoonnummer"> </div> </div> <div class="form-group"> <label for="gsm" class="col-sm-2 col-md-2control-label">gsm nummer</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][noodgevallen][]" id="gsm" value="test-gsm"> </div> </div> <div class="form-group"> <label for="email" class="col-sm-2 col-md-2control-label">email</label> <div class="col-sm-3 col-md-3"> <input type="email" class="form-control" name="reizigers[ID][noodgevallen][]" id="email" value="test-email"> </div> </div> <div class="form-group"> <label for="verwantschap" class="col-sm-2 col-md-2control-label">verwantschap</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][noodgevallen][]" id="verwantschap" value="test-verwantschap"> </div> </div></div></div></div></div>';
-		var htmlTemplateVerzekering = '<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseinsuranceID" class=""> Verzekeringen [TITLE] <i class="fa fa-plus pull-right"></i></a></h4></div>[openclose]<div class="panel-body"><div class="form-group"> <label> <input type="radio" name="reizigers[ID][verzekering][]" value="Reisongevallen &amp; Annulatie &amp; Reisbagage - €3,25/dag (min. €20)"> Reisongevallen &amp; Annulatie &amp; Reisbagage - €3,25/dag (min. €20) </label></div><div class="form-group"> <label> <input type="radio" name="reizigers[ID][verzekering][]" value="Eigen reisongevallenverzekering + geldig bewijs en voorwaarden">Ik verklaar te beschikken over een eigen reisongevallenverzekering en kan hiervan indien nodig een geldig bewijs en voorwaarden voorleggen </label></div><div class="form-horizontal"><div class="form-group"> <label for="email" class="col-sm-2 col-md-2control-label">Naam maatschappij</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][verzekering][eigen][]" id="email" value="test-Naam maatschappij"> </div> </div> <div class="form-group"> <label for="polisnummer" class="col-sm-2 col-md-2control-label">Polisnummer</label> <div class="col-sm-3 col-md-3"> <input type="text" class="form-control" name="reizigers[ID][verzekering][eigen][]" id="polisnummer" value="test-Polisnummer"> </div> </div></div><div class="form-group"> <label> <input type="radio" name="reizigers[ID][verzekering][]" value="Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden">"Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden" </label></div></div></div></div>';
-		var htmlTemplateOptions = "<div class='panel panel-default'><div class='panel-heading'><h4 class='panel-title'><a data-toggle='collapse' data-parent='#accordion' href='#collapseoptionsID' class=''> Opties [TITLE]<i class='fa fa-plus pull-right'></i></a></h4></div>[opencloseoptions]<div class='panel-body'><?php $optioneel = get_field('optioneel');foreach ($optioneel as $opt):?><div class='form-group'> <label> <input type='checkbox' name='reizigers[ID][opties][]' value='<?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?>' data-price='<?php echo $opt['item_prijs']; ?><?php endif ?>'> <?php echo $opt['item']; ?><?php if ($opt['item_prijs']): ?> - &euro;<?php echo $opt['item_prijs']; ?><?php endif ?> </label></div><?php endforeach; ?></div></div></div>";
-		var aantalReizigers = $(".aantal-reizigers").val();
-		var title="";
-		var openclosedata="";
-		var opencloseverzekeringen="";
-		var opencloseoptions="";
-		for (var i = 1; i <= aantalReizigers; i++) {
-
-			if(i == 1){
-				title = "hoofdreiziger";
-				openclosedata='<div id="collapse'+i+'" class="panel-collapse in" style="height: auto;">';
-				opencloseverzekeringen='<div id="collapseinsurance'+i+'" class="panel-collapse in" style="height: auto;">';
-				opencloseoptions = '<div id="collapseoptions" class="panel-collapse in" style="height: auto;">';
-			}
-			else{
-				title = "reiziger "+i;
-				openclosedata='<div id="collapse'+i+'" class="panel-collapse collapse">';
-				opencloseverzekeringen='<div id="collapseinsurance'+i+'" class="panel-collapse collapse">';
-				opencloseoptions = '<div id="collapseoptions'+i+'" class="panel-collapse collapse"">';
-			}
-			addReiziger($(".reizigers-data"), htmlTemplateData, title, openclosedata, i  );
-			addReiziger($(".reizigers-verzekeringen"), htmlTemplateVerzekering, title, opencloseverzekeringen, i  );
-			addReiziger($(".reizigers-options"), htmlTemplateOptions, title, opencloseoptions, i  );	
-		};
-
-	});
-	jQuery(".aantal-reizigers").trigger("change");
-	function addReiziger(div, template, title, openclose, i){
-		var htmltemplate = "";
-		htmltemplate = template;
-		htmltemplate = htmltemplate.replace("[TITLE]", title).replace("[openclose]", openclose).replace("[i]", i);
-		div.append(htmltemplate);
-	}
 
 	// Travel Isotope
 	var container = $('#travel-wrap');
@@ -167,6 +125,47 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
+
+	//booking addReizigers
+	var htmlTemplateData = $('.reizigers-data').html();
+	var htmlTemplateVerzekering = $('.reizigers-verzekeringen').html();
+	var htmlTemplateOptions = $('.reizigers-options').html();
+	var htmlTemplateOverview = $('.reizigers-overview').html();
+	
+	$(".aantal-reizigers").change(function(){
+		$(".reizigers-data").empty();
+		$(".reizigers-verzekeringen").empty();
+		$(".reizigers-options").empty();
+		$(".reizigers-overview").empty();
+
+		var aantalReizigers = $(".aantal-reizigers").val();
+		var title='';
+		var active='';
+		for (var i = 1; i <= aantalReizigers; i++) {
+
+			if(i == 1){
+				title = "hoofdreiziger";
+				active = 'in" style="height: auto;';
+			}
+			else{
+				title = "reiziger "+i;
+				active = ' collapse';
+			}
+
+			addReiziger($(".reizigers-data"), htmlTemplateData, title, active, i );
+			addReiziger($(".reizigers-verzekeringen"), htmlTemplateVerzekering, title, active, i );
+			addReiziger($(".reizigers-options"), htmlTemplateOptions, title, active, i );	
+			addReiziger($(".reizigers-overview"), htmlTemplateOverview, title, active, i );	
+		};
+
+	});
+	jQuery(".aantal-reizigers").trigger("change");
+	function addReiziger(div, template, title, active, i){
+		var htmltemplate = "";
+		htmltemplate = template;
+		htmltemplate = htmltemplate.replace("%title%", title).replace("%active%", active).replace(/%id%/g, i);
+		div.append(htmltemplate);
+	}
 
 	//random background image
 	if ($('#bgimg').length){
