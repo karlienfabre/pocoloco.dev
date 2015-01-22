@@ -29,17 +29,17 @@ Template Name: Reizen template
 				<div class="row text-center search filters" id="filters">
 					<div class="mybutton big choice non-active">
 						<button>
-							<span data-filter=".groepsreizen" data-hover="Groepsreizen">Groepsreizen</span><i class="fa fa-check-circle-o"></i>
+							<span data-filter=".groepsreizen" data-hover="Groepsreizen">Groepsreizen</span>
 						</button>
 					</div>
 					<div class="mybutton big choice non-active">
 						<button>
-							<span data-filter=".individueel" data-hover="Individueel">Individueel</span><i class="fa fa-check-circle-o"></i>
+							<span data-filter=".individueel" data-hover="Individueel">Individueel</span>
 						</button>
 					</div>
 					<div class="mybutton big choice non-active">
 						<button>
-							<span data-filter=".activiteiten" data-hover="Activiteiten">Activiteiten</span><i class="fa fa-check-circle-o"></i>
+							<span data-filter=".activiteiten" data-hover="Activiteiten">Activiteiten</span>
 						</button>
 					</div>
 				</div>
