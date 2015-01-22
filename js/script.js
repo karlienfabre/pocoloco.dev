@@ -204,9 +204,6 @@ $(document).ready(function() {
 	});
 
 	//booking form
-	$('.actions a[href$="#finish"]').click(function(){
-		$('#bookingform').submit();
-	});
 	$(document).on('submit', '#bookingform', function() {
 		$.ajax({
 			url : 'http://dev.design311.com/pocoloco/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
@@ -428,12 +425,12 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.eigenverzekering').change(function(){
-		if($(this).is(':checked')) {
-
+	$('input.verzekeringen').change(function(){		
+		if($(this).hasClass('eigenverzekering')) {
+			$('.eigenverzekeringform :input').prop("disabled", false);
 		}
 		else{
-
+			$('.eigenverzekeringform :input').prop("disabled", true);
 		}
 	})
 
@@ -542,6 +539,12 @@ jQuery('.blog_container').slick({
 });
 
 //Booking wizard
+var form = $("#bookingform");
+form.validate({
+    errorPlacement: function errorPlacement(error, element) { element.before(error); },
+    rules: {}
+});
+
 jQuery("#book-wizard").steps({
     headerTag: "h3",
     bodyTag: "section",
@@ -550,5 +553,19 @@ jQuery("#book-wizard").steps({
     	next: "volgende",
    		previous: "vorige",
    		finish: "boeken"
+    },
+    onStepChanging: function (event, currentIndex, newIndex)
+    {
+        form.validate().settings.ignore = ":disabled,:hidden";
+        return form.valid();
+    },
+    onFinishing: function (event, currentIndex)
+    {
+        form.validate().settings.ignore = ":disabled,:hidden";
+        return form.valid();
+    },
+    onFinished: function (event, currentIndex)
+    {
+        $('#bookingform').submit();
     }
 });

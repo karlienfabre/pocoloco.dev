@@ -185,8 +185,7 @@ $query = new WP_Query( $args );
 											                "Voornaam">Voornaam</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Voornaam" name=
-											                    "reizigers[%id%][]" type="text" value="test-Voornaam">
+											                    <input class="form-control required" id="Voornaam" name="reizigers[%id%][]" type="text" placeholder="Voornaam">
 											                </div>
 											            </div>
 
@@ -195,8 +194,7 @@ $query = new WP_Query( $args );
 											                "Achternaam">Achternaam</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Achternaam" name=
-											                    "reizigers[%id%][]" type="text" value="test-Achternaam">
+											                    <input class="form-control" id="Achternaam" name="reizigers[%id%][]" type="text" placeholder="Achternaam">
 											                </div>
 											            </div>
 
@@ -205,8 +203,7 @@ $query = new WP_Query( $args );
 											                "geslacht">Geslacht</label>
 
 											                <div class="col-sm-2 col-md-2">
-											                    <select class="form-control input-m required" name=
-											                    "reizigers[%id%][]">
+											                    <select class="form-control input-m required" name="reizigers[%id%][]">
 											                        <option value="Man">
 											                            Man
 											                        </option>
@@ -223,8 +220,7 @@ $query = new WP_Query( $args );
 											                "Geboortedatum">Geboortedatum</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Geboortedatum" name=
-											                    "reizigers[%id%][]" type="text" value="test-xx/xx/xxxx">
+											                    <input class="form-control" id="Geboortedatum" name="reizigers[%id%][]" type="text" placeholder="xx/xx/xxxx">
 											                </div>
 											            </div>
 
@@ -233,9 +229,7 @@ $query = new WP_Query( $args );
 											                "Telefoonnummer">Telefoonnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name=
-											                    "reizigers[%id%][]" type="text" value=
-											                    "test-Telefoonnummer">
+											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][]" type="text" placeholder="Telefoonnummer">
 											                </div>
 											            </div>
 
@@ -244,8 +238,7 @@ $query = new WP_Query( $args );
 											                nummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name=
-											                    "reizigers[%id%][]" type="text" value="test-gsm">
+											                    <input class="form-control" id="gsm" name="reizigers[%id%][]" type="text" placeholder="gsm">
 											                </div>
 											            </div>
 
@@ -254,8 +247,7 @@ $query = new WP_Query( $args );
 											                "email">email</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name=
-											                    "reizigers[%id%][]" type="email" value="test-email">
+											                    <input class="form-control" id="email" name="reizigers[%id%][]" type="email" placeholder="email">
 											                </div>
 											            </div>
 
@@ -264,10 +256,9 @@ $query = new WP_Query( $args );
 											                "Land">Land</label>
 
 											                <div class="col-sm-2 col-md-2">
-											                    <select class="form-control input-m required" name=
-											                    "reizigers[%id%][]">
-											                        <option value="BelgiÃ«">
-											                            BelgiÃ«
+											                    <select class="form-control input-m required" name="reizigers[%id%][]">
+											                        <option value="België">
+											                            België
 											                        </option>
 
 											                        <option value="Nederland">
@@ -286,8 +277,7 @@ $query = new WP_Query( $args );
 											                "Woonplaats">Woonplaats</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Woonplaats" name=
-											                    "reizigers[%id%][]" type="text" value="test-Woonplaats">
+											                    <input class="form-control" id="Woonplaats" name="reizigers[%id%][]" type="text" placeholder="Woonplaats">
 											                </div>
 											            </div>
 
@@ -296,8 +286,7 @@ $query = new WP_Query( $args );
 											                "Postcode">Postcode</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Postcode" name=
-											                    "reizigers[%id%][]" type="text" value="test-Postcode">
+											                    <input class="form-control" id="Postcode" name="reizigers[%id%][]" type="text" placeholder="Postcode">
 											                </div>
 											            </div>
 
@@ -306,9 +295,7 @@ $query = new WP_Query( $args );
 											                "Straat">Straat + Nummer + Bus</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="straat" name=
-											                    "reizigers[%id%][]" type="text" value=
-											                    "test-Straat + Nummer + Bus">
+											                    <input class="form-control" id="straat" name="reizigers[%id%][]" type="text" placeholder="Straat + Nummer + Bus">
 											                </div>
 											            </div>
 
@@ -318,8 +305,7 @@ $query = new WP_Query( $args );
 											                deelname aan de reis zou belemmeren?</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <textarea class="form-control" id="extra" name=
-											                    "reizigers[%id%][]"></textarea>
+											                    <textarea class="form-control" id="extra" name="reizigers[%id%][]"></textarea>
 											                </div>
 											            </div>
 
@@ -329,8 +315,7 @@ $query = new WP_Query( $args );
 											                maaltijden? (vegetarisch/andere)</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <textarea class="form-control" id="extra" name=
-											                    "reizigers[%id%][]"></textarea>
+											                    <textarea class="form-control" id="extra" name="reizigers[%id%][]"></textarea>
 											                </div>
 											            </div>
 
@@ -341,9 +326,7 @@ $query = new WP_Query( $args );
 											                "naam">Naam</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Naam" name=
-											                    "reizigers[%id%][noodgevallen][]" type="text" value=
-											                    "test-Naam">
+											                    <input class="form-control" id="Naam" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Naam">
 											                </div>
 											            </div>
 
@@ -352,9 +335,7 @@ $query = new WP_Query( $args );
 											                "Telefoonnummer">Telefoonnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name=
-											                    "reizigers[%id%][noodgevallen][]" type="text" value=
-											                    "test-Telefoonnummer">
+											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Telefoonnummer">
 											                </div>
 											            </div>
 
@@ -363,9 +344,7 @@ $query = new WP_Query( $args );
 											                nummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name=
-											                    "reizigers[%id%][noodgevallen][]" type="text" value=
-											                    "test-gsm">
+											                    <input class="form-control" id="gsm" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="gsm">
 											                </div>
 											            </div>
 
@@ -374,9 +353,7 @@ $query = new WP_Query( $args );
 											                "email">email</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name=
-											                    "reizigers[%id%][noodgevallen][]" type="email" value=
-											                    "test-email">
+											                    <input class="form-control" id="email" name="reizigers[%id%][noodgevallen][]" type="email" placeholder="email">
 											                </div>
 											            </div>
 
@@ -385,9 +362,7 @@ $query = new WP_Query( $args );
 											                "verwantschap">verwantschap</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="verwantschap" name=
-											                    "reizigers[%id%][noodgevallen][]" type="text" value=
-											                    "test-verwantschap">
+											                    <input class="form-control" id="verwantschap" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="verwantschap">
 											                </div>
 											            </div>
 											        </div>
@@ -417,7 +392,7 @@ $query = new WP_Query( $args );
 											<div id="collapseinsurance%id%" class="panel-collapse %active%">
 												<div class="panel-body">
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" type="radio"
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio"
 											            value=
 											            "Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)">
 											            Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min.
@@ -425,7 +400,7 @@ $query = new WP_Query( $args );
 											        </div>
 
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" type="radio"
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen eigenverzekering" type="radio"
 											            value=
 											            "Eigen reisongevallenverzekering + geldig bewijs en voorwaarden">Ik
 											            verklaar te beschikken over een eigen reisongevallenverzekering en
@@ -433,15 +408,13 @@ $query = new WP_Query( $args );
 											            voorleggen</label>
 											        </div>
 
-											        <div class="form-horizontal">
+											        <div class="form-horizontal eigenverzekeringform">
 											            <div class="form-group">
 											                <label class="col-sm-2 col-md-2control-label" for="email">Naam
 											                maatschappij</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name=
-											                    "reizigers[%id%][verzekering][eigen][]" type="text" value=
-											                    "test-Naam maatschappij">
+											                    <input class="form-control" id="email" name="reizigers[%id%][verzekering][eigen][]" type="text" placeholder="Naam maatschappij" disabled>
 											                </div>
 											            </div>
 
@@ -450,17 +423,13 @@ $query = new WP_Query( $args );
 											                "polisnummer">Polisnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="polisnummer" name=
-											                    "reizigers[%id%][verzekering][eigen][]" type="text" value=
-											                    "test-Polisnummer">
+											                    <input class="form-control" id="polisnummer" name="reizigers[%id%][verzekering][eigen][]" type="text" placeholder="Polisnummer" disabled>
 											                </div>
 											            </div>
 											        </div>
 
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" type="radio"
-											            value=
-											            "Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden">"Ik
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio" value="Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden">"Ik
 											            wens een andere formule van reisongevallen verzekering, contacteer
 											            me voor de verschillende mogelijkheden"</label>
 											        </div>
