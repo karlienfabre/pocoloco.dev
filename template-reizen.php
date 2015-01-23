@@ -132,7 +132,7 @@ Template Name: Reizen template
 										<span class="muted">&euro;<?php echo $minprice; ?></span>
 									</div>
 									<h4><?php the_title(); ?></h4>
-									<p>
+									<p class="short-text">
 										<?php echo get_field('intro'); ?>
 									</p>
 									<div class="travel-data">
