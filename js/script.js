@@ -540,10 +540,9 @@ jQuery('.blog_container').slick({
 
 //Booking wizard
 var form = $("#bookingform");
-form.validate({
-    errorPlacement: function errorPlacement(error, element) { element.before(error); },
-    rules: {}
-});
+/*form.validate({
+    errorPlacement: function errorPlacement(error, element) { element.before(error); }
+});*/
 
 jQuery("#book-wizard").steps({
     headerTag: "h3",
@@ -554,7 +553,7 @@ jQuery("#book-wizard").steps({
    		previous: "vorige",
    		finish: "boeken"
     },
-    onStepChanging: function (event, currentIndex, newIndex)
+    /*onStepChanging: function (event, currentIndex, newIndex)
     {
         form.validate().settings.ignore = ":disabled,:hidden";
         return form.valid();
@@ -563,7 +562,7 @@ jQuery("#book-wizard").steps({
     {
         form.validate().settings.ignore = ":disabled,:hidden";
         return form.valid();
-    },
+    },*/
     onFinished: function (event, currentIndex)
     {
         $('#bookingform').submit();
