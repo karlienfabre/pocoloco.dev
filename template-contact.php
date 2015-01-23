@@ -67,15 +67,16 @@ Template Name: Contact template
 
 	<?php endwhile; ?>
 <?php endif; ?>
-		<!-- Contact Section -->
-		<section id="contactform" class="section-content no-padding">
+<!-- Contact Section -->
+<section id="contactform" class="section-content no-padding">
 
-			<?php get_template_part('includes/contact-form'); ?>
+	<?php get_template_part('includes/contact-form'); ?>
 
-			<?php get_template_part('includes/social-links'); ?>
-			
-		</section>
-		<!-- Contact Section -->
+	<?php get_template_part('includes/social-links'); ?>
+	
+</section>
+<!-- Contact Section -->
+
 <?php 
 	$args = array(
 		'post_type' => 'kantoren',
