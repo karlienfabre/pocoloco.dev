@@ -8,7 +8,11 @@ function get_root(){
   return get_stylesheet_directory_uri() . '/';
 }
 
-function get_minPrice($reisdatas){
+function get_minPrice($reisdatas, $reisdatas_individueel){
+	if ($reisdatas_individueel) {
+		$reisdatas = array_merge($reisdatas_individueel, $reisdatas);
+	}
+
 	$minprice = 9999;
 	foreach ($reisdatas as $reisdata) {
 		$price = floatval(str_replace(',', '.', $reisdata['prijs']));

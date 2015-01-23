@@ -122,9 +122,10 @@ Template Name: Reizen template
 											$minprice = 9999;
 											$aantalData = 0;
 											$reisdatas = get_field('reisdata');
+											$reisdatas_individueel = get_field('reisdata_individueel');
 											if (is_array($reisdatas)) {
 												$aantalData = count($reisdatas);
-												$minprice = get_minPrice($reisdatas);
+												$minprice = get_minPrice($reisdatas, $reisdatas_individueel);
 											}
 										 ?>
 

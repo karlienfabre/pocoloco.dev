@@ -44,8 +44,13 @@ $query = new WP_Query( $args );
 
  	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
- 		<?php 
- 			$reisdatas = get_field('reisdata');
+ 		<?php
+ 			if (isset($_GET['di'])) {
+ 				$reisdatas = get_field('reisdata_individueel');
+ 			}
+ 			else{
+ 				$reisdatas = get_field('reisdata');
+ 			}
  			$reisdata = $reisdatas[$_GET['id']];
  		 ?>
 
@@ -120,19 +125,12 @@ $query = new WP_Query( $args );
 										</select>
 									</div>
 
-							        <!-- <div class="form-group">
-										<label for="name">Reisperiode</label>
-										<select class="form-control input-m required">
-											<optgroup label="Juli">
-									            <option>04/07/2015 - 11/07/2015</option>
-									            <option>12/07/2015 - 19/07/2015</option>
-									        </optgroup>
-									        <optgroup label="Augustus">
-									            <option>04/08/2015 - 11/08/2015</option>
-									            <option>12/08/2015 - 19/08/2015</option>
-									        </optgroup>
-										</select>
-									</div> -->
+									<?php if (isset($_GET['di'])): ?>
+							        <div class="form-group">
+										<label for="vertrekdatum">Vertrekdatum tussen <?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?></label>
+										<input type="date" min="<?php echo date("Y-m-d", strtotime($reisdata['vertrekdatum'])); ?>" max="<?php echo date("Y-m-d", strtotime($reisdata['einddatum'])); ?>">
+									</div>
+									<?php endif ?>
 
 									<?php 
 										$args = array(
@@ -181,8 +179,7 @@ $query = new WP_Query( $args );
 												<div class="panel-body">
 											        <div class="form-horizontal">
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Voornaam">Voornaam</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Voornaam">Voornaam *</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control required" id="Voornaam" name="reizigers[%id%][]" type="text" placeholder="Voornaam">
@@ -190,17 +187,15 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Achternaam">Achternaam</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Achternaam">Achternaam *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Achternaam" name="reizigers[%id%][]" type="text" placeholder="Achternaam">
+											                    <input class="form-control required" id="Achternaam" name="reizigers[%id%][]" type="text" placeholder="Achternaam">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2 control-label" for=
-											                "geslacht">Geslacht</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="geslacht">Geslacht *</label>
 
 											                <div class="col-sm-2 col-md-2">
 											                    <select class="form-control input-m required" name="reizigers[%id%][]">
@@ -216,44 +211,39 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Geboortedatum">Geboortedatum</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Geboortedatum">Geboortedatum *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Geboortedatum" name="reizigers[%id%][]" type="text" placeholder="xx/xx/xxxx">
+											                    <input class="form-control required" id="Geboortedatum" name="reizigers[%id%][]" type="text" placeholder="xx/xx/xxxx">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Telefoonnummer">Telefoonnummer</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Telefoonnummer">Telefoonnummer *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][]" type="text" placeholder="Telefoonnummer">
+											                    <input class="form-control required" id="Telefoonnummer" name="reizigers[%id%][]" type="text" placeholder="Telefoonnummer">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm
-											                nummer</label>
+											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm nummer *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name="reizigers[%id%][]" type="text" placeholder="gsm">
+											                    <input class="form-control required" id="gsm" name="reizigers[%id%][]" type="text" placeholder="gsm">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "email">email</label>
+											                <label class="col-sm-2 col-md-2control-label" for="email">email *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name="reizigers[%id%][]" type="email" placeholder="email">
+											                    <input class="form-control required" id="email" name="reizigers[%id%][]" type="email" placeholder="email">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2 control-label" for=
-											                "Land">Land</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Land">Land *</label>
 
 											                <div class="col-sm-2 col-md-2">
 											                    <select class="form-control input-m required" name="reizigers[%id%][]">
@@ -273,36 +263,31 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Woonplaats">Woonplaats</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Woonplaats">Woonplaats *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Woonplaats" name="reizigers[%id%][]" type="text" placeholder="Woonplaats">
+											                    <input class="form-control required" id="Woonplaats" name="reizigers[%id%][]" type="text" placeholder="Woonplaats">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Postcode">Postcode</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Postcode">Postcode *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Postcode" name="reizigers[%id%][]" type="text" placeholder="Postcode">
+											                    <input class="form-control required" id="Postcode" name="reizigers[%id%][]" type="text" placeholder="Postcode">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Straat">Straat + Nummer + Bus</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Straat">Straat + Nummer + Bus *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="straat" name="reizigers[%id%][]" type="text" placeholder="Straat + Nummer + Bus">
+											                    <input class="form-control required" id="straat" name="reizigers[%id%][]" type="text" placeholder="Straat + Nummer + Bus">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "extra">Heb je bepaalde medische voorgeschiedenis die je
-											                deelname aan de reis zou belemmeren?</label>
+											                <label class="col-sm-2 col-md-2control-label" for="extra">Heb je bepaalde medische voorgeschiedenis die je deelname aan de reis zou belemmeren?</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <textarea class="form-control" id="extra" name="reizigers[%id%][]"></textarea>
@@ -310,9 +295,7 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "extra">Heb je bepaalde verwachtingen wat betreft
-											                maaltijden? (vegetarisch/andere)</label>
+											                <label class="col-sm-2 col-md-2control-label" for="extra">Heb je bepaalde verwachtingen wat betreft maaltijden? (vegetarisch/andere)</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <textarea class="form-control" id="extra" name="reizigers[%id%][]"></textarea>
@@ -322,47 +305,42 @@ $query = new WP_Query( $args );
 											            <h4>contactpersoon bij noodgevallen</h4>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "naam">Naam</label>
+											                <label class="col-sm-2 col-md-2control-label" for="naam">Naam *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Naam" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Naam">
+											                    <input class="form-control required" id="Naam" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Naam">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "Telefoonnummer">Telefoonnummer</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Telefoonnummer">Telefoonnummer *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Telefoonnummer">
+											                    <input class="form-control required" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Telefoonnummer">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm
-											                nummer</label>
+											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm nummer *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="gsm">
+											                    <input class="form-control required" id="gsm" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="gsm">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "email">email</label>
+											                <label class="col-sm-2 col-md-2control-label" for="email">email *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name="reizigers[%id%][noodgevallen][]" type="email" placeholder="email">
+											                    <input class="form-control required" id="email" name="reizigers[%id%][noodgevallen][]" type="email" placeholder="email">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "verwantschap">verwantschap</label>
+											                <label class="col-sm-2 col-md-2control-label" for="verwantschap">verwantschap *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="verwantschap" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="verwantschap">
+											                    <input class="form-control required" id="verwantschap" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="verwantschap">
 											                </div>
 											            </div>
 											        </div>
@@ -392,18 +370,11 @@ $query = new WP_Query( $args );
 											<div id="collapseinsurance%id%" class="panel-collapse %active%">
 												<div class="panel-body">
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio"
-											            value=
-											            "Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)">
-											            Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min.
-											            &euro;20)</label>
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio" value="Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)"> Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)</label>
 											        </div>
 
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen eigenverzekering" type="radio"
-											            value=
-											            "Eigen reisongevallenverzekering + geldig bewijs en voorwaarden">Ik
-											            verklaar te beschikken over een eigen reisongevallenverzekering en
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen eigenverzekering" type="radio" value="Eigen reisongevallenverzekering + geldig bewijs en voorwaarden">Ik verklaar te beschikken over een eigen reisongevallenverzekering en
 											            kan hiervan indien nodig een geldig bewijs en voorwaarden
 											            voorleggen</label>
 											        </div>
@@ -419,8 +390,7 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for=
-											                "polisnummer">Polisnummer</label>
+											                <label class="col-sm-2 col-md-2control-label" for="polisnummer">Polisnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control" id="polisnummer" name="reizigers[%id%][verzekering][eigen][]" type="text" placeholder="Polisnummer" disabled>

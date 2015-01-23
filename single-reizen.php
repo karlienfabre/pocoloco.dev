@@ -4,7 +4,7 @@
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<!-- About Section -->
-		<section id="" class="section-content">
+		<section class="section-content">
 			<div class="container">
 
 				<!-- Section title -->
