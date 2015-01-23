@@ -8,8 +8,8 @@ if (count($_POST)>0) {
 
     $voornaam = addslashes(strip_tags($_POST['reizigers'][1][0]));
     $gekozenkantoor = addslashes(strip_tags($_POST['gekozenkantoor']));
-    $telefoonkantoor = '03 678 29 10';
-    $emailkantoor = 'antwerpen@joker.be';
+    $telefoonkantoor = addslashes(strip_tags($_POST['kantoorphone']));
+    $emailkantoor = addslashes(strip_tags($_POST['kantooremail']));
     $reisfiche = addslashes(strip_tags($_POST['reisfiche']));
     $reisurl = addslashes(strip_tags($_POST['reisurl']));
     $verkoopsvoorwaarden = 'http://google.com/';
@@ -19,17 +19,18 @@ if (count($_POST)>0) {
     $aantalreizigers = addslashes(strip_tags($_POST['aantalreizigers']));
     $basisprijs = addslashes(strip_tags($_POST['reisprijs']));
     $reizigers = $_POST['reizigers'];
-    $totalprice = 1235;
+    //$totalprice = 1235;
     
-    $recipient = "hello@design311.com";
+    $recipient = addslashes(strip_tags($_POST['kantooremail']));
     $object = "Bevestiging Poco Loco Adventures";
     ob_start();
     require("../mail-templates/ink/template_mail_confirmation.php");
     $htmlmessage = ob_get_clean();
 
     $headers  = "MIME-Version: 1.0\n";
-    $headers .= "Content-type: text/html; charset=UTF-8\n";
-    $headers .= "From: $voornaam <hi@yen.tl>\n";
+    $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
+    $headers .= "From: $voornaam <pocoloco@pocolocoadventures.be> \r\n";
+    $headers .= "Reply-To: ".  ." \r\n";
     if(mail($recipient, $object, $htmlmessage, $headers)){
       $send = true;
     }

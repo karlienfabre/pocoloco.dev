@@ -205,6 +205,7 @@ $(document).ready(function() {
 
 	//booking form
 	$(document).on('submit', '#bookingform', function() {
+		console.log($('#bookingform').serializeArray());
 		$.ajax({
 			url : 'http://dev.design311.com/pocoloco/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
 			type : 'post',
@@ -213,7 +214,6 @@ $(document).ready(function() {
 			success : function(data) {
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'> <i class='fa fa-rocket fa-4x'></i> <h2>Email Sent Successfully</h2> <p>Your message has been submitted.</p> </div>");
-					console.log(data);
 				} else {
 					$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending</h2> <p>Try again later.</p> </div>");
 				}
@@ -332,6 +332,11 @@ $(document).ready(function() {
 		var newP = shorten( $(this).text(), 200 );
 		$(this).text(newP);
 	});
+	
+	$(".medium-text").each(function(){
+		var newP = shorten( $(this).text(), 350 );
+		$(this).text(newP);
+	});
 
 	//shorten travel text
 	function shorten(text, maxLength) {
@@ -434,6 +439,18 @@ $(document).ready(function() {
 		}
 	})
 
+	$('#gekozenkantoor').change(function(){		
+		$('#kantooremail').val($('#gekozenkantoor option:selected').data('email'));
+		$('#kantoorphone').val($('#gekozenkantoor option:selected').data('phone'));
+	})
+
+	$('#aantalreizigers').change(function(){
+		console.log($('#aantalreizigers').val());	
+		$('#sp-aantalreizigers').text($('#aantalreizigers').val());
+		console.log($('#sp-aantalreizigers'));
+	})
+
+	
 
 });
 

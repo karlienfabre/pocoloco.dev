@@ -21,7 +21,7 @@
 						<?php echo get_field('over_ons_tekst'); ?>
 					</p><br /><br />
 					<div class="mybutton ultra">
-						<button type="link" class="linkbutton" data-url="<?php echo get_post_type_archive_link( 'reizen' ); ?>">
+						<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
 							<span data-hover="Ontdekken">Alle reizen</span>
 						</button>
 					</div>
@@ -283,14 +283,15 @@
 												</div>
 												<div class="col-md-5">
 													<h2><?php the_title(); ?></h2>
-													<p class="lead">
+													<p class="lead medium-text">
 														<?php echo get_field('intro'); ?>
 													</p>
 													<br />
 													<div class="pricebutton medium">
 														<?php 
 															$reisdata = get_field('reisdata');
-															$minprice = get_minPrice($reisdata);
+															$reisdata_individueel = get_field('reisdata_individueel');
+															$minprice = get_minPrice($reisdata, $reisdata_individueel);
 														?>
 														<a href="<?php the_permalink(); ?>"><span data-hover="Vanaf €<?php echo $minprice; ?> pp">Vanaf €<?php echo $minprice; ?> pp</span></a>
 													</div>
@@ -306,13 +307,13 @@
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div><!--<?php var_dump(get_post_type_archive_link( 'reizen' )); ?>-->
 				</div>
 				<div class="row text-center">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="element-line">
 							<div class="mybutton ultra">
-								<button type="link" class="linkbutton" data-url="<?php echo get_post_type_archive_link( 'reizen' ); ?>">
+								<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
 									<span data-hover="Ontdekken">Alle reizen</span>
 								</button>
 							</div>

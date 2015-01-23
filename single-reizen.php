@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -104,7 +104,7 @@
 									<div class="row text-center">
 										<div class="col-md-6 col-md-offset-3">
 											<div class="text-center testimonial">
-												<a href=""> <img class="img-circle img-responsive" src="<?php echo get_field('quote_afbeelding')['sizes']['thumbnail']; ?>" alt=""> </a>
+												<a href=""> <img class="img-circle img-responsive" src="<?php $afb = get_field('quote_afbeelding'); echo $afb['sizes']['thumbnail']; ?>" alt=""> </a>
 											</div>
 										</div>
 									</div>
@@ -300,9 +300,9 @@
 					<div class="col-md-3 setting">
 						<i class="fa fa-arrow-circle-o-down"></i>
 						<?php if (get_field('reisfiche')): ?>
-							<a href="<?php echo get_field('reisfiche')['url']; ?>"><h4>download reisfiche</h4></a>
+							<a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank"><h4>download reisfiche</h4></a>
 							<p>
-								Alle info over deze reis vind je samengevat in deze reisfiche.
+								Alle info over deze reis vind je samengevat in deze reisfiche, <a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">klik hier om de reisfiche te downloaden</a>.
 							</p>
 						<?php else: ?>
 							<h4>download reisfiche</h4>

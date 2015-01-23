@@ -53,6 +53,7 @@
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="<?php root() ?>js/modernizr.js" type="text/javascript"></script>
 		<script src="<?php root() ?>js/jquery.sticky.js"></script>
+		<script src="<?php root() ?>js/jquery.fitvids.js" type="text/javascript"></script>
 		<script src="<?php root() ?>js/jquery.easing-1.3.pack.js"></script>
 		<script src="<?php root() ?>js/bootstrap.min.js"></script>
 		<script src="<?php root() ?>js/bootstrap-modal.js" type="text/javascript"></script>

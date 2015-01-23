@@ -102,8 +102,8 @@ $query = new WP_Query( $args );
 											<?php endforeach; ?>
 						    			</ul>
 
-						    			<a href="#" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
-						    			<a href="#" target="_blank">verkoopsvoorwaarden (pdf)</a><br />
+						    			<a href="http://www.joker.be/sites/default/files/reisvoorwaarden_2015_-2016.pdf" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
+						    			<a href="http://www.epower.amadeus.com/joker/Portals/joker/AgencyRules.aspx" target="_blank">verkoopsvoorwaarden (pdf)</a><br />
 						    			<?php if (get_field('reisfiche')): ?>
 											<a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">technische fiche reis (pdf)</a>
 										<?php else: ?>
@@ -114,7 +114,7 @@ $query = new WP_Query( $args );
 						    	<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
 							        <div class="form-group">
 										<label for="aantalreizigers">Selecteer het aantal reizigers</label>
-										<select class="form-control input-m required aantal-reizigers" name="aantalreizigers">
+										<select class="form-control input-m required aantal-reizigers" name="aantalreizigers" id="aantalreizigers">
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -143,18 +143,25 @@ $query = new WP_Query( $args );
 										$kantoor_query = new WP_Query( $args );
 									?>
 
+									<?php if (get_field('verzenden_naar') == 'Joker kantoren' || get_field('verzenden_naar') == false): ?>
 
-							        <div class="form-group">
-										<label for="name">Selecteer je joker reiskantoor</label>
-
-										<select class="form-control input-m required" name="gekozenkantoor">
-										<?php $backup = $post; ?>
-										<?php while ( $kantoor_query->have_posts() ) : $kantoor_query->the_post(); ?>
-											<option value="<?php the_title(); ?>"><?php the_title(); ?></option>
-										<?php endwhile; ?>
-										<?php $post = $backup; ?>
-										</select>
-									</div>
+								        <div class="form-group">
+											<label for="name">Selecteer je reiskantoor</label>
+											<select class="form-control input-m required" name="gekozenkantoor" id="gekozenkantoor">
+											<?php $backup = $post; ?>
+											<?php while ( $kantoor_query->have_posts() ) : $kantoor_query->the_post(); ?>
+												<option value="<?php the_title(); ?>" data-phone="<?php echo get_field('telefoonnummer') ?>" data-email="<?php echo get_field('emailadres') ?>"><?php the_title(); ?></option>
+											<?php endwhile; ?>
+											<?php $post = $backup; ?>
+											</select>
+											<input type="hidden" name="kantoorphone" id="kantoorphone">
+											<input type="hidden" name="kantooremail" id="kantooremail">
+										</div>
+									<?php else: ?>
+											<input type="hidden" name="gekozenkantoor" id="gekozenkantoor" value="Poco Loco Adventures">
+											<input type="hidden" name="kantoorphone" id="kantoorphone" value="+32(0)35016790">
+											<input type="hidden" name="kantooremail" id="kantooremail" value="pocoloco@pocolocoadventures.be">
+									<?php endif ?>
 								</div>
 					    	</div>
 
@@ -454,13 +461,13 @@ $query = new WP_Query( $args );
 					    	<div class="row">
 								<div class="col-md-12">
 						    		<strong><?php the_title(); ?></strong><br />
-						    		<strong>Periode</strong> 01/07/15 - 07/07/15<br />
-						    		<strong>Aantal reizigers</strong> 3
+						    		<strong>Periode</strong> <?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?><br />
+						    		<strong>Aantal reizigers</strong> <span id="sp-aantalreizigers"></span>
 								</div>
 							</div>
 					        <div class="row">
 								<div class="col-md-12">
-									<div class="panel-group reizigers-overview" id="accordion">
+									<!-- <div class="panel-group reizigers-overview" id="accordion">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseovervieuw%id%" class="collapsed"> Overzicht %title%<i class="fa fa-plus pull-right"></i></a></h4>
@@ -488,12 +495,17 @@ $query = new WP_Query( $args );
 												</div>
 											</div>
 										</div>
-									</div>
-									<h5>Totaal voor alle reizigers samen: </h5> <h2>€1250</h2>
+									</div> -->
+									<!-- <h5>Totaal voor alle reizigers samen: </h5> <h2>€1250</h2> -->
 
-									<a href="#">algemene reisvoorwaarden (pdf)</a><br />
-						    		<a href="#">verkoopsvoorwaarden (pdf)</a><br />
-						    		<a href="#">technische fiche reis (pdf)</a><br /><br />
+									<a href="http://www.joker.be/sites/default/files/reisvoorwaarden_2015_-2016.pdf" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
+						    		<a href="http://www.epower.amadeus.com/joker/Portals/joker/AgencyRules.aspx" target="_blank">verkoopsvoorwaarden (pdf)</a><br />
+						    		<?php if (get_field('reisfiche')): ?>
+											<a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">technische fiche reis (pdf)</a>
+										<?php else: ?>
+											<a href="#">technische fiche reis (niet beschikbaar)</a>
+										<?php endif ?>
+						    		<br /><br />
 									<div class="form-group">
 									    <label>
 									      <input type="checkbox"> ik aanvaard de reisvoorwaarden. Ik heb de infofiche van de reis gelezen.
