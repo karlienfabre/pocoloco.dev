@@ -136,7 +136,7 @@ $(document).ready(function() {
 		$(".reizigers-data").empty();
 		$(".reizigers-verzekeringen").empty();
 		$(".reizigers-options").empty();
-		$(".reizigers-overview").empty();
+		//$(".reizigers-overview").empty();
 
 		var aantalReizigers = $(".aantal-reizigers").val();
 		var title='';
@@ -155,7 +155,7 @@ $(document).ready(function() {
 			addReiziger($(".reizigers-data"), htmlTemplateData, title, active, i );
 			addReiziger($(".reizigers-verzekeringen"), htmlTemplateVerzekering, title, active, i );
 			addReiziger($(".reizigers-options"), htmlTemplateOptions, title, active, i );	
-			addReiziger($(".reizigers-overview"), htmlTemplateOverview, title, active, i );	
+			//addReiziger($(".reizigers-overview"), htmlTemplateOverview, title, active, i );	
 		};
 
 	});
@@ -204,7 +204,11 @@ $(document).ready(function() {
 	});
 
 	//booking form
+	$('.actions a[href$="#finish"]').click(function(){
+		$('#bookingform').submit();
+	});
 	$(document).on('submit', '#bookingform', function() {
+		console.log('testing');
 		$.ajax({
 			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
 			type : 'post',
@@ -442,6 +446,7 @@ $(document).ready(function() {
 		$('#kantooremail').val($('#gekozenkantoor option:selected').data('email'));
 		$('#kantoorphone').val($('#gekozenkantoor option:selected').data('phone'));
 	})
+	$("#gekozenkantoor").trigger("change");
 
 	$('#aantalreizigers').change(function(){
 		console.log($('#aantalreizigers').val());	
@@ -578,9 +583,9 @@ jQuery("#book-wizard").steps({
     {
         form.validate().settings.ignore = ":disabled,:hidden";
         return form.valid();
-    },*/
+    },
     onFinished: function (event, currentIndex)
     {
         $('#bookingform').submit();
-    }
+    }*/
 });
