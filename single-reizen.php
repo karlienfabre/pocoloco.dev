@@ -302,7 +302,7 @@
 						<?php if (get_field('reisfiche')): ?>
 							<a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank"><h4>download reisfiche</h4></a>
 							<p>
-								Alle info over deze reis vind je samengevat in deze reisfiche, <a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">klik hier om de reisfiche te downloaden</a>.
+								Alle info over deze reis vind je samengevat in deze reisfiche, <a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank">klik hier om de reisfiche te downloaden</a>.
 							</p>
 						<?php else: ?>
 							<h4>download reisfiche</h4>
