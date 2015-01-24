@@ -38,3 +38,10 @@ function pocoloco_excerpt_more( $more ) {
   return '... <p><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Lees meer</a></p>';
 }
 add_filter('excerpt_more', 'pocoloco_excerpt_more');
+
+add_filter('wp_title', 'pocoloco_wp_title');
+function pocoloco_wp_title($input){
+  $output = $input . get_bloginfo( 'name' );
+
+  return $output;
+}
