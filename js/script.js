@@ -205,7 +205,6 @@ $(document).ready(function() {
 
 	//booking form
 	$(document).on('submit', '#bookingform', function() {
-		console.log($('#bookingform').serializeArray());
 		$.ajax({
 			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
 			type : 'post',
