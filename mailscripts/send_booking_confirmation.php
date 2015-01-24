@@ -22,7 +22,7 @@ if (count($_POST)>0) {
     $reizigers = $_POST['reizigers'];
     //$totalprice = 1235;
     
-    $recipient = addslashes(strip_tags($_POST['kantooremail']));
+    $recipient = 'hello@design311.com'; //addslashes(strip_tags($_POST['kantooremail']));
     $object = "Bevestiging Poco Loco Adventures";
     ob_start();
     require("../mail-templates/ink/template_mail_confirmation.php");
