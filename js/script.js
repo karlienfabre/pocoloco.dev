@@ -185,7 +185,7 @@ $(document).ready(function() {
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
 		$.ajax({
-			url : 'http://dev.design311.com/pocoloco/wp-content/themes/pocoloco/mailscripts/send_mail.php',
+			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_mail.php',
 			type : 'post',
 			dataType : 'json',
 			data : $(this).serialize(),
@@ -207,7 +207,7 @@ $(document).ready(function() {
 	$(document).on('submit', '#bookingform', function() {
 		console.log($('#bookingform').serializeArray());
 		$.ajax({
-			url : 'http://dev.design311.com/pocoloco/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
+			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
 			type : 'post',
 			dataType : 'json',
 			data : $(this).serialize(),

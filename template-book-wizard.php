@@ -105,7 +105,7 @@ $query = new WP_Query( $args );
 						    			<a href="http://www.joker.be/sites/default/files/reisvoorwaarden_2015_-2016.pdf" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
 						    			<a href="http://www.epower.amadeus.com/joker/Portals/joker/AgencyRules.aspx" target="_blank">verkoopsvoorwaarden (pdf)</a><br />
 						    			<?php if (get_field('reisfiche')): ?>
-											<a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">technische fiche reis (pdf)</a>
+											<a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank">technische fiche reis (pdf)</a>
 										<?php else: ?>
 											<a href="#">technische fiche reis (niet beschikbaar)</a>
 										<?php endif ?>
@@ -501,7 +501,7 @@ $query = new WP_Query( $args );
 									<a href="http://www.joker.be/sites/default/files/reisvoorwaarden_2015_-2016.pdf" target="_blank">algemene reisvoorwaarden (pdf)</a><br />
 						    		<a href="http://www.epower.amadeus.com/joker/Portals/joker/AgencyRules.aspx" target="_blank">verkoopsvoorwaarden (pdf)</a><br />
 						    		<?php if (get_field('reisfiche')): ?>
-											<a href="<?php echo get_field('reisfiche')['url']; ?>" target="_blank">technische fiche reis (pdf)</a>
+											<a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url'] ?>" target="_blank">technische fiche reis (pdf)</a>
 										<?php else: ?>
 											<a href="#">technische fiche reis (niet beschikbaar)</a>
 										<?php endif ?>
@@ -519,7 +519,7 @@ $query = new WP_Query( $args );
 				<div class="form-respond text-center"></div>
 			</div>
 
-			<input type="hidden" name="reisfiche" value="<?php echo get_field('reisfiche')['url']; ?>">
+			<input type="hidden" name="reisfiche" value="<?php echo $reisfiche = get_field('reisfiche'); echo $reisfiche['url'] ?>">
 			<input type="hidden" name="reisurl" value="<?php the_permalink(); ?>">
 			<input type="hidden" name="reistitel" value="<?php the_title(); ?>">
 			<input type="hidden" name="reisperiode" value="<?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?>">
