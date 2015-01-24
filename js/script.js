@@ -208,7 +208,6 @@ $(document).ready(function() {
 		$('#bookingform').submit();
 	});
 	$(document).on('submit', '#bookingform', function() {
-		console.log('testing');
 		$.ajax({
 			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
 			type : 'post',
@@ -218,7 +217,7 @@ $(document).ready(function() {
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'> <i class='fa fa-rocket fa-4x'></i> <h2>Email Sent Successfully</h2> <p>Your message has been submitted.</p> </div>");
 				} else {
-					$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending</h2> <p>Try again later.</p> </div>");
+					$('.form-respond').html("<div class='content-message'> <i class='fa fa-times fa-4x'></i> <h2>Error sending email</h2> <p>Try again later.</p> </div>");
 				}
 			},
 			error : function(xhr, err) {

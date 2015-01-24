@@ -22,7 +22,7 @@ if (count($_POST)>0) {
     $reizigers = $_POST['reizigers'];
     //$totalprice = 1235;
     
-    $recipient = 'hello@design311.com'; //addslashes(strip_tags($_POST['kantooremail']));
+    $recipient = $email;
     $object = "Bevestiging Poco Loco Adventures";
     ob_start();
     require("../mail-templates/ink/template_mail_confirmation.php");
@@ -30,8 +30,10 @@ if (count($_POST)>0) {
 
     $headers  = "MIME-Version: 1.0\n";
     $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
-    $headers .= "From: $voornaam <pocoloco@pocolocoadventures.be> \r\n";
-    $headers .= "Reply-To: $email \r\n";
+    $headers .= "From: Poco Loco Adventures <pocoloco@pocolocoadventures.be> \r\n";
+    $headers .= 'Cc: '. $emailkantoor . " \r\n";
+    $headers .= 'Cc: pocoloco@pocolocoadventures.be'. " \r\n";
+    $headers .= "Reply-To: " . $emailkantoor . " \r\n";
     if(mail($recipient, $object, $htmlmessage, $headers)){
       $send = true;
     }
