@@ -440,10 +440,10 @@ background: #CC0000 !important;
                                 <?php endif ?>
                               </p>
                               <?php endforeach ?>
-                              <h4 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 12px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Prijsbestek</h4>
+                              <!-- <h4 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 12px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Prijsbestek</h4>
                               <p class="left" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 12px; margin: 0; padding: 7px 0 20px;" align="left">
                                 Totaal voor alle reizigers samen: &euro;<?php echo $totalprice; ?>
-                              </p>
+                              </p> -->
                             </td>
                             <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; visibility: hidden; width: 0px; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="center" valign="top"></td>
                           </tr></table></td>

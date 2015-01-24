@@ -7,7 +7,7 @@ $send = false;
 if (count($_POST)>0) {
 
     $voornaam = addslashes(strip_tags($_POST['reizigers'][1][0]));
-    $email = addslashes(strip_tags($_POST['reizigers'][7][0]));
+    $email = addslashes(strip_tags($_POST['reizigers'][1][6]));
     $gekozenkantoor = addslashes(strip_tags($_POST['gekozenkantoor']));
     $telefoonkantoor = addslashes(strip_tags($_POST['kantoorphone']));
     $emailkantoor = addslashes(strip_tags($_POST['kantooremail']));

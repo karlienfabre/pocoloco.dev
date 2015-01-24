@@ -8,12 +8,12 @@
     $phone=addslashes(strip_tags($_POST["phone"]));
     $message=addslashes(strip_tags($_POST["message"]));
     
-    $recipient  	= "hello@design311.com";
-    $object 			= "Request from :: Alpine :: Responsive One Page HTML5/CSS3 Parallax Site Template";
+    $recipient  	= "pocoloco@pocolocoadventures.be";
+    $object 			= "Poco Loco Adventures - Contact";
     $htmlmessage 	= <<<MESSAGE
     <html>
     	<head>
-     		<title>Request from :: Alpine :: Responsive One Page HTML5/CSS3 Parallax Site Template</title>
+     		<title>Poco Loco Adventures - Contact</title>
     	</head>
 	    <body>
 	      <style>body {font: 12px/1.2em Verdana}</style>
