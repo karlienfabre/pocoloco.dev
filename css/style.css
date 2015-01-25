@@ -14,8 +14,12 @@
 	box-sizing: border-box;
 }
 @font-face {
-	font-family: 'DIN-MediumAlternate';
-	src: url('../fonts/DIN/DIN-MediumAlternate.ttf');
+  font-family: 'DIN-MediumAlternate';
+  src: url('../fonts/DIN/DIN-MediumAlternate.otf'); /* IE9 Compat Modes */
+  src: url('../fonts/DIN/DIN-MediumAlternate.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/DIN/DIN-MediumAlternate.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/DIN/DIN-MediumAlternate.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/DIN/DIN-MediumAlternate.svg#DIN-MediumAlternate') format('svg'); /* Legacy iOS */
 }
 html, body {
 	height: 100%;

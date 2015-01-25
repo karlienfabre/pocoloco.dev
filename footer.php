@@ -73,8 +73,6 @@
 		<script src="<?php root() ?>js/portfolio_custom.js" type="text/javascript"></script>
 		<script src="<?php root() ?>js/script.js"></script>
 		<script src="<?php root() ?>js/retina-1.1.0.min.js"></script>
-		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-		<script src="<?php root() ?>js/google-map.js"></script>
 		<!-- Js Library -->
 
 		<?php wp_footer(); ?>
