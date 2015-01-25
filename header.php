@@ -118,8 +118,36 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 
-						<?php foreach ($items as $item): ?>
+						<?php foreach ($items as $item): 
+
+							$active = false;
+
+							global $post;
+
+							if ($item->object_id == $post->ID) {
+								$active = true;
+							}
+							elseif ($item->object_id == 137) {
+								if ($post->post_type == 'reizen') {
+									$active = true;
+								}
+							}
+							elseif ($item->object_id == 72) {
+								if ($post->post_type == 'forum' || $post->post_type == 'topic') {
+									$active = true;
+								}
+							}
+							elseif ($item->object_id == 40) {
+								if ($post->post_type == 'post') {
+									$active = true;
+								}
+							}
+
+							if ($active): ?>
+							<li class="active">
+							<?php else: ?>
 							<li>
+							<?php endif ?>
 								<a href="<?php echo $item->url; ?>" class="int-collapse-menu"><?php echo $item->title ?></a>
 							</li>
 						<?php endforeach ?>
