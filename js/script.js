@@ -237,7 +237,7 @@ $(document).ready(function() {
 			data : $(this).serialize(),
 			success : function(data) {
 				if (data == true) {
-					$('.form-respond').html("<div class='content-message'><h2>Email Sent Successfully</h2> <p>Your message has been submitted.</p> </div>");
+					$('.form-respond').html("<div class='content-message'><h2>Je inschrijving is verwerkt</h2> <p>We nemen spoedig contact met je op.</p> </div>");
 				} else {
 					$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen email</h2> <p>Probeer het later nog eens.</p> </div>");
 				}
