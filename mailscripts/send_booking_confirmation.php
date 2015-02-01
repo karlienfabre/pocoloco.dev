@@ -13,14 +13,13 @@ if (count($_POST)>0) {
     $emailkantoor = addslashes(strip_tags($_POST['kantooremail']));
     $reisfiche = addslashes(strip_tags($_POST['reisfiche']));
     $reisurl = addslashes(strip_tags($_POST['reisurl']));
-    $verkoopsvoorwaarden = 'http://google.com/';
-    $reisvoorwaarden = 'http://google.com/';
+    $verkoopsvoorwaarden = 'http://www.epower.amadeus.com/joker/Portals/joker/AgencyRules.aspx';
+    $reisvoorwaarden = 'http://www.joker.be/sites/default/files/reisvoorwaarden_2015_-2016.pdf';
     $reistitel = addslashes(strip_tags($_POST['reistitel']));
     $periode = addslashes(strip_tags($_POST['reisperiode']));
     $aantalreizigers = addslashes(strip_tags($_POST['aantalreizigers']));
     $basisprijs = addslashes(strip_tags($_POST['reisprijs']));
     $reizigers = $_POST['reizigers'];
-    //$totalprice = 1235;
     
     $recipient = $email;
     $object = "Bevestiging Poco Loco Adventures";

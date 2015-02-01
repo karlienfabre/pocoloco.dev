@@ -436,8 +436,15 @@ background: #CC0000 !important;
                                      <?php echo $optie; ?><br />
                                    <?php endforeach ?>
                                 <?php else: ?>
-                                  Geen opties geselecteerd <br />
+                                  Geen opties geselecteerd <br /><br />
                                 <?php endif ?>
+
+                                <strong>Contactpersoon bij noodgevallen</strong>
+                                <?php echo $reiziger['verzekering']['eigen'][0] ?> <br />
+                                <?php echo $reiziger['verzekering']['eigen'][1] ?> <br />
+                                <?php echo $reiziger['verzekering']['eigen'][2] ?> <br />
+                                <?php echo $reiziger['verzekering']['eigen'][3] ?> <br />
+                                <?php echo $reiziger['verzekering']['eigen'][4] ?> <br />
                               </p>
                               <?php endforeach ?>
                               <!-- <h4 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 12px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Prijsbestek</h4>
