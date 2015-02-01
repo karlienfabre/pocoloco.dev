@@ -13,9 +13,9 @@ $(window).load(function() {
 			queue : false
 		},
 	});
+	
+	$(".filters span").click(function(){
 
-	$('.filters span').click(function() {
-		
 		var elfilters = $(this).parents().eq(1);
 
 		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
@@ -36,15 +36,8 @@ $(window).load(function() {
 			}
 		}
 		checkFilter();
-		return false;
-	});
 
-
-
-	
-	$(".filters span").click(function(){
 		var filters=[];
-		console.log("filters before adding "+filters);
 
 		$(".search.filters").children().each(function(){
 			var filter = $(this).children().children().attr("data-filter");
@@ -67,7 +60,6 @@ $(window).load(function() {
 
 		filters = filters.join("");
 		filterItems(filters);
-		console.log("filters after adding "+filters);
 
 	});
 

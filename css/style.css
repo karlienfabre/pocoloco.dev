@@ -1882,7 +1882,6 @@ footer img{
 .vertical-center-element{
 	display: table-cell;
 	vertical-align: middle;
-	float: none;
 }
 .vertical-centered-text{
 	padding-right: 60px;

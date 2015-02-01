@@ -95,7 +95,63 @@
 							<?php echo get_field('tekst_onder_subtitel'); ?>
 						</p>
 					</div>
-
+<!--
+							<div class="testimonial_wrapper">
+							<div>
+								<div class="row">
+									<div class="container">
+										<div class="col-md-4 vertical-center-element">
+											<div class="testimonail_container">
+												<div class="row">
+													<div class="col-md-12  bgwhite">
+														<div class="row text-center">
+															<div class="col-md-6 col-md-offset-3">
+																<div class="text-center testimonial">
+																	<img class="img-circle img-responsive" src="../img/reisaanbod/testimonials/testi_canyoning.jpg" alt="">
+																</div>
+															</div>
+														</div>
+														<div class="row text-center">
+															<div class="row-md-9">
+																	<p>Tic-tac nollie bearings Ron Allen disaster. Downhill blunt no comply Kevin Jarvis slob air. Deck Brooklyn Banks indy grab slap maxwell pop shove-it.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="row">
+									<div class="container">
+										<div class=" col-md-4 vertical-center-element">
+											<div class="testimonail_container">
+												<div class="row">
+													<div class="col-md-12  bgwhite">
+														<div class="row text-center">
+															<div class="col-md-6 col-md-offset-3">
+																<div class="text-center testimonial">
+																	<img class="img-circle img-responsive" src="../img/reisaanbod/testimonials/testi_canyoning.jpg" alt="">
+																</div>
+															</div>
+														</div>
+														<div class="row text-center">
+															<div class="row-md-9">
+																	<p>Tic-tac nollie bearings Ron Allen disaster. Downhill blunt no comply Kevin Jarvis slob air. Deck Brooklyn Banks indy grab slap maxwell pop shove-it.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+-->
 					<?php if (get_field('quote_tekst') && get_field('quote_afbeelding')): ?>
 					<div class="col-md-4  vertical-center-element">
 						<div class="testimonail_container">
@@ -323,5 +379,14 @@
 
 	<?php endwhile; ?>
 <?php endif; ?>
-
+<!--
+			<script>
+			//testimonial slider
+			$('.testimonial_wrapper').slick({
+			  infinite: false,
+			  slidesToShow: 1,
+			  slidesToScroll: 1
+			});
+		</script>
+-->
 <?php get_footer(); ?>
