@@ -21,20 +21,20 @@
 
 						<!-- Parallax title -->
 						<p class="lead white">
-							Poco Loco Adventures Traveling is een product in samenwerking met: 
+							Poco Loco Adventures is een product in samenwerking met: 
 						</p>
 						<!-- Parallax title -->
 
 						<!-- Parallax content -->
 						<div class="parallax-content co-operation">
 							<p>
-								Joker reizen NV (lic 1679)<br />
-								Geerdegemvaart 96<br />
+								Joker<br />
+								Geerdegevaart 96-98<br />
 								2800 Mechelen<br />
-								<a href="#">www.joker.be</a><br />
+								<a href="http://www.joker.be" target="_blank">www.joker.be</a><br />
 								<img src="<?php root() ?>img/home/logo_joker_reizen.png" alt=""/>
 							</p>
-<span>© Copyright 2013 by Poco Loco Adventures - pocoloco@pocolocoadventures.be - +32(0)35016790 </span>
+<span>© Copyright 2007-<?php echo date('Y') ?> by Poco Loco Adventures - pocoloco@pocolocoadventures.be - +32(0)35016790 </span>
 						</div>
 						<!-- Parallax content -->
 
