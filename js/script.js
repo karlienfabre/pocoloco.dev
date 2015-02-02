@@ -295,7 +295,7 @@ $(document).ready(function() {
 		topSpacing : 0
 	});
 
-	$(".container").fitVids();
+	/*$(".container").fitVids();*/
 
 	$('a.external').click(function() {
 		var url = $(this).attr('href');
