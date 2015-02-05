@@ -95,25 +95,31 @@
 							<?php echo get_field('tekst_onder_subtitel'); ?>
 						</p>
 					</div>
-<!--
-							<div class="testimonial_wrapper">
+
+					<div class="col-md-4">
+						<?php
+							$quotes = get_field('quotes');
+							if (!empty($quotes)) :
+						?>
+						<div class="testimonial_wrapper">
+							<?php foreach($quotes as $key=>$quote) : ?>
 							<div>
 								<div class="row">
 									<div class="container">
 										<div class="col-md-4 vertical-center-element">
 											<div class="testimonail_container">
 												<div class="row">
-													<div class="col-md-12  bgwhite">
+													<div class="col-md-12 bgwhite">
 														<div class="row text-center">
 															<div class="col-md-6 col-md-offset-3">
 																<div class="text-center testimonial">
-																	<img class="img-circle img-responsive" src="../img/reisaanbod/testimonials/testi_canyoning.jpg" alt="">
+																	<img class="img-circle img-responsive" src="<?php $afb = $quote['quote_afbeelding']; echo $afb['sizes']['thumbnail']; ?>" alt="">
 																</div>
 															</div>
 														</div>
 														<div class="row text-center">
 															<div class="row-md-9">
-																	<p>Tic-tac nollie bearings Ron Allen disaster. Downhill blunt no comply Kevin Jarvis slob air. Deck Brooklyn Banks indy grab slap maxwell pop shove-it.</p>
+																	<p><?php echo $quote['quote_tekst']; ?></p>
 															</div>
 														</div>
 													</div>
@@ -123,57 +129,11 @@
 									</div>
 								</div>
 							</div>
-							<div>
-								<div class="row">
-									<div class="container">
-										<div class=" col-md-4 vertical-center-element">
-											<div class="testimonail_container">
-												<div class="row">
-													<div class="col-md-12  bgwhite">
-														<div class="row text-center">
-															<div class="col-md-6 col-md-offset-3">
-																<div class="text-center testimonial">
-																	<img class="img-circle img-responsive" src="../img/reisaanbod/testimonials/testi_canyoning.jpg" alt="">
-																</div>
-															</div>
-														</div>
-														<div class="row text-center">
-															<div class="row-md-9">
-																	<p>Tic-tac nollie bearings Ron Allen disaster. Downhill blunt no comply Kevin Jarvis slob air. Deck Brooklyn Banks indy grab slap maxwell pop shove-it.</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<?php break; ?>
+							<?php endforeach; ?>
 						</div>
+						<?php endif; ?>
 					</div>
--->
-					<?php if (get_field('quote_tekst') && get_field('quote_afbeelding')): ?>
-					<div class="col-md-4  vertical-center-element">
-						<div class="testimonail_container">
-							<div class="row">
-								<div class="col-md-12  bgwhite">
-									<div class="row text-center">
-										<div class="col-md-6 col-md-offset-3">
-											<div class="text-center testimonial">
-												<a href=""> <img class="img-circle img-responsive" src="<?php $afb = get_field('quote_afbeelding'); echo $afb['sizes']['thumbnail']; ?>" alt=""> </a>
-											</div>
-										</div>
-									</div>
-									<div class="row text-center">
-										<div class="row-md-9">
-												<p><?php echo get_field('quote_tekst'); ?></p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<?php endif ?>
 				</div>
 			</div>
 			<div class="border-bottom">
@@ -379,14 +339,4 @@
 
 	<?php endwhile; ?>
 <?php endif; ?>
-<!--
-			<script>
-			//testimonial slider
-			$('.testimonial_wrapper').slick({
-			  infinite: false,
-			  slidesToShow: 1,
-			  slidesToScroll: 1
-			});
-		</script>
--->
 <?php get_footer(); ?>

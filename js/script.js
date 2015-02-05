@@ -602,3 +602,10 @@ jQuery("#book-wizard").steps({
         $('#bookingform').submit();
     }*/
 });
+
+//testimonial slider
+jQuery('.testimonial_wrapper').slick({
+  infinite: false,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
