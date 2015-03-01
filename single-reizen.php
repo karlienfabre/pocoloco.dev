@@ -129,7 +129,6 @@
 									</div>
 								</div>
 							</div>
-							<?php break; ?>
 							<?php endforeach; ?>
 						</div>
 						<?php endif; ?>

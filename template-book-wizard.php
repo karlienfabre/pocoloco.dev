@@ -312,7 +312,7 @@ $query = new WP_Query( $args );
 											            <h4>contactpersoon bij noodgevallen</h4>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="naam">Naam *</label>
+											                <label class="col-sm-2 col-md-2control-label" for="naam">Naam</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control" id="Naam" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Naam">
@@ -320,7 +320,7 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Telefoonnummer">Telefoonnummer *</label>
+											                <label class="col-sm-2 col-md-2control-label" for="Telefoonnummer">Telefoonnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Telefoonnummer">
@@ -328,7 +328,7 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm nummer *</label>
+											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm nummer</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control" id="gsm" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="gsm">
@@ -336,7 +336,7 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="email">email *</label>
+											                <label class="col-sm-2 col-md-2control-label" for="email">email</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control" id="email" name="reizigers[%id%][noodgevallen][]" type="email" placeholder="email">
@@ -344,7 +344,7 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="verwantschap">verwantschap *</label>
+											                <label class="col-sm-2 col-md-2control-label" for="verwantschap">verwantschap</label>
 
 											                <div class="col-sm-3 col-md-3">
 											                    <input class="form-control" id="verwantschap" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="verwantschap">

@@ -13,61 +13,22 @@ $(window).load(function() {
 			queue : false
 		},
 	});
-	
+
 	$(".filters span").click(function(){
+		var filter = $(this).children().attr("data-filter")
+		filterItems(filter);
 
-		var elfilters = $(this).parents().eq(1);
-
-		if( (elfilters.attr("id") == "alleReizen") && elfilters.hasClass("non-active") )
-		{
-			$(".label").each(function(){
-				inActive( $(this) );
-			});
-			setActive(elfilters);
-		}
-		else{
-			//set label alleReizen inactive
-			inActive( $("#alleReizen") );
-			if( elfilters.hasClass("non-active") ){
-				setActive(elfilters);
-			}
-			else{
-				inActive(elfilters);
-			}
-		}
-		checkFilter();
-
-		var filters=[];
-
-		$(".search.filters").children().each(function(){
-			var filter = $(this).children().children().attr("data-filter");
-
-			if( $(this).hasClass("non-active") ){
-
-				filters = jQuery.grep(filters, function(value){
-					return value != filter;
-				}); 
-
-			}
-			else{
-				if(jQuery.inArray(filter,filters) == -1){
-				    filters.push(filter);
-				}
-			}
-
-
+		var label = $(this).parent();
+		$(".label").each(function(){
+			inActive( $(this) );
 		});
-
-		filters = filters.join("");
-		filterItems(filters);
+		setActive(label);
 
 	});
-
-
-	function filterItems(filters){
-		console.log("filter items with filters:" + filters);
+	
+	function filterItems(filter){
 		container.isotope({
-			filter : filters,
+			filter : filter,
 		}, function noResultsCheck(){
 			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
 			    if (numItems == 0) {
@@ -83,29 +44,14 @@ $(window).load(function() {
 
 	function setActive(el){
 		el.removeClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-check-circle-o").addClass("fa-ban");		
+		var i = el.find('i');
+		i.removeClass("fa-check-circle-o").addClass("fa-ban");		
 	}
 
 	function inActive(el){
 		el.addClass("non-active");
-		var span = el.find('i');
-		span.removeClass("fa-ban").addClass("fa-check-circle-o")		
-	}
-	function checkFilter(){
-
-		var filterdivs = $('.filters span').parent().parent();
-
-		if( filterdivs.not('.non-active').length == 0 ){
-			setActive( $("#alleReizen") );
-		}
-
-		var filterLabels = $(".filters .label");
-
-		if( filterLabels.not('.non-active').length == 0){
-			setActive( $("#alleReizen") );
-		}
-
+		var i = el.find('i');
+		i.removeClass("fa-ban").addClass("fa-check-circle-o")		
 	}
 	function noResultsCheck() {
 	    var numItems = $('.item:not(.isotope-hidden)').length;
@@ -176,11 +122,14 @@ $(document).ready(function() {
 	// Contact Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#contactform', function() {
+		
+		var formdata = $(this).serializeObject();
+
 		$.ajax({
 			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_mail.php',
 			type : 'post',
 			dataType : 'json',
-			data : $(this).serialize(),
+			data : formdata,
 			success : function(data) {
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'><h2>Je bericht is goed verzonden</h2> <p>We beantwoorden je vraag binnen de 48 uur.</p> </div>");
@@ -198,11 +147,14 @@ $(document).ready(function() {
 	// Niewsbrief Form Request
 	$(".validate").validate();
 	$(document).on('submit', '#nieuwsbriefform', function() {
+		
+		var formdata = $(this).serializeObject();
+
 		$.ajax({
 			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_mail.php',
 			type : 'post',
 			dataType : 'json',
-			data : $(this).serialize(),
+			data : formdata,
 			success : function(data) {
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'><h2>Je inschrijving is verwerkt</h2> <p>We sturen je binnenkort onze nieuwsbrief.</p> </div>");
@@ -222,11 +174,14 @@ $(document).ready(function() {
 		$('#bookingform').submit();
 	});
 	$(document).on('submit', '#bookingform', function() {
+
+		var formdata = $(this).serializeObject();
+
 		$.ajax({
 			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_booking_confirmation.php',
 			type : 'post',
 			dataType : 'json',
-			data : $(this).serialize(),
+			data : formdata,
 			success : function(data) {
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'><h2>Je inschrijving is verwerkt</h2> <p>We nemen spoedig contact met je op.</p> </div>");
@@ -235,6 +190,8 @@ $(document).ready(function() {
 				}
 			},
 			error : function(xhr, err) {
+				console.log(err);
+				console.log(xhr);
 				$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen</h2> <p>Probeer het later nog eens.</p> </div>");
 			}
 		});
@@ -295,7 +252,7 @@ $(document).ready(function() {
 		topSpacing : 0
 	});
 
-	/*$(".container").fitVids();*/
+	//$(".container").fitVids();
 
 	$('a.external').click(function() {
 		var url = $(this).attr('href');
@@ -419,7 +376,7 @@ $(document).ready(function() {
 
 
 	//button action
-	$("button.linkbutton").click(function(){
+	$("span.linkbutton").click(function(){
 		var url = $(this).data("url");
 		$(location).attr('href', url);
 	});
@@ -569,7 +526,16 @@ function parallaxInit() {
 jQuery('.blog_container').slick({
   infinite: false,
   slidesToShow: 3,
-  slidesToScroll: 1
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
 
 //Booking wizard
@@ -609,3 +575,20 @@ jQuery('.testimonial_wrapper').slick({
   slidesToShow: 1,
   slidesToScroll: 1
 });
+
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
