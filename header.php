@@ -6,8 +6,6 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
-		<meta name="description" content="Responsive One Page HTML5/CSS3 Parallax Site Template" />
-		<meta name="author" content="Creative-Ispiration">
 
 		<!-- Favicons -->
 		<link rel="shortcut icon" href="<?php root() ?>img/ico-16.ico">
