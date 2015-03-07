@@ -52,7 +52,7 @@
 						<!-- Form group -->
 						<div class="form-group">
 						    <label>
-						      <input type="checkbox"> Ik wil de nieuwsbrief ontvangen
+						      <input type="checkbox" name="nieuwsbrief"> Ik wil de nieuwsbrief ontvangen
 						    </label>
 						</div>
 						<!-- Form group -->

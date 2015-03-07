@@ -344,7 +344,7 @@
 									<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-6">
 										<!-- Form group -->
 										<div class="form-group">
-											<input type="email" name="email" id="email" class="form-control input-lg required email" placeholder="Jouw email">
+											<input type="email" name="signup_name" id="signup_name" class="form-control input-lg required email" placeholder="Jouw email">
 										</div>
 										<!-- Form group -->
 									</div>

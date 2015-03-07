@@ -60,7 +60,7 @@ $query = new WP_Query( $args );
 				<div class="row">
 					<div id="book-wizard">
 					    <h3>Reis</h3>
-					    <section>
+					    <section class="booking1">
 					    	<div class="row">
 						    	<div class="col-md-12 col-sm-12 col-md-12 col-xs-12">
 						    		<h2><?php the_title(); ?></h2>
@@ -128,7 +128,8 @@ $query = new WP_Query( $args );
 									<?php if (isset($_GET['di'])): ?>
 							        <div class="form-group">
 										<label for="vertrekdatum">Vertrekdatum tussen <?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?></label>
-										<input type="date" min="<?php echo date("Y-m-d", strtotime($reisdata['vertrekdatum'])); ?>" max="<?php echo date("Y-m-d", strtotime($reisdata['einddatum'])); ?>">
+										<input type="date" id="vertrekDatum" name="vertrekDatum" class="form-control required dateISO">
+										<!-- <input type="date" id="vertrekdatum" name="vertrekdatum" class="required" min="<?php echo date("Y-m-d", strtotime($reisdata['vertrekdatum'])); ?>" max="<?php echo date("Y-m-d", strtotime($reisdata['einddatum'])); ?>"> -->
 									</div>
 									<?php endif ?>
 
@@ -144,8 +145,7 @@ $query = new WP_Query( $args );
 									?>
 
 									<?php if (get_field('verzenden_naar') == 'Joker kantoren' || get_field('verzenden_naar') == false): ?>
-
-								        <div class="form-group">
+								        <div class="form-group selecteer-kantoor">
 											<label for="name">Selecteer je reiskantoor</label>
 											<select class="form-control input-m" name="gekozenkantoor" id="gekozenkantoor">
 											<?php $backup = $post; ?>
@@ -168,7 +168,7 @@ $query = new WP_Query( $args );
 					    </section>
 
 					    <h3>Reizigers</h3>
-					    <section>
+					    <section class="booking2">
 					    	<div class="row">
 								<div class="col-md-12">
 									<p>Vul de nodige gegevens in van alle reizigers</p>
@@ -186,18 +186,18 @@ $query = new WP_Query( $args );
 												<div class="panel-body">
 											        <div class="form-horizontal">
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Voornaam">Voornaam *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Voornaam">Voornaam *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Voornaam" name="reizigers[%id%][]" type="text" placeholder="Voornaam">
+											                    <input class="form-control required" id="Voornaam" name="reizigers[%id%][0]" type="text" placeholder="Voornaam">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Achternaam">Achternaam *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Achternaam">Achternaam *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Achternaam" name="reizigers[%id%][]" type="text" placeholder="Achternaam">
+											                    <input class="form-control required" id="Achternaam" name="reizigers[%id%][1]" type="text" placeholder="Achternaam">
 											                </div>
 											            </div>
 
@@ -205,7 +205,7 @@ $query = new WP_Query( $args );
 											                <label class="col-sm-2 col-md-2 control-label" for="geslacht">Geslacht *</label>
 
 											                <div class="col-sm-2 col-md-2">
-											                    <select class="form-control input-m" name="reizigers[%id%][]">
+											                    <select class="form-control input-m required" name="reizigers[%id%][2]">
 											                        <option value="Man">
 											                            Man
 											                        </option>
@@ -218,34 +218,34 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Geboortedatum">Geboortedatum *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Geboortedatum">Geboortedatum *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Geboortedatum" name="reizigers[%id%][]" type="text" placeholder="xx/xx/xxxx">
+											                    <input class="form-control required" id="Geboortedatum" name="reizigers[%id%][3]" type="text" placeholder="xx/xx/xxxx">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Telefoonnummer">Telefoonnummer *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Telefoonnummer">Telefoonnummer *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][]" type="text" placeholder="Telefoonnummer">
+											                    <input class="form-control required" id="Telefoonnummer" name="reizigers[%id%][4]" type="text" placeholder="Telefoonnummer">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm nummer *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="gsm">gsm nummer *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name="reizigers[%id%][]" type="text" placeholder="gsm">
+											                    <input class="form-control required" id="gsm" name="reizigers[%id%][5]" type="text" placeholder="gsm">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="email">email *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="email">email *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name="reizigers[%id%][]" type="email" placeholder="email">
+											                    <input class="form-control required email" id="email" name="reizigers[%id%][6]" type="email" placeholder="email">
 											                </div>
 											            </div>
 
@@ -253,7 +253,7 @@ $query = new WP_Query( $args );
 											                <label class="col-sm-2 col-md-2 control-label" for="Land">Land *</label>
 
 											                <div class="col-sm-2 col-md-2">
-											                    <select class="form-control input-m" name="reizigers[%id%][]">
+											                    <select class="form-control input-m required" name="reizigers[%id%][7]">
 											                        <option value="België">
 											                            België
 											                        </option>
@@ -270,84 +270,84 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Woonplaats">Woonplaats *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Woonplaats">Woonplaats *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Woonplaats" name="reizigers[%id%][]" type="text" placeholder="Woonplaats">
+											                    <input class="form-control required" id="Woonplaats" name="reizigers[%id%][8]" type="text" placeholder="Woonplaats">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Postcode">Postcode *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Postcode">Postcode *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Postcode" name="reizigers[%id%][]" type="text" placeholder="Postcode">
+											                    <input class="form-control required" id="Postcode" name="reizigers[%id%][9]" type="text" placeholder="Postcode">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Straat">Straat + Nummer + Bus *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="straat">Straat + Nummer + Bus *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="straat" name="reizigers[%id%][]" type="text" placeholder="Straat + Nummer + Bus">
+											                    <input class="form-control required" id="straat" name="reizigers[%id%][10]" type="text" placeholder="Straat + Nummer + Bus">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="extra">Heb je bepaalde medische voorgeschiedenis die je deelname aan de reis zou belemmeren?</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="extra">Heb je bepaalde medische voorgeschiedenis die je deelname aan de reis zou belemmeren?</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <textarea class="form-control" id="extra" name="reizigers[%id%][]"></textarea>
+											                    <textarea class="form-control" id="extra" name="reizigers[%id%][11]"></textarea>
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="extra">Heb je bepaalde verwachtingen wat betreft maaltijden? (vegetarisch/andere)</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="extra">Heb je bepaalde verwachtingen wat betreft maaltijden? (vegetarisch/andere)</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <textarea class="form-control" id="extra" name="reizigers[%id%][]"></textarea>
+											                    <textarea class="form-control" id="extra" name="reizigers[%id%][12]"></textarea>
 											                </div>
 											            </div>
 
 											            <h4>contactpersoon bij noodgevallen</h4>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="naam">Naam</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="naam">Naam</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Naam" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Naam">
+											                    <input class="form-control" id="Naam" name="reizigers[%id%][noodgevallen][0]" type="text" placeholder="Naam">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="Telefoonnummer">Telefoonnummer</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Telefoonnummer">Telefoonnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="Telefoonnummer">
+											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][1]" type="text" placeholder="Telefoonnummer">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="gsm">gsm nummer</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="gsm">gsm nummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="gsm">
+											                    <input class="form-control" id="gsm" name="reizigers[%id%][noodgevallen][2]" type="text" placeholder="gsm">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="email">email</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="email">email</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name="reizigers[%id%][noodgevallen][]" type="email" placeholder="email">
+											                    <input class="form-control email" id="email" name="reizigers[%id%][noodgevallen][3]" type="email" placeholder="email">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="verwantschap">verwantschap</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="verwantschap">verwantschap</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="verwantschap" name="reizigers[%id%][noodgevallen][]" type="text" placeholder="verwantschap">
+											                    <input class="form-control" id="verwantschap" name="reizigers[%id%][noodgevallen][4]" type="text" placeholder="verwantschap">
 											                </div>
 											            </div>
 											        </div>
@@ -360,7 +360,7 @@ $query = new WP_Query( $args );
 					    </section>
 
 					    <h3>Verzekeringen</h3>
-					    <section>
+					    <section class="booking3">
 					    	<div class="row">
 								<div class="col-md-12">
 									<p>Vul de nodige gegevens in van alle reizigers</p>
@@ -377,38 +377,38 @@ $query = new WP_Query( $args );
 											<div id="collapseinsurance%id%" class="panel-collapse %active%">
 												<div class="panel-body">
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio" value="Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)"> Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)</label>
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen required" type="radio" value="Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)"> Reisongevallen &amp; Annulatie &amp; Reisbagage - &euro;3,25/dag (min. &euro;20)</label>
 											        </div>
 
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen eigenverzekering" type="radio" value="Eigen reisongevallenverzekering + geldig bewijs en voorwaarden">Ik verklaar te beschikken over een eigen reisongevallenverzekering en
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen eigenverzekering" type="radio" value="Eigen reisongevallenverzekering + geldig bewijs en voorwaarden"> Ik verklaar te beschikken over een eigen reisongevallenverzekering en
 											            kan hiervan indien nodig een geldig bewijs en voorwaarden
 											            voorleggen</label>
 											        </div>
 
 											        <div class="form-horizontal eigenverzekeringform">
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="email">Naam
+											                <label class="col-sm-2 col-md-2 control-label" for="naammaatschappij">Naam
 											                maatschappij</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="email" name="reizigers[%id%][verzekering][eigen][]" type="text" placeholder="Naam maatschappij" disabled>
+											                    <input class="form-control required" id="naammaatschappij" name="reizigers[%id%][verzekering][eigen][0]" type="text" placeholder="Naam maatschappij">
 											                </div>
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2control-label" for="polisnummer">Polisnummer</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="polisnummer">Polisnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="polisnummer" name="reizigers[%id%][verzekering][eigen][]" type="text" placeholder="Polisnummer" disabled>
+											                    <input class="form-control required" id="polisnummer" name="reizigers[%id%][verzekering][eigen][1]" type="text" placeholder="Polisnummer">
 											                </div>
 											            </div>
 											        </div>
 
 											        <div class="form-group">
-											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio" value="Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden">"Ik
+											            <label><input name="reizigers[%id%][verzekering][]" class="verzekeringen" type="radio" value="Ik wens een andere formule van reisongevallen verzekering, contacteer me voor de verschillende mogelijkheden"> Ik
 											            wens een andere formule van reisongevallen verzekering, contacteer
-											            me voor de verschillende mogelijkheden"</label>
+											            me voor de verschillende mogelijkheden</label>
 											        </div>
 											    </div>
 											</div>
@@ -418,7 +418,7 @@ $query = new WP_Query( $args );
 					        </div>
 					    </section>
 					    <h3>Opties</h3>
-					    <section>
+					    <section class="booking4">
 					    	<div class="row">
 								<div class="col-md-12">
 									<p>Selecteer per reiziger de nodige opties</p>
@@ -452,7 +452,7 @@ $query = new WP_Query( $args );
 					        </div>
 					    </section>
 					    <h3>Bevestiging</h3>
-					    <section>
+					    <section class="booking5">
 					    	<div class="row">
 								<div class="col-md-12">
 									<p>Hieronder vind je een overzicht van je boeking, je kan nog steeds terugkeren naar een stap en aanpassingen uitvoeren. Onderaan deze pagina kan je je boeking bevestigen </p>
@@ -507,9 +507,8 @@ $query = new WP_Query( $args );
 										<?php endif ?>
 						    		<br /><br />
 									<div class="form-group">
-									    <label>
-									      <input type="checkbox"> ik aanvaard de reisvoorwaarden. Ik heb de infofiche van de reis gelezen.
-									    </label>
+									    <input type="checkbox" class="required" id="reisvoorwaardenaccepteren" name="reisvoorwaardenaccepteren">
+									    <label for="reisvoorwaardenaccepteren"> ik aanvaard de reisvoorwaarden. Ik heb de infofiche van de reis gelezen. </label>
 									</div>
 								</div>
 					        </div>

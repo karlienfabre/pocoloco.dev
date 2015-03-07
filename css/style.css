@@ -2152,6 +2152,7 @@ h4.individueel{
 }
 .wizard>.content .form-horizontal .control-label{
 	text-align: left;
+	padding-top:0;
 }
 .wizard>.content>.body label.error {
     color: #8a1f11;
@@ -2327,4 +2328,23 @@ ol.linenums li {
 
 .logged-in.admin-bar .sticky-wrapper.is-sticky .navbar{
 	top:32px !important;
+}
+
+#bookingform .form-group label{
+	position:static;
+	margin:0.5em 0;
+}
+
+#bookingform .form-group input, #bookingform .form-group textarea, #bookingform .form-group select{
+	display:inline-block;
+}
+
+#bookingform .reizigers-verzekeringen label.error{
+	display:none;
+}
+
+#bookingform .booking5 label.error{
+	position:absolute;
+	top:2em;
+	left:0;
 }

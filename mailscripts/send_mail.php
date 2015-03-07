@@ -3,12 +3,28 @@
 	$send = false;
 	
   if (count($_POST)>0) {
+
     $name=addslashes(strip_tags($_POST["name"]));
     $email=addslashes(strip_tags($_POST["email"]));
     $phone=addslashes(strip_tags($_POST["phone"]));
     $message=addslashes(strip_tags($_POST["message"]));
+
+    if (isset($_POST["nieuwsbrief"])) {
+      $url = 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/newsletter_subscribe.php';
+      $data = array('signup_name' => $email);
+
+      $options = array(
+          'http' => array(
+              'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+              'method'  => 'POST',
+              'content' => http_build_query($data),
+          ),
+      );
+      $context  = stream_context_create($options);
+      $result = file_get_contents($url, false, $context);
+    }
     
-    $recipient  	= "pocoloco@pocolocoadventures.be";
+    $recipient  	= "contact@pocolocoadventures.be";
     $object 			= "Poco Loco Adventures - Contact";
     $htmlmessage 	= <<<MESSAGE
     <html>

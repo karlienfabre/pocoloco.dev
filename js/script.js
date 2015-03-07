@@ -131,6 +131,7 @@ $(document).ready(function() {
 			dataType : 'json',
 			data : formdata,
 			success : function(data) {
+				console.log(data);
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'><h2>Je bericht is goed verzonden</h2> <p>We beantwoorden je vraag binnen de 48 uur.</p> </div>");
 				} else {
@@ -151,15 +152,15 @@ $(document).ready(function() {
 		var formdata = $(this).serializeObject();
 
 		$.ajax({
-			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/send_mail.php',
+			url : 'http://pocolocoadventures.be/wp-content/themes/pocoloco/mailscripts/newsletter_subscribe.php',
 			type : 'post',
 			dataType : 'json',
 			data : formdata,
 			success : function(data) {
-				if (data == true) {
+				if (data.status == 'success') {
 					$('.form-respond').html("<div class='content-message'><h2>Je inschrijving is verwerkt</h2> <p>We sturen je binnenkort onze nieuwsbrief.</p> </div>");
 				} else {
-					$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen</h2> <p>Probeer het later nog eens.</p> </div>");
+					$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen</h2> <p>"+data.message+"</p> </div>");
 				}
 			},
 			error : function(xhr, err) {
@@ -170,9 +171,6 @@ $(document).ready(function() {
 	});
 
 	//booking form
-	$('.actions a[href$="#finish"]').click(function(){
-		$('#bookingform').submit();
-	});
 	$(document).on('submit', '#bookingform', function() {
 
 		var formdata = $(this).serializeObject();
@@ -403,28 +401,27 @@ $(document).ready(function() {
 		}
 	});
 
-	$('input.verzekeringen').change(function(){		
+	/*$('input.verzekeringen').change(function(){	
+    	console.log("change");
 		if($(this).hasClass('eigenverzekering')) {
 			$('.eigenverzekeringform :input').prop("disabled", false);
 		}
 		else{
 			$('.eigenverzekeringform :input').prop("disabled", true);
 		}
-	})
+	})*/
 
 	$('#gekozenkantoor').change(function(){		
 		$('#kantooremail').val($('#gekozenkantoor option:selected').data('email'));
 		$('#kantoorphone').val($('#gekozenkantoor option:selected').data('phone'));
 	})
-	$("#gekozenkantoor").trigger("change");
+	if ($(".selecteer-kantoor").length != 0) {
+		$("#gekozenkantoor").trigger("change");
+	};
 
 	$('#aantalreizigers').change(function(){
-		console.log($('#aantalreizigers').val());	
 		$('#sp-aantalreizigers').text($('#aantalreizigers').val());
-		console.log($('#sp-aantalreizigers'));
 	})
-
-	
 
 });
 
@@ -540,9 +537,6 @@ jQuery('.blog_container').slick({
 
 //Booking wizard
 var form = $("#bookingform");
-/*form.validate({
-    errorPlacement: function errorPlacement(error, element) { element.before(error); }
-});*/
 
 jQuery("#book-wizard").steps({
     headerTag: "h3",
@@ -553,20 +547,62 @@ jQuery("#book-wizard").steps({
    		previous: "vorige",
    		finish: "boeken"
     },
-    /*onStepChanging: function (event, currentIndex, newIndex)
+    onStepChanging: function (event, currentIndex, newIndex)
     {
-        form.validate().settings.ignore = ":disabled,:hidden";
-        return form.valid();
+    	// Always allow step back to the previous step even if the current step is not valid!
+        if (currentIndex > newIndex)
+        {
+            return true;
+        }
+
+        // Needed in some cases if the user went back (clean up)
+        if (currentIndex > newIndex)
+        {
+            // To remove error styles
+            form.find(".body:eq(" + newIndex + ") label.error").remove();
+            form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
+        }
+
+        $('.panel-collapse.collapse').show().removeClass('collapse').addClass('in').css('height', 'auto');
+
+        return validateBookingform();
     },
     onFinishing: function (event, currentIndex)
     {
-        form.validate().settings.ignore = ":disabled,:hidden";
-        return form.valid();
+        return validateBookingform();
     },
     onFinished: function (event, currentIndex)
     {
         $('#bookingform').submit();
-    }*/
+    }
+});
+
+function validateBookingform(){
+
+	form.validate({
+		debug:true
+	}).settings.ignore = ":disabled,:hidden";
+    return form.valid();
+}
+
+jQuery.extend(jQuery.validator.messages, {
+    required: "Dit veld is verplicht",
+    //remote: "Please fix this field.",
+    email: "Gelieve een geldig e-mailadres in te vullen",
+    //url: "Please enter a valid URL.",
+    date: "Gelieve een datum in te te vullen (YYYY/MM/DD)",
+    dateISO: "Gelieve een datum in te te vullen (YYYY/MM/DD)",
+    number: "Please enter a valid number.",
+    digits: "Please enter only digits.",
+    creditcard: "Please enter a valid credit card number.",
+    equalTo: "Please enter the same value again.",
+    accept: "Please enter a value with a valid extension.",
+    maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+    minlength: jQuery.validator.format("Please enter at least {0} characters."),
+    rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+    range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+    max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+    min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
 });
 
 //testimonial slider

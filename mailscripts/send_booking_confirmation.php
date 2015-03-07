@@ -29,9 +29,9 @@ if (count($_POST)>0) {
 
     $headers  = "MIME-Version: 1.0\n";
     $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
-    $headers .= "From: Poco Loco Adventures <pocoloco@pocolocoadventures.be> \r\n";
+    $headers .= "From: Poco Loco Adventures <boeking@pocolocoadventures.be> \r\n";
     $headers .= 'Cc: '. $emailkantoor . " \r\n";
-    $headers .= 'Cc: pocoloco@pocolocoadventures.be'. " \r\n";
+    $headers .= 'Cc: boeking@pocolocoadventures.be'. " \r\n";
     $headers .= "Reply-To: " . $emailkantoor . " \r\n";
     if(mail($recipient, $object, $htmlmessage, $headers)){
       $send = true;
