@@ -27,12 +27,12 @@ function pocoloco_theme_setup() {
 }
 add_action( 'after_setup_theme', 'pocoloco_theme_setup' );
 
-function pocoloco_scripts(){
+/*function pocoloco_scripts(){
   if (is_front_page()) {
     wp_enqueue_script( 'poco-blog-slider', get_root() . 'js/blog-slider.js', array(), false, true );
   }
 }
-add_action('wp_enqueue_scripts', 'pocoloco_scripts');
+add_action('wp_enqueue_scripts', 'pocoloco_scripts');*/
 
 function pocoloco_excerpt_more( $more ) {
   return '... <p><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Lees meer</a></p>';
