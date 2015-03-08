@@ -20,14 +20,14 @@
 				<?php if ( !empty($youtube_url) ): ?>
 				<div class="row text-center search">
 					<div class="mybutton small choice foto">
-						<button id="submit" type="submit">
-							<span data-hover="Foto">Foto</span>
-						</button>
+						<span id="submit" type="submit">
+							<button data-hover="Foto">Foto</button>
+						</span>
 					</div>
 					<div class="mybutton small choice video non-active">
-						<button id="submit" type="submit">
-							<span data-hover="Film">Film</span>
-						</button>
+						<span id="submit" type="submit">
+							<button data-hover="Film">Film</button>
+						</span>
 					</div>
 				</div>
 				<?php endif ?>
@@ -200,9 +200,9 @@
 							?>
 							<div class="travel-date">
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>">
-										<span data-hover="Boek">Boek</span>
-									</button>
+									<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>">
+										<button data-hover="Boek">Boek</button>
+									</span>
 								</div>
 								<p><?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
 								<span class="travel-price">&euro;<?php echo get_price($data['prijs']); ?></span><br />
@@ -237,9 +237,9 @@
 									€<?php echo get_price($data['prijs']); ?></br>
 								</span>
 								<div class="mybutton medium book">
-									<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>&amp;di=1">
-										<span data-hover="Boek">Boek</span>
-									</button>
+									<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>&amp;di=1">
+										<button data-hover="Boek">Boek</button>
+									</span>
 								</div>
 							</div>
 

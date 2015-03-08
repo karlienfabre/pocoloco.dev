@@ -90,9 +90,9 @@
 		<!-- Blog Section -->
 		<div class="row text-center">
 			<div class="mybutton big">
-				<button type="link" class="linkbutton" data-url="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">
-					<span data-hover="Overzicht">Terug naar het</span>
-				</button>
+				<span type="link" class="linkbutton" data-url="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">
+					<button data-hover="Overzicht">Terug naar het</button>
+				</span>
 			</div>
 		</div>
 

@@ -26,38 +26,42 @@ Template Name: Reizen template
 				<?php endwhile; ?>
 			<?php endif; ?>
 
-				<div class="row text-center search filters" id="filters">
-					<div class="mybutton big choice non-active">
-						<button>
-							<span data-filter=".groepsreizen" data-hover="Groepsreizen"><i class="fa fa-check-circle-o"></i>Groepsreizen</span>
-						</button>
+				<div class="row text-center search filters" id="">
+					<div class="mybutton small label col-xs-12" id="alleReizen">
+						<span>
+							<button data-filter="*" data-hover="AlleReizen"><i class="fa fa-ban"></i>Alle reizen</button>
+						</span>
 					</div>
-					<div class="mybutton big choice non-active">
-						<button>
-							<span data-filter=".individueel" data-hover="Individueel"><i class="fa fa-check-circle-o"></i>Individueel</span>
-						</button>
+					<div class="clearfix visible-xs button-seperator-xs"></div>
+					<div class="mybutton small label non-active ">
+						<span>
+							<button data-filter=".groepsreizen" data-hover="Groepsreizen"><i class="fa fa-check-circle-o"></i>Groepsreizen</button>
+						</span>
 					</div>
-					<div class="mybutton big choice non-active">
-						<button>
-							<span data-filter=".activiteiten" data-hover="Activiteiten"><i class="fa fa-check-circle-o"></i>Activiteiten</span>
-						</button>
+					<div class="clearfix visible-xs button-seperator-xs"></div>
+					<div class="mybutton small label non-active ">
+						<span>
+							<button data-filter=".individueel" data-hover="Individueel"><i class="fa fa-check-circle-o"></i>Individueel</button>
+						</span>
+					</div>
+					<div class="clearfix visible-xs button-seperator-xs"></div>
+					<div class="mybutton small label non-active">
+						<span>
+							<button data-filter=".activiteiten" data-hover="Activiteiten"><i class="fa fa-check-circle-o"></i>Activiteiten</span>
+						</span>
 					</div>
 				</div>
 
 				<div class="row text-center search filters">
-					<div class="mybutton small label" id="alleReizen">
-						<button>
-							<span data-filter="*" data-hover="AlleReizen"><i class="fa fa-ban"></i>Alle reizen</span>
-						</button>
-					</div>
 
 					<?php $terms = get_terms('reiscategorie'); ?>
 					<?php foreach ($terms as $term): ?>
 						<div class="mybutton small non-active label">
-							<button>
-								<span data-filter=".<?php echo $term->slug ?>" data-hover="<?php echo $term->name ?>"><i class="fa fa-check-circle-o"></i><?php echo $term->name ?></span>
-							</button>
+							<span>
+								<button data-filter=".<?php echo $term->slug ?>" data-hover="<?php echo $term->name ?>"><i class="fa fa-check-circle-o"></i><?php echo $term->name ?></button>
+							</span>
 						</div>
+						<div class="clearfix visible-xs button-seperator-xs"></div>
 					<?php endforeach ?>
 				</div>
 
@@ -147,9 +151,9 @@ Template Name: Reizen template
 									</div> 
 
 									<div class="mybutton small">
-										<button class="linkbutton" data-url="#">
-											<span data-hover="Bekijken">Bekijken</span>
-										</button>
+										<span class="linkbutton" data-url="#">
+											<button data-hover="Bekijken">Bekijken</button>
+										</span>
 									</div>
 								</a>
 							</div>
