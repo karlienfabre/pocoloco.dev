@@ -2150,7 +2150,7 @@ h4.individueel{
     display: block;
     border: 1px solid #ccc;
 }
-.wizard>.content>.body input[type="checkbox"] {
+.wizard>.content>.body input[type="checkbox"], .wizard>.content>.body input[type="radio"]  {
     display: inline-block;
 }
 .wizard>.content>.body input.error {
@@ -2164,6 +2164,7 @@ h4.individueel{
 }
 .wizard>.content .form-horizontal .control-label{
 	text-align: left;
+	padding-top:0;
 }
 .wizard>.content>.body label.error {
     color: #8a1f11;
@@ -2335,4 +2336,27 @@ ol.linenums li {
     color: #bebec5;
     line-height: 20px;
     text-shadow: 0 1px 0 #fff;
+}
+
+.logged-in.admin-bar .sticky-wrapper.is-sticky .navbar{
+	top:32px !important;
+}
+
+#bookingform .form-group label{
+	position:static;
+	margin:0.5em 0;
+}
+
+#bookingform .form-group input, #bookingform .form-group textarea, #bookingform .form-group select{
+	display:inline-block;
+}
+
+#bookingform .reizigers-verzekeringen label.error{
+	display:none;
+}
+
+#bookingform .booking5 label.error{
+	position:absolute;
+	top:2em;
+	left:0;
 }
