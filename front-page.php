@@ -21,9 +21,9 @@
 						<?php echo get_field('over_ons_tekst'); ?>
 					</p><br /><br />
 					<div class="mybutton ultra">
-						<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
-							<span data-hover="Ontdekken">Alle reizen</span>
-						</button>
+						<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
+							<button data-hover="Ontdekken">Alle reizen</button>
+						</span>
 					</div>
 				</div>
 				<!-- Section title -->
@@ -313,9 +313,9 @@
 					<div class="col-md-10 col-md-offset-1">
 						<div class="element-line">
 							<div class="mybutton ultra">
-								<button type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
-									<span data-hover="Ontdekken">Alle reizen</span>
-								</button>
+								<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
+									<button data-hover="Ontdekken">Alle reizen</button>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -354,9 +354,9 @@
 										<div class="action form-button medium">
 
 											<div class="mybutton medium">
-												<button id="submit" type="submit">
-													<span data-hover="Inschrijven">Inschrijven</span>
-												</button>
+												<span id="submit" type="submit">
+													<button data-hover="Inschrijven">Inschrijven</button>
+												</span>
 											</div>
 
 										</div>
@@ -434,9 +434,9 @@
 													<?php echo get_field('intro'); ?>
 												</p>
 												<div class="mybutton medium">
-													<button type="link" class="linkbutton" data-url="<?php the_permalink(); ?>">
-														<span data-hover="Lees meer">Lees meer</span>
-													</button>
+													<span type="link" class="linkbutton" data-url="<?php the_permalink(); ?>">
+														<button data-hover="Lees meer">Lees meer</button>
+													</span>
 												</div>
 											</div>
 										</div>
