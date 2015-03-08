@@ -17,7 +17,6 @@
   font-family: 'DIN-MediumAlternate';
   src: url('../fonts/DIN/DIN-MediumAlternate.otf'); /* IE9 Compat Modes */
   src: url('../fonts/DIN/DIN-MediumAlternate.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/DIN/DIN-MediumAlternate.woff') format('woff'), /* Pretty Modern Browsers */
        url('../fonts/DIN/DIN-MediumAlternate.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('../fonts/DIN/DIN-MediumAlternate.svg#DIN-MediumAlternate') format('svg'); /* Legacy iOS */
 }
@@ -186,6 +185,10 @@ blockquote {
 .panel-group .panel-heading a {
 	display: block;
 }
+.faqpanel-group .panel-heading a,.faqpanel-group .panel-heading i {
+	padding-left: 5px;
+	padding-right: 5px;
+}
 .panel-group .panel-heading a.collapsed {
 	color: #222;
 }
@@ -260,9 +263,6 @@ blockquote {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-right: 0;
-}
-.navbar-brand img{
-	width: 12.1%;
 }
 
 #navigation-sticky-wrapper {
@@ -1100,14 +1100,14 @@ div.mc-image {
 
 .travel-box{
 	margin-bottom: 20px;
-	/* min-height: 423px !important; */
+	min-height: 423px !important;
 }
 
 .travel-box a {
 	background: #f5f5f5;
 	padding: 30px 20px;
 	display: block;
-	/* min-height: 423px !important; */
+	min-height: 423px !important;
 }
 .travel-box a:hover{
 	color: #FBB809;
@@ -1658,44 +1658,43 @@ footer img{
 	padding-left: 0px;
 	right: 0px;
 }
-
 /* ##### CUSTOM BUTTON ##### */
-.mybutton a:hover, .mybutton button:hover, .mybutton a:focus
-.mybutton button:focus {
+.mybutton a:hover, .mybutton span:hover, .mybutton a:focus
+.mybutton span:focus {
 	outline: none;
 }
-.mybutton.ultra a, .mybutton.ultra button {
+.mybutton.ultra a, .mybutton.ultra span {
 	font-size: 20px;
 	line-height: 60px;
 }
-.mybutton.ultra a span, .mybutton.ultra button span {
+.mybutton.ultra a button, .mybutton.ultra span button {
 	padding: 0 30px;
 }
-.mybutton.big a, .mybutton.big button {
+.mybutton.big a, .mybutton.big span {
 	font-size: 17px;
 	line-height: 50px;
 }
-.mybutton.big a span, .mybutton.big button span {
+.mybutton.big a button, .mybutton.big span button {
 	padding: 0 20px;
 }
-.mybutton.medium a, .mybutton.medium button {
+.mybutton.medium a, .mybutton.medium span {
 	font-size: 14px;
 	line-height: 40px;
 }
-.mybutton.medium a span, .mybutton.medium button span {
+.mybutton.medium a button, .mybutton.medium span  button {
 	padding: 0 15px;
 }
-.mybutton.small a, .mybutton.small button {
+.mybutton.small a, .mybutton.small span {
 	font-size: 12px;
 	line-height: 35px;
 }
-.mybutton.small a span, .mybutton.small button span {
+.mybutton.small a button, .mybutton.small span button {
 	padding: 0 10px;
 }
 .mybutton {
 	display: inline;
 }
-.mybutton a, .mybutton button {
+.mybutton a, .mybutton span, .mybutton button {
 	text-transform: uppercase;
 	border: 0;
 	padding: 0;
@@ -1707,7 +1706,7 @@ footer img{
 	text-shadow: 0 0 1px rgba(255,255,255,0.3);
 	letter-spacing: 0;
 }
-.mybutton a span, .mybutton button span {
+.mybutton a button, .mybutton span button {
 	color: #fff;
 	text-align: center;
 	position: relative;
@@ -1855,9 +1854,14 @@ footer img{
 .co-operation span{
 	color: #BFBFBF;
 }
-
-.search{
+#filters{
 	margin-top: 30px;
+}
+.search{
+	margin-top: 15px;
+}
+.button-seperator-xs{
+	height: 15px;
 }
 #topvideo{
 	display: none;
@@ -1878,6 +1882,8 @@ footer img{
 }
 .row.center-vertical{
 	display: table;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 .vertical-center-element{
 	display: table-cell;
@@ -1886,8 +1892,14 @@ footer img{
 .vertical-centered-text{
 	padding-right: 60px;
 }
+.vertical-centered-text h2, .vertical-centered-text p{
+	padding-left: 15px;
+}
 .testimonial{
 	margin-bottom: 20px;
+}
+.testimonial p{
+	width: 120%;
 }
 .bgwhite{
 	background-color: #fff;
@@ -2138,7 +2150,7 @@ h4.individueel{
     display: block;
     border: 1px solid #ccc;
 }
-.wizard>.content>.body input[type="checkbox"], .wizard>.content>.body input[type="radio"] {
+.wizard>.content>.body input[type="checkbox"] {
     display: inline-block;
 }
 .wizard>.content>.body input.error {
@@ -2152,7 +2164,6 @@ h4.individueel{
 }
 .wizard>.content .form-horizontal .control-label{
 	text-align: left;
-	padding-top:0;
 }
 .wizard>.content>.body label.error {
     color: #8a1f11;
@@ -2324,27 +2335,4 @@ ol.linenums li {
     color: #bebec5;
     line-height: 20px;
     text-shadow: 0 1px 0 #fff;
-}
-
-.logged-in.admin-bar .sticky-wrapper.is-sticky .navbar{
-	top:32px !important;
-}
-
-#bookingform .form-group label{
-	position:static;
-	margin:0.5em 0;
-}
-
-#bookingform .form-group input, #bookingform .form-group textarea, #bookingform .form-group select{
-	display:inline-block;
-}
-
-#bookingform .reizigers-verzekeringen label.error{
-	display:none;
-}
-
-#bookingform .booking5 label.error{
-	position:absolute;
-	top:2em;
-	left:0;
 }

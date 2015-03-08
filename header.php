@@ -14,6 +14,8 @@
 		<link rel="apple-touch-icon" href="<?php root() ?>img/ico-114.png" sizes="114x114">
 		<link rel="apple-touch-icon" href="<?php root() ?>img/ico-144.png" sizes="144x144">
 
+		<script src="<?php root() ?>js/css_browser_selector.js" type="text/javascript"></script>
+
 		<!-- Stylesheet -->
 		<link href="<?php root() ?>css/normalize.css" rel="stylesheet" type="text/css" />
 		<link href="<?php root() ?>css/bootstrap.min.css" rel="stylesheet">

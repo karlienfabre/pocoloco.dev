@@ -196,6 +196,19 @@ Author: Karlien Fabré
 		max-height: 35px;
 	}
 
+	.highlighted-travels .pricebutton a{
+		margin-bottom: 10px;
+	}
+
+	#bloglatest .blog-element .blog-inner .blog-detail .blog-content p.blog-intro {
+		min-height: 260px;
+		max-height: 260px;
+	}
+
+	footer img{
+		margin-bottom: 25px;
+	}
+
 }
 
 /* Small devices (tablets, 768px and up) */
@@ -227,7 +240,6 @@ Author: Karlien Fabré
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
 	.flexslider{ text-align:left;}
 
 	#home .section-title h1 {
@@ -239,13 +251,13 @@ Author: Karlien Fabré
 
 	.project-description{ text-align:inherit;}
 	.navbar .nav > li > a{ padding:0 15px;}
-	.mybutton a, .mybutton button {
+	.mybutton a, .mybutton span {
 		-webkit-perspective: 1000px;
 		-moz-perspective: 1000px;
 		perspective: 1000px;
 		letter-spacing: 0;
 	}
-	.mybutton a span, .mybutton button span {
+	.mybutton a button, .mybutton span button {
 		-webkit-transition: -webkit-transform 0.3s;
 		-moz-transition: -moz-transform 0.3s;
 		transition: transform 0.3s;
@@ -256,12 +268,12 @@ Author: Karlien Fabré
 		-moz-transform-style: preserve-3d;
 		transform-style: preserve-3d;
 	}
-	.mybutton a:hover span, .mybutton button:hover span {
+	.mybutton a:hover button, .mybutton span:hover button {
 		-webkit-transform: rotateX(90deg) translateY(-22px);
 		-moz-transform: rotateX(90deg) translateY(-22px);
 		transform: rotateX(90deg) translateY(-22px);
 	}
-	.csstransforms3d .mybutton a span::before, .csstransforms3d .mybutton button span::before {
+	.csstransforms3d .mybutton a button::before, .csstransforms3d .mybutton span button::before {
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -280,8 +292,8 @@ Author: Karlien Fabré
 	}
 
 	.mybutton2 a, .mybutton2 button {
-	overflow: hidden;
-	margin: 0 15px;
+		overflow: hidden;
+		margin: 0 15px;
 	}
 	.mybutton2 a span, .mybutton2 button span {
 		display: block;
@@ -312,6 +324,50 @@ Author: Karlien Fabré
 		-webkit-transform: translateX(0%);
 		-moz-transform: translateX(0%);
 		transform: translateX(0%);
+	}
+
+
+
+	/*IE en FF button fixes*/
+	.gecko .mybutton a, .gecko .mybutton span, .ie .mybutton a, .ie .mybutton span {
+		-webkit-perspective: none;
+		-moz-perspective: none;
+		perspective: none;
+		letter-spacing: 0;
+	}
+	.gecko .mybutton a button, .gecko .mybutton span button, .ie .mybutton a button, .ie .mybutton span button {
+		-webkit-transition: none;
+		-moz-transition: none
+		transition: transform none;
+		-webkit-transform-origin: none;
+		-moz-transform-origin:none;
+		transform-origin: none;
+		-webkit-transform-style: none;
+		-moz-transform-style:none;
+		transform-style: none;
+	}
+	.gecko .mybutton a:hover button, .gecko .mybutton span:hover button, .ie .mybutton a:hover button, .ie .mybutton span:hover button  {
+		-webkit-transform: none;
+		-moz-transform: none;
+		transform: none;
+	}
+	.gecko .csstransforms3d .mybutton a button::before, .gecko .csstransforms3d .mybutton span button::before,
+	.ie .csstransforms3d .mybutton a button::before, .ie .csstransforms3d .mybutton span button::before  {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: attr(data-hover);
+		-webkit-transition:none;
+		-moz-transition: none;
+		transition: none;
+		-webkit-transform: none;
+		-moz-transform:none;
+		transform: none;
+		-webkit-transform-origin: none;
+		-moz-transform-origin:none;
+		transform-origin: none;
 	}
 
 }

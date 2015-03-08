@@ -66,3 +66,31 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 	background: #2184be;
 }
 
+
+/*FF en IE fix*/
+.section-title .lead strong, .progress .progress-bar, .nav-tabs > li > a, .parallax-box a:hover, .pager .puls > a:hover, .pricing-box .pricing-featured li.price-row, .pager .pagination li a:hover, .widget .widget-tag li a:hover, .hi-icon-effect-1 .hi-icon, .mybutton a button, .mybutton span button, .csstransforms3d .mybutton a:hover button::before, .csstransforms3d .mybutton span:hover button::before, .mybutton2 a span, .mybutton2 button span{
+	background: #FBB809;
+}/* BACKGROUND STANDARD COLOR */
+.csstransforms3d .mybutton a button::before, .csstransforms3d .mybutton span button::before, .mybutton2 a::before {
+	background: #FBB809;
+} /* BACKGROUND DARK COLOR */
+.mybutton.non-active a button, .mybutton.non-active span button, .csstransforms3d .mybutton.non-active a:hover button::before, .csstransforms3d .mybutton.non-active span:hover button::before{
+	background: #666666
+}
+.csstransforms3d .mybutton.non-active a button::before, .csstransforms3d .mybutton.non-active span button::before {
+	background: #666666;
+}
+
+
+.mybutton.label span button{
+	background: #2184be;
+}
+.mybutton.label.non-active span button{
+	background: #666666;
+}
+.csstransforms3d .mybutton.label a button::before, .csstransforms3d .mybutton.label span button::before {
+	background: #2184be;
+}
+.csstransforms3d .mybutton.label.non-active a button::before, .csstransforms3d .mybutton.label.non-active span button::before {
+	background: #666666;
+}
