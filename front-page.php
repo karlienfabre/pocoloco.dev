@@ -296,7 +296,7 @@
 														<a href="<?php the_permalink(); ?>"><span data-hover="Vanaf €<?php echo $minprice; ?> pp">Vanaf €<?php echo $minprice; ?> pp</span></a>
 													</div>
 													<div class="mybutton medium">
-														<a href="<?php the_permalink(); ?>"> <span data-hover="Ontdek deze reis">Ontdek deze reis</span> </a>
+														<a href="<?php the_permalink(); ?>"> <button data-hover="Ontdek deze reis">Ontdek deze reis</button> </a>
 													</div>
 												</div>
 											</div>
