@@ -1,16 +1,6 @@
 //Page Preloader
 $(window).load(function() {
 
-	// Travel Isotope
-	var container = $('#travel-wrap');
-	container.isotope({
-		animationEngine : 'best-available',
-		itemSelector: '.travel-box ',
-		animationOptions : {
-			duration : 200,
-			queue : false
-		},
-	});
 
 	$(".filters span").click(function(){
 		var filter = $(this).children().attr("data-filter")
@@ -248,7 +238,6 @@ $(document).ready(function() {
 		topSpacing : 0
 	});
 
-	//$(".container").fitVids();
 
 	$('a.external').click(function() {
 		var url = $(this).attr('href');
@@ -257,44 +246,6 @@ $(document).ready(function() {
 		});
 		$("#intro-loader").fadeIn("slow");
 		return false;
-	});
-
-	$('.flexslider').flexslider({
-		animation : "slide",
-		slideshowSpeed: 3200,
-		pauseOnHover: true,
-	});
-
-	$('.intro-flexslider').flexslider({
-		animation : "fade",
-		touch: false,
-		directionNav : false,
-		controlNav : false,
-		slideshowSpeed : 5000,
-		animationSpeed : 600,
-	});
-
-
-	// Radial progress bar
-	$('.cart').appear(function() {
-		var easy_pie_chart = {};
-		$('.circular-item').removeClass("hidden");
-		$('.circular-pie').each(function() {
-			var text_span = $(this).children('span');
-			$(this).easyPieChart($.extend(true, {}, easy_pie_chart, {
-				size : 250,
-				animate : 2000,
-				lineWidth : 6,
-				lineCap : 'square',
-				barColor : $(this).data('color'),
-				lineWidth : 20,
-				trackColor : '#2B2925',
-				scaleColor : false,
-				onStep : function(value) {
-					text_span.text(parseInt(value, 10) + 1 + '%');
-				}
-			}));
-		});
 	});
 
 	$(".short-text").each(function(){
@@ -370,24 +321,8 @@ $(document).ready(function() {
 
 	$('.fa-question-circle').tooltip();
 
-
-	//button action
-	$("span.linkbutton").click(function(){
-		var url = $(this).data("url");
-		$(location).attr('href', url);
-	});
-
-	//choice buttons 
+	//choice video/film 
 	$(".choice").click(function(){
-		if( $(this).hasClass("non-active") ){
-
-			$(".choice").each(function(){
-				$(this).addClass("non-active");
-			});
-
-			$(this).removeClass("non-active");
-		}
-
 		if( $(this).hasClass("video") ){
 			$("#topslider").css("display","none");
 			$("#topvideo").css("display","block");
@@ -487,35 +422,6 @@ function parallaxInit() {
 	$('#seven-parallax').parallax("30%", 0.1);
 	/*add as necessary*/
 }
-
-// Number Counter
-(function() {
-	var Core = {
-		initialized : false,
-		initialize : function() {
-			if (this.initialized)
-				return;
-			this.initialized = true;
-			this.build();
-		},
-		build : function() {
-			this.animations();
-		},
-		animations : function() {
-			// Count To
-			$(".number-counters [data-to]").each(function() {
-				var $this = $(this);
-				$this.appear(function() {
-					$this.countTo({});
-				}, {
-					accX : 0,
-					accY : -150
-				});
-			});
-		},
-	};
-	Core.initialize();
-})();
 
 //blog slider / homepage
 jQuery('.blog_container').slick({
