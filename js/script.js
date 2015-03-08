@@ -1,7 +1,5 @@
 //Page Preloader
 $(window).load(function() {
-	$("#intro-loader").delay(50).fadeOut();
-	$(".mask").delay(100).fadeOut("slow");
 
 	// Travel Isotope
 	var container = $('#travel-wrap');

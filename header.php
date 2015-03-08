@@ -55,12 +55,6 @@
 
 	<body data-spy="scroll" data-target=".navbar" data-offset="75" <?php body_class(); ?>>
 
-		<!-- Intro loader -->
-		<div class="mask">
-			<div id="intro-loader"></div>
-		</div>
-		<!-- Intro loader -->
-
 	<?php if (is_front_page()): ?>
 		<!-- Home Section -->
 		<section id="home">
