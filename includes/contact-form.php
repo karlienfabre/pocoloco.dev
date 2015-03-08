@@ -63,9 +63,9 @@
 					<div class="action form-button medium">
 
 						<div class="mybutton medium">
-							<button id="submit" type="submit">
-								<span data-hover="Verzenden">Verzenden</span>
-							</button>
+							<span id="submit" type="submit">
+								<button data-hover="Verzenden">Verzenden</button>
+							</span>
 						</div>
 
 					</div>
