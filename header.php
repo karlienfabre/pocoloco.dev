@@ -108,7 +108,7 @@
 						<i class="fa fa-bars fa-2x"></i>
 					</button>
 					<a id="brand" class="navbar-brand" href="<?php echo home_url('/'); ?>"> 
-						<img src="<?php root() ?>img/logo.png" alt="logo poco loco adventures"> 
+						<img src="<?php root() ?>img/logo_nav.png" alt="logo poco loco adventures"> 
 					</a>
 				</div>
 				<?php 
