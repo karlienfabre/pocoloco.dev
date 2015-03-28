@@ -161,6 +161,8 @@ $(document).ready(function() {
 	//booking form
 	$(document).on('submit', '#bookingform', function() {
 
+		$('div.actions, section.booking5').slideUp();
+
 		var formdata = $(this).serializeObject();
 
 		$.ajax({

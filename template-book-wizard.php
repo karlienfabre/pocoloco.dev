@@ -128,7 +128,7 @@ $query = new WP_Query( $args );
 									<?php if (isset($_GET['di'])): ?>
 							        <div class="form-group">
 										<label for="vertrekdatum">Vertrekdatum tussen <?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?></label>
-										<input type="date" id="vertrekDatum" name="vertrekDatum" class="form-control required dateISO">
+										<input type="text" id="vertrekDatum" name="vertrekDatum" class="form-control required" placeholder="DD/MM/YYYY">
 										<!-- <input type="date" id="vertrekdatum" name="vertrekdatum" class="required" min="<?php echo date("Y-m-d", strtotime($reisdata['vertrekdatum'])); ?>" max="<?php echo date("Y-m-d", strtotime($reisdata['einddatum'])); ?>"> -->
 									</div>
 									<?php endif ?>
@@ -392,7 +392,7 @@ $query = new WP_Query( $args );
 											                maatschappij</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control required" id="naammaatschappij" name="reizigers[%id%][verzekering][eigen][0]" type="text" placeholder="Naam maatschappij">
+											                    <input class="form-control" id="naammaatschappij" name="reizigers[%id%][verzekering][eigen][0]" type="text" placeholder="Naam maatschappij">
 											                </div>
 											            </div>
 
@@ -400,7 +400,7 @@ $query = new WP_Query( $args );
 											                <label class="col-sm-2 col-md-2 control-label" for="polisnummer">Polisnummer</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control required" id="polisnummer" name="reizigers[%id%][verzekering][eigen][1]" type="text" placeholder="Polisnummer">
+											                    <input class="form-control" id="polisnummer" name="reizigers[%id%][verzekering][eigen][1]" type="text" placeholder="Polisnummer">
 											                </div>
 											            </div>
 											        </div>
