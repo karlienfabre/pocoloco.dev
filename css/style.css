@@ -195,7 +195,10 @@ blockquote {
 .panel-group .panel-body {
 	padding-top: 0;
 }
-
+.faqpanel-group .panel-heading a,.faqpanel-group .panel-heading i {
+	padding-left: 5px;
+	padding-right: 5px;
+}
 .media {
 	border-top: 1px solid #dedede;
 	padding-top: 25px;
