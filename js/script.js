@@ -408,7 +408,12 @@ $(function() {
 		}
 	});
 });
-
+//Flexslider
+$('.flexslider').flexslider({
+	animation : "slide",
+	slideshowSpeed: 3200,
+	pauseOnHover: true,
+});
 //Parallax
 $(window).bind('load', function() {
 	parallaxInit();
