@@ -15,6 +15,7 @@ $(window).load(function() {
 	});
 	
 	function filterItems(filter){
+		var container = $('#travel-wrap');
 		container.isotope({
 			filter : filter,
 		}, function noResultsCheck(){
@@ -521,6 +522,28 @@ jQuery('.testimonial_wrapper').slick({
   infinite: false,
   slidesToShow: 1,
   slidesToScroll: 1
+});
+
+//choice buttons 
+$(".choice").click(function(){
+	if( $(this).hasClass("non-active") ){
+
+		$(".choice").each(function(){
+			$(this).addClass("non-active");
+		});
+
+		$(this).removeClass("non-active");
+	}
+
+	if( $(this).hasClass("video") ){
+		$("#topslider").css("display","none");
+		$("#topvideo").css("display","block");
+	}
+
+	if( $(this).hasClass("foto") ){
+		$("#topvideo").css("display","none");
+		$("#topslider").css("display","block");			
+	}
 });
 
 $.fn.serializeObject = function()

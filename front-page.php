@@ -21,9 +21,11 @@
 						<?php echo get_field('over_ons_tekst'); ?>
 					</p><br /><br />
 					<div class="mybutton ultra">
-						<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
+						<a href="<?php echo home_url('/'); ?>reizen">
+						<span>
 							<button data-hover="Ontdekken">Alle reizen</button>
 						</span>
+						</a>
 					</div>
 				</div>
 				<!-- Section title -->
@@ -313,9 +315,11 @@
 					<div class="col-md-10 col-md-offset-1">
 						<div class="element-line">
 							<div class="mybutton ultra">
-								<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>reizen">
+								<a href="<?php echo home_url('/'); ?>reizen">
+								<span>
 									<button data-hover="Ontdekken">Alle reizen</button>
 								</span>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -434,9 +438,11 @@
 													<?php echo get_field('intro'); ?>
 												</p>
 												<div class="mybutton medium">
-													<span type="link" class="linkbutton" data-url="<?php the_permalink(); ?>">
-														<button data-hover="Lees meer">Lees meer</button>
+													<a href="<?php the_permalink(); ?>">
+													<span>
+														<button data-hover="Ontdekken">Lees meer</button>
 													</span>
+													</a>
 												</div>
 											</div>
 										</div>
