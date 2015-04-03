@@ -211,12 +211,8 @@
 							<?php endforeach; ?>
 
 						</div>
-					</div>
-							
-
-					<?php if (get_field('reisdata_individueel')): ?>
-
-					<div class="col-md-3 col-md-offset-1">
+						
+						<?php if (get_field('reisdata_individueel')): ?>
 						<h4 class="individueel">Individueel reizen</h4>
 						<div class="travel-dates">
 
@@ -246,9 +242,14 @@
 						<?php endforeach; ?>
 
 						</div>
-					</div>
 
 					<?php endif ?>
+
+
+					</div>
+							
+
+					
 
 					<?php if (get_field('reisdata_info')): ?>
 
@@ -317,7 +318,7 @@
 						<?php if (get_field('reisfiche')): ?>
 							<a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank"><h4>download reisfiche</h4></a>
 							<p>
-								Alle info over deze reis vind je samengevat in deze reisfiche, <a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank">klik hier om de reisfiche te downloaden</a>.
+								Alle info over deze reis vind je samengevat in deze reisfiche, <a href="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url']; ?>" target="_blank">klik hier</a> om de reisfiche te downloaden.
 							</p>
 						<?php else: ?>
 							<h4>download reisfiche</h4>
