@@ -1947,17 +1947,20 @@ h2.group{
 .travel-date p{
 	margin-bottom: 3px;
 }
+.travel-date i.fa-flag{
+	margin-right: 8px;
+}
+.travel-date i.blackflag{
+	color: #000;
+}
 .travel-date i.greenflag{
 	color: green;
-	margin-right: 8px;
 }
 .travel-date i.yellowflag{
 	color: #FBB809;
-	margin-right: 8px;
 }
 .travel-date i.redflag{
 	color: red;
-	margin-right: 8px;
 }
 .travel-date span.flag{
 	font-size: 11px;

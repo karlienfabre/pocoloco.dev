@@ -177,25 +177,25 @@
 								$reisdata = get_field('reisdata');
 								foreach($reisdata as $key => $data) :
 
-									switch ($data['aantal_beschikbare_plaatsen']) {
-										case 0:
-											$flag = 'redflag';
+									switch ($data['status_reis']) {
+										case 'red':
 											$flagtext = 'deze reis is volzet';
 											break;
-										case 1:
-										case 2:
-											$flag = 'yellowflag';
+										case 'yellow':
 											$flagtext = 'laatste plaatsen';
 											break;
-										default:
-											$flag = 'greenflag';
-											$flagtext = 'nog plaatsen beschikbaar';
+										case 'green':
+											$flagtext = 'afreis gegarandeerd';
 											break;
+										default:
+											$flagtext = 'nog plaatsen beschikbaar';
 									}
 
-									if($data['aantal_beschikbare_plaatsen'] == false){
-										$flag = 'greenflag';
+									$flag = $data['status_reis'] . 'flag';
+
+									if($data['status_reis'] == false){
 										$flagtext = 'nog plaatsen beschikbaar';
+										$flag = 'blackflag';
 									}
 							?>
 							<div class="travel-date">
@@ -208,6 +208,7 @@
 								<span class="travel-price">&euro;<?php echo get_price($data['prijs']); ?></span><br />
 								<i class="fa fa-flag <?php echo $flag; ?>"></i><span class="flag"><?php echo $flagtext; ?></span>
 							</div>
+							
 							<?php endforeach; ?>
 
 						</div>
