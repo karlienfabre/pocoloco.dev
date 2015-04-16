@@ -45,8 +45,17 @@
 		<!-- Parallax Container -->
 
 		<footer class="text-center">
-			<img src="<?php root() ?>img/logo.png" alt="" />
+			<div class="row">
+				<div class="col-md-2 col-sm-2 col-sm-offset-1  col-xs-6 col-md-offset-1">
+					<img src="<?php root() ?>img/logo_aga.jpg" alt="" />
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo_joker.jpg" alt="" /></div>
+				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo.png" alt="" /></div>
+				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo_mdm.jpg" alt="" /></div>
+				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo_vaude.jpg" alt="" /></div>
+			</div>
 		</footer>
+
 
 
 		<!-- Js Library -->
