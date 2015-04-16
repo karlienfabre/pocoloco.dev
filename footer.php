@@ -47,12 +47,26 @@
 		<footer class="text-center">
 			<div class="row">
 				<div class="col-md-2 col-sm-2 col-sm-offset-1  col-xs-6 col-md-offset-1">
-					<img src="<?php root() ?>img/logo_aga.jpg" alt="" />
+					<a href="http://www.allianz-global-assistance.be/content/1/nl/">
+						<img src="<?php root() ?>img/logo_aga.jpg" alt="" />
+					</a>
 				</div>
-				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo_joker.jpg" alt="" /></div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<a href="http://joker.be">
+						<img src="<?php root() ?>img/logo_joker.jpg" alt="" />
+					</a>
+				</div>
 				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo.png" alt="" /></div>
-				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo_mdm.jpg" alt="" /></div>
-				<div class="col-md-2 col-sm-2 col-xs-6"><img src="<?php root() ?>img/logo_vaude.jpg" alt="" /></div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<a href="http://www.doktersvandewereld.be/biketour-2015-soigneur-zkt-coureur">
+						<img src="<?php root() ?>img/logo_mdm.jpg" alt="" />
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-6">
+					<a href="http://www.vaude.com/en-BE/?shp=2">
+						<img src="<?php root() ?>img/logo_vaude.jpg" alt="" />
+					</a>
+				</div>
 			</div>
 		</footer>
 
