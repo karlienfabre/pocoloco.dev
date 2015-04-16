@@ -201,7 +201,7 @@
 							<div class="travel-date">
 								<div class="mybutton medium book">
 									<span type="link" class="linkbutton" data-url="<?php echo home_url('/'); ?>boek-een-reis?reis=<?php echo the_id(); ?>&amp;id=<?php echo $key; ?>">
-										<button data-hover="Boek">Boek</button>
+										<button data-hover="Boek">Boek nu</button>
 									</span>
 								</div>
 								<p><?php echo substr($data['vertrekdatum'], 6, 2) .'/'. substr($data['vertrekdatum'], 4, 2); ?> - <?php echo substr($data['einddatum'], 6, 2) .'/'. substr($data['einddatum'], 4, 2) .'/'. substr($data['einddatum'], 0, 4); ?></p>
