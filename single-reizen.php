@@ -324,7 +324,7 @@
 						<?php else: ?>
 							<h4>download reisfiche</h4>
 							<p>
-								Voor deze reis is voorlopig geen reisfiche beschikbaar.
+								Voor deze reis in  nog geen reisfiche beschikbaar, stel je vragen over deze reis via het contactformulier
 							</p>
 						<?php endif ?>
 					</div>
