@@ -2002,6 +2002,9 @@ h4.individueel{
 	color: #fff;
 	text-align: center;
 }
+.setting a{
+	color: #000;
+}
 .setting h4{
 	color: #fff;
 	text-transform: uppercase;
