@@ -524,6 +524,13 @@ jQuery('.testimonial_wrapper').slick({
   slidesToScroll: 1
 });
 
+//button action
+$(".linkbutton").click(function(){
+	console.log("clicked");
+	var url = $(this).data("url");
+	$(location).attr('href', url+".html");
+});
+
 //choice buttons 
 $(".choice").click(function(){
 	if( $(this).hasClass("non-active") ){
