@@ -2,6 +2,8 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
+$debug = false;
+
 $send = false;
 	
 if (count($_POST)>0) {
@@ -17,6 +19,10 @@ if (count($_POST)>0) {
     $reisvoorwaarden = 'http://www.joker.be/sites/default/files/reisvoorwaarden_2015_-2016.pdf';
     $reistitel = addslashes(strip_tags($_POST['reistitel']));
     $periode = addslashes(strip_tags($_POST['reisperiode']));
+
+    if (!empty($_POST['vertrekdatum'])) {
+        $vertrekdatum = addslashes(strip_tags($_POST['vertrekdatum']));
+    }
     $aantalreizigers = addslashes(strip_tags($_POST['aantalreizigers']));
     $basisprijs = addslashes(strip_tags($_POST['reisprijs']));
     $reizigers = $_POST['reizigers'];
@@ -27,15 +33,27 @@ if (count($_POST)>0) {
     require("../mail-templates/ink/template_mail_confirmation.php");
     $htmlmessage = ob_get_clean();
 
-    $headers  = "MIME-Version: 1.0\n";
-    $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
-    $headers .= "From: Poco Loco Adventures <boeking@pocolocoadventures.be> \r\n";
-    $headers .= 'Cc: '. $emailkantoor . " \r\n";
-    $headers .= 'Cc: boeking@pocolocoadventures.be'. " \r\n";
-    $headers .= "Reply-To: " . $emailkantoor . " \r\n";
-    if(mail($recipient, $object, $htmlmessage, $headers)){
-      $send = true;
+    if ($debug === TRUE) {
+        $headers  = "MIME-Version: 1.0\n";
+        $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
+        $headers .= "From: Poco Loco Adventures <boeking@pocolocoadventures.be> \r\n";
+        $headers .= "Reply-To: " . $emailkantoor . " \r\n";
+        if(mail('hello@design311.com', $object, $htmlmessage, $headers)){
+          $send = true;
+        }
     }
+    else{
+        $headers  = "MIME-Version: 1.0\n";
+        $headers .= "Content-type: text/html; charset=UTF-8 \r\n";
+        $headers .= "From: Poco Loco Adventures <boeking@pocolocoadventures.be> \r\n";
+        $headers .= 'Cc: '. $emailkantoor . " \r\n";
+        $headers .= 'Cc: boeking@pocolocoadventures.be'. " \r\n";
+        $headers .= "Reply-To: " . $emailkantoor . " \r\n";
+        if(mail($recipient, $object, $htmlmessage, $headers)){
+          $send = true;
+        }
+    }
+
 }
 
 echo json_encode($send);

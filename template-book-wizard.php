@@ -128,7 +128,7 @@ $query = new WP_Query( $args );
 									<?php if (isset($_GET['di'])): ?>
 							        <div class="form-group">
 										<label for="vertrekdatum">Vertrekdatum tussen <?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?></label>
-										<input type="text" id="vertrekDatum" name="vertrekDatum" class="form-control required" placeholder="DD/MM/YYYY">
+										<input type="text" id="vertrekdatum" name="vertrekdatum" class="form-control required" placeholder="DD/MM/YYYY">
 										<!-- <input type="date" id="vertrekdatum" name="vertrekdatum" class="required" min="<?php echo date("Y-m-d", strtotime($reisdata['vertrekdatum'])); ?>" max="<?php echo date("Y-m-d", strtotime($reisdata['einddatum'])); ?>"> -->
 									</div>
 									<?php endif ?>
@@ -226,18 +226,10 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2 control-label" for="Telefoonnummer">Telefoonnummer *</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Telefoonnummer">Telefoon/GSM *</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control required" id="Telefoonnummer" name="reizigers[%id%][4]" type="text" placeholder="Telefoonnummer">
-											                </div>
-											            </div>
-
-											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2 control-label" for="gsm">gsm nummer *</label>
-
-											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control required" id="gsm" name="reizigers[%id%][5]" type="text" placeholder="gsm">
+											                    <input class="form-control required" id="Telefoonnummer" name="reizigers[%id%][4]" type="text" placeholder="Telefoon/GSM">
 											                </div>
 											            </div>
 
@@ -320,18 +312,10 @@ $query = new WP_Query( $args );
 											            </div>
 
 											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2 control-label" for="Telefoonnummer">Telefoonnummer</label>
+											                <label class="col-sm-2 col-md-2 control-label" for="Telefoonnummer">Telefoon/GSM</label>
 
 											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][1]" type="text" placeholder="Telefoonnummer">
-											                </div>
-											            </div>
-
-											            <div class="form-group">
-											                <label class="col-sm-2 col-md-2 control-label" for="gsm">gsm nummer</label>
-
-											                <div class="col-sm-3 col-md-3">
-											                    <input class="form-control" id="gsm" name="reizigers[%id%][noodgevallen][2]" type="text" placeholder="gsm">
+											                    <input class="form-control" id="Telefoonnummer" name="reizigers[%id%][noodgevallen][1]" type="text" placeholder="Telefoon/GSM">
 											                </div>
 											            </div>
 

@@ -358,7 +358,7 @@ background: #CC0000 !important;
               </tr></table><table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="center" valign="top">
                   <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; position: relative; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0px;" align="center" valign="top">
                         <table class="twelve colums" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="center" valign="top">
-                              <img src="http://staging.pocolocoadventures.be/pocoloco/email/img/header.jpg" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: left; clear: both; display: block;" align="left" /></td>
+                              <img src="http://pocolocoadventures.be/wp-content/themes/pocoloco/mail-templates/ink/img/header.jpg" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: left; clear: both; display: block;" align="left" /></td>
                           </tr></table></td>
                     </tr></table></td>
               </tr></table><table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="center" valign="top">
@@ -408,6 +408,9 @@ background: #CC0000 !important;
                               <p class="left" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 12px; margin: 0; padding: 7px 0 20px;" align="left">
                                 <?php echo $reistitel; ?> <br />
                                 Periode: <?php echo $periode; ?> <br />
+                                <?php if (!empty($vertrekdatum)): ?>
+                                Vertrekdatum: <?php echo $vertrekdatum; ?> <br />
+                                <?php endif ?>
                                 Aantal reizigers:<?php echo $aantalreizigers; ?>  <br />
                                 Basisprijs per persoon: &euro;<?php echo $basisprijs; ?>
                               </p>
@@ -419,7 +422,6 @@ background: #CC0000 !important;
                                 <?php echo $reiziger[2]; ?> <br />
                                 <?php echo $reiziger[3]; ?>  <br />
                                 <?php echo $reiziger[4]; ?> <br />
-                                <?php echo $reiziger[5]; ?> <br />
                                 <?php echo $reiziger[6]; ?> <br />
                                 <?php echo $reiziger[10]; ?> <br /> <?php //straat + nr + postbus ?>
                                 <?php echo $reiziger[9]; ?> <?php echo $reiziger[8]; ?> <br /> <?php //postcode + woonplaats ?>
@@ -434,17 +436,16 @@ background: #CC0000 !important;
                                 <?php if (isset($reiziger['opties'])): ?>
                                   <?php foreach ($reiziger['opties'] as $optie): ?>
                                      <?php echo $optie; ?><br />
-                                   <?php endforeach ?>
+                                   <?php endforeach ?><br />
                                 <?php else: ?>
                                   Geen opties geselecteerd <br /><br />
                                 <?php endif ?>
 
-                                <strong>Contactpersoon bij noodgevallen</strong>
-                                <?php echo $reiziger['verzekering']['eigen'][0] ?> <br />
-                                <?php echo $reiziger['verzekering']['eigen'][1] ?> <br />
-                                <?php echo $reiziger['verzekering']['eigen'][2] ?> <br />
-                                <?php echo $reiziger['verzekering']['eigen'][3] ?> <br />
-                                <?php echo $reiziger['verzekering']['eigen'][4] ?> <br />
+                                <strong>Contactpersoon bij noodgevallen</strong> <br />
+                                <?php echo $reiziger['noodgevallen'][0] ?> <br />
+                                <?php echo $reiziger['noodgevallen'][1] ?> <br />
+                                <?php echo $reiziger['noodgevallen'][3] ?> <br />
+                                <?php echo $reiziger['noodgevallen'][4] ?> <br />
                               </p>
                               <?php endforeach ?>
                               <!-- <h4 style="color: rgb(34,34,34) !important; font-family: Helvetica; font-weight: bold; text-align: center; line-height: 100%; word-break: normal; display: inline-block; font-size: 12px; font-style: normal; letter-spacing: normal; text-transform: uppercase; margin: 0; padding: 15px 0 0;" align="center">Prijsbestek</h4>
@@ -484,7 +485,7 @@ background: #CC0000 !important;
                         <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 100%; position: relative; display: block; padding: 0px;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="wrapper last white" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; position: relative; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; background: #fff; margin: 0; padding: 0px;" align="center" bgcolor="#fff" valign="top">
                               <table class="twelve colums" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; line-height: 19px; font-size: 14px; margin: 0; padding: 0;" align="center" valign="top">
                                     <center style="width: 100%; min-width: 580px;">
-                                      <img class="center" src="http://staging.pocolocoadventures.be/pocoloco/email/img/logo_mail.png" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: none; clear: both; display: block; margin: 0 auto;" align="none" /></center>
+                                      <img class="center" src="http://pocolocoadventures.be/wp-content/themes/pocoloco/mail-templates/ink/img/logo_mail.png" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: none; clear: both; display: block; margin: 0 auto;" align="none" /></center>
                                     
                                   </td>
                                 </tr></table></td>
