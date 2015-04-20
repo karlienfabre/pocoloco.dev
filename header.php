@@ -2,7 +2,11 @@
 <html lang="en">
 
 	<head>
+		<?php if (is_front_page()): ?>
+		<title><?php echo get_bloginfo('description'); ?> &raquo; <?php wp_title('&raquo;', true, 'right'); ?></title>
+		<?php else: ?>
 		<title><?php wp_title('&raquo;', true, 'right'); ?></title>
+		<?php endif ?>
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
