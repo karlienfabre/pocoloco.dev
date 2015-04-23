@@ -23,7 +23,7 @@
 					<div class="mybutton ultra">
 						<a href="<?php echo home_url('/'); ?>reizen">
 						<span>
-							<button data-hover="Ontdekken">Alle reizen</button>
+							<button data-hover="Reizen bekijken">Reizen bekijken</button>
 						</span>
 						</a>
 					</div>
@@ -242,7 +242,7 @@
 		<!-- Parallax Container -->
 
 		<!-- Service Section -->
-		<section id="" class="section-content">
+		<section id="kijkerreizen" class="section-content">
 			<div class="container">
 
 				<!-- Section title -->
@@ -261,63 +261,66 @@
 				</div>
 				<!-- Section title -->
 
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="element-line">
-							
-							<div class="flexslider">
-								<ul class="slides">
 
-								<?php
-									$reizen = get_field('reizen_in_de_kijker');
-									foreach($reizen as $post) : setup_postdata( $post );
-								?>
-									<!-- Item Slide -->
-									<li>
-										<div class="slide-item">
-											<div class="row">
-												<div class="col-md-7">
-													<?php
-														$thumb_id = get_post_thumbnail_id();
-														$thumb_url = wp_get_attachment_image_src($thumb_id,'large');
+				<div class="row kijker_container">
+
+					<?php
+						$reizen = get_field('reizen_in_de_kijker');
+						foreach($reizen as $post) : setup_postdata( $post );
+					?>
+					<!-- Blog item -->
+					<div class="col-md-4 col-sm-4 col-md-4 col-xs-12">
+						<div class="element-line">
+							<div class="item_top">
+								<div class="blog-element">
+									<div class="blog-inner">
+										<div class="blog-detail">
+											<div class="blog-content">
+												<h3>
+													<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+												</h3>
+												<a href="<?php the_permalink(); ?>"> 
+												<?php
+												if (has_post_thumbnail()):
+													$thumb_id = get_post_thumbnail_id();
+													$thumb_url = wp_get_attachment_image_src($thumb_id,'homepage-thumb');
+												?>
+													<img src="<?php echo $thumb_url[0]; ?>" class="img-responsive" alt="">
+												<?php endif; ?>
+												</a>
+												<p class="blog-intro">
+													<?php echo get_field('intro'); ?>
+												</p>
+												<div class="pricebutton medium">
+													<?php 
+														$reisdata = get_field('reisdata');
+														$reisdata_individueel = get_field('reisdata_individueel');
+														$minprice = get_minPrice($reisdata, $reisdata_individueel);
 													?>
-													<img class="img-responsive img-center img-rounded" src="<?php echo $thumb_url[0]; ?>" alt=""/>
-												</div>
-												<div class="col-md-5">
-													<h2><?php the_title(); ?></h2>
-													<p class="lead medium-text">
-														<?php echo get_field('intro'); ?>
-													</p>
-													<br />
-													<div class="pricebutton medium">
-														<?php 
-															$reisdata = get_field('reisdata');
-															$reisdata_individueel = get_field('reisdata_individueel');
-															$minprice = get_minPrice($reisdata, $reisdata_individueel);
-														?>
-														<a href="<?php the_permalink(); ?>"><span data-hover="Vanaf €<?php echo $minprice; ?> pp">Vanaf €<?php echo $minprice; ?> pp</span></a>
-													</div>
-													<div class="mybutton medium">
-														<a href="<?php the_permalink(); ?>"> <button data-hover="Ontdek deze reis">Ontdek deze reis</button> </a>
-													</div>
+													<a href="<?php the_permalink(); ?>"><span data-hover="Vanaf €<?php echo $minprice; ?> pp">Vanaf €<?php echo $minprice; ?> pp</span></a>
+												</div><br>
+												<div class="mybutton medium">
+													<a href="<?php the_permalink(); ?>"> <button data-hover="Ontdek deze reis">Ontdek deze reis</button> </a>
 												</div>
 											</div>
 										</div>
-									</li>
-									<!-- Item Slide -->
-								<?php endforeach; ?>
-								</ul>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div><!--<?php var_dump(get_post_type_archive_link( 'reizen' )); ?>-->
+					</div>
+					<?php endforeach; ?>
+					<!-- Blog item -->
 				</div>
+			</div>
+
 				<div class="row text-center">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="element-line">
 							<div class="mybutton ultra">
 								<a href="<?php echo home_url('/'); ?>reizen">
 								<span>
-									<button data-hover="Ontdekken">Alle reizen</button>
+									<button data-hover="Reizen bekijken">Alle reizen bekijken</button>
 								</span>
 								</a>
 							</div>
@@ -389,7 +392,7 @@
 		 ?>
 		<?php if ( $query->have_posts() ) : ?>
 
-		<!-- Team Section -->
+		<!-- Blog Section -->
 		<section id="bloglatest" class="section-content">
 			<div class="container">
 

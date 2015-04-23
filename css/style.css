@@ -828,6 +828,77 @@ div.mc-image {
 	max-height: 207px;
 }
 
+
+
+
+#kijkerreizen .blog-element {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	height: 625px;
+	background-color: #f5f5f5;
+}
+#kijkerreizen .blog-element .blog-inner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	display: block;
+	height: 100%;
+}
+
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content {
+	/*display: table-cell;*/
+	vertical-align: middle;
+	padding: 0 15px;
+	color: #898989;
+	text-align: center;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content h3 {
+	margin: 8px 0 8px 0;
+	padding: 0 0 8px 0;
+	/*border-bottom: 1px solid #222;*/
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	color: #222 !important;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content h3 a {
+	color: #222 !important;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content h3 a:hover{
+	color: #FBB809 !important;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content p.blog-date {
+	font-weight: 300;
+	margin: 20px 0 25px 0;
+	font-size: 15px;
+	line-height: 18px;
+	color: #FBB809;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content p.blog-intro {
+	font-weight: 400;
+	margin-bottom: 25px;
+	font-size: 16px;
+	text-align: justify;
+	line-height: 23px;
+	min-height: 207px;
+	max-height: 207px;
+}
+#kijkerreizen .pricebutton{
+	margin-right: 0;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content .pricebutton.medium a{
+	clear: both;
+	margin: 0 0 25px 0;
+}
+#kijkerreizen .blog-element .blog-inner .blog-detail .blog-content .mybutton.medium a{
+	clear: both;
+	margin: 0 0 25px 0;
+}
 /* ##### PRICING ##### */
 .pricing-5-col .pricing-box {
 	width: 20%;
@@ -1860,6 +1931,9 @@ footer img{
 #filters{
 	margin-top: 30px;
 }
+.filter-info{
+	margin-top: 50px;
+}
 .search{
 	margin-top: 15px;
 }
@@ -2368,4 +2442,59 @@ ol.linenums li {
 	position:absolute;
 	top:2em;
 	left:0;
+}
+
+/* --------------------------------------
+Wobble fast
+---------------------------------------*/
+
+@keyframes wobblefast {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@-moz-keyframes wobblefast /* Firefox */ {
+  0% {
+    -moz-transform: translate(0, 0px);
+  }
+  50% {
+    -moz-transform: translate(0, -5px);
+  }
+  100% {
+    -moz-transform: translate(0, 0px);
+  }
+}
+@-webkit-keyframes wobblefast /* Safari and Chrome */ {
+  0% {
+    -webkit-transform: translate(0, 0px);
+  }
+  50% {
+    -webkit-transform: translate(0, -5px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0px);
+  }
+}
+@-o-keyframes wobblefast /* Opera */ {
+  0% {
+    -o-transform: translate(0, 0px);
+  }
+  50% {
+    -o-transform: translate(0, -5px);
+  }
+  100% {
+    -o-transform: translate(0, 0px);
+  }
+}
+.anim-wobblefast {
+  animation: wobblefast 1.5s linear infinite;
+  -webkit-animation: wobblefast 1.5s linear infinite;
+  -moz-animation: wobblefast 1.5s linear infinite;
+  -o-animation: wobblefast 1.5s linear infinite;
 }

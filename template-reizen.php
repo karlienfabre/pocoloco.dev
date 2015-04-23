@@ -64,6 +64,9 @@ Template Name: Reizen template
 						<div class="clearfix visible-xs button-seperator-xs"></div>
 					<?php endforeach ?>
 				</div>
+				<div class="row text-center filter-info">
+					<p>Beperk je keuze volgens je interesse door bovenstaande filterknoppen te gebruiken</p>
+				</div>
 
 			<?php 
 				$args = array(

@@ -97,9 +97,14 @@
 								</div>
 								<p class="lead">
 									<!-- Bank Randy Colvin tailslide full pipe flypaper boardslide feeble -->
-									<a href="#about" class="zoom">
+									<div class="anim-wobblefast">
+										<a href="#about">
+											<img class="arrow" src="<?php root() ?>img/arrow_down_white.png"/>
+										</a>
+									</div>
+<!-- 									<a href="#about" class="zoom">
 										<img class="arrow" src="<?php root() ?>img/arrow_down_white.png"/>
-									</a>
+									</a> -->
 								</p>
 							</div>
 							<!-- Section title -->

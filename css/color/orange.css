@@ -59,10 +59,10 @@ a, .section-title h1 i, .pricing-box li h1, .slide-content h1 strong, .timeline-
 	background: #2184be;
 }
 
-.mybutton.book a span, .mybutton.book button span, .csstransforms3d .mybutton.book a:hover span::before, .csstransforms3d .mybutton.book button:hover span::before{
+.mybutton.book a button, .mybutton.book span button, .csstransforms3d .mybutton.book a:hover button::before, .csstransforms3d .mybutton.book span:hover button::before{
 	background: #2184be
 }
-.csstransforms3d .mybutton.book a span::before, .csstransforms3d .mybutton.book button span::before {
+.csstransforms3d .mybutton.book a button::before, .csstransforms3d .mybutton.book span button::before {
 	background: #2184be;
 }
 
