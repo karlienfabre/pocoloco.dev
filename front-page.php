@@ -288,8 +288,8 @@
 													<img src="<?php echo $thumb_url[0]; ?>" class="img-responsive" alt="">
 												<?php endif; ?>
 												</a>
-												<p class="blog-intro">
-													<?php echo get_field('intro'); ?>
+												<p class="blog-intro short-text">
+													<?php echo get_field('tekst_onder_subtitel'); ?>
 												</p>
 												<div class="pricebutton medium">
 													<?php 

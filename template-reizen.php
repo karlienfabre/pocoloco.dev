@@ -140,7 +140,7 @@ Template Name: Reizen template
 									</div>
 									<h4><?php the_title(); ?></h4>
 									<p class="short-text">
-										<?php echo get_field('intro'); ?>
+										<?php echo get_field('tekst_onder_subtitel'); ?>
 									</p>
 									<div class="travel-data">
 										<i class="fa fa-calendar"></i>
