@@ -868,6 +868,8 @@ div.mc-image {
 	text-align: center;
 	font-weight: bold;
 	color: #222 !important;
+	min-height: 50px;
+	max-height: 50px;
 }
 #kijkerreizen .blog-element .blog-inner .blog-detail .blog-content h3 a {
 	color: #222 !important;
@@ -890,6 +892,7 @@ div.mc-image {
 	line-height: 23px;
 	min-height: 207px;
 	max-height: 207px;
+	padding-top: 25px;
 }
 #kijkerreizen .pricebutton{
 	margin-right: 0;
