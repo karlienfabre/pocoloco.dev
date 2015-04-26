@@ -807,6 +807,8 @@ div.mc-image {
 	text-align: center;
 	font-weight: bold;
 	color: #222 !important;
+	min-height: 45px;
+	max-height: 45px;
 }
 #bloglatest .blog-element .blog-inner .blog-detail .blog-content h3 a {
 	color: #222 !important;
