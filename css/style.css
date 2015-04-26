@@ -267,9 +267,12 @@ blockquote {
 	padding-bottom: 10px;
 	padding-right: 0;
 }
+#brand img{
+	width: 45%;
+}
 
 #navigation-sticky-wrapper {
-	height: 60px;
+	height: 80px;
 }
 #navigation-sticky-wrapper is-sticky {
 	position: fixed;
@@ -284,7 +287,7 @@ blockquote {
 	z-index: 10;
 }
 .navbar-collapse {
-	min-height: 60px !important;
+	min-height: 80px !important;
 }
 .navbar-collapse.in {
 	overflow-y: visible !important;
@@ -312,7 +315,7 @@ blockquote {
 	transition: all 0.3s ease-out 0s;
 	padding-top: 0;
 	padding-bottom: 0;
-	line-height: 60px;
+	line-height: 80px;
 }
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
