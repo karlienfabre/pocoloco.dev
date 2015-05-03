@@ -184,7 +184,7 @@
 										<div class="col-md-4">
 											<div class="element-line">
 												<div class="circular-content">
-													<div class="circular-item hidden">
+													<div class="circular-item">
 														<div class="circ_counter_desc">
 															<p class="lead">
 																<?php echo get_field('subtitel_1'); ?>
@@ -200,7 +200,7 @@
 										<div class="col-md-4">
 											<div class="element-line">
 												<div class="circular-content">
-													<div class="circular-item hidden">
+													<div class="circular-item">
 														<div class="circ_counter_desc">
 															<p class="lead">
 																<?php echo get_field('subtitel_2'); ?>
@@ -216,7 +216,7 @@
 										<div class="col-md-4">
 											<div class="element-line">
 												<div class="circular-content">
-													<div class="circular-item hidden">
+													<div class="circular-item">
 														<div class="circ_counter_desc">
 															<p class="lead">
 																<?php echo get_field('subtitel_3'); ?>
