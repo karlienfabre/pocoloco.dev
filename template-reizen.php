@@ -176,7 +176,7 @@ Template Name: Reizen template
 		<!-- About Section -->
 
 		<!-- Parallax Container -->
-		<div id="one-parallax" class="parallax" style="background-image: url('img/reisaanbod/background_1.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div id="one-parallax" class="parallax" style="background-image: url('<?php root() ?>img/reisaanbod/background_1.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
 				<div class="section-content">
 					<div class="container text-center" style="height:437px;">
