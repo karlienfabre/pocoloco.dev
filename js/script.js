@@ -528,7 +528,7 @@ jQuery('.testimonial_wrapper').slick({
 $(".linkbutton").click(function(){
 	console.log("clicked");
 	var url = $(this).data("url");
-	$(location).attr('href', url+".html");
+	$(location).attr('href', url);
 });
 
 //choice buttons 
