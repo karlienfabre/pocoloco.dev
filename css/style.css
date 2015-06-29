@@ -285,6 +285,8 @@ blockquote {
 	box-shadow: 0 !important;
 	transition: all 0.3s ease-out 0s;
 	z-index: 10;
+	max-width: 1170px;
+	margin: 0 auto;
 }
 .navbar-collapse {
 	min-height: 80px !important;
@@ -299,6 +301,7 @@ blockquote {
 .navbar {
 	position: relative;
 	border: 0;
+	background: none 0px 0px repeat scroll rgb(251, 184, 9);
 }
 .navbar .nav > li {
 	display: block;
