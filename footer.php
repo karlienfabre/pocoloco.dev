@@ -13,6 +13,41 @@
 			<!-- Contact Section -->
 		<?php endif ?>
 
+		<?php if (is_singular( 'reizen' )): ?>
+			<section class="nieuwsbrief">
+				<h1>
+					Schrijf je in op de nieuwsbrief
+				</h1>
+				<!-- form contact -->
+				<form method="post" name="contactform" id="nieuwsbriefform" class="element-line validate" role="form">
+					<div class="form-respond text-center"></div>
+					<div class="row">
+						<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-6">
+							<!-- Form group -->
+							<div class="form-group">
+								<input type="email" name="signup_name" id="signup_name" class="form-control input-lg required email" placeholder="Jouw email">
+							</div>
+							<!-- Form group -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<div class="action form-button medium">
+
+								<div class="mybutton medium">
+									<span id="submit" type="submit">
+										<button data-hover="Inschrijven">Inschrijven</button>
+									</span>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</form>
+				<!-- form contact -->
+			</section>
+		<?php endif ?>
+
 		<!-- Parallax Container -->
 		<div id="five-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_5.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
