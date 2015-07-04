@@ -17,7 +17,7 @@ $(window).load(function() {
 	function filterItems(filter){
 		var container = $('#travel-wrap');
 		container.isotope({
-			filter : filter,
+			filter : filter,	
 		}, function noResultsCheck(){
 			    var numItems = $('.travel-box:not(.isotope-hidden)').length;
 			    if (numItems == 0) {
@@ -120,9 +120,9 @@ $(document).ready(function() {
 			dataType : 'json',
 			data : formdata,
 			success : function(data) {
-				console.log(data);
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'><h2>Je bericht is goed verzonden</h2> <p>We beantwoorden je vraag binnen de 48 uur.</p> </div>");
+					ga('send', 'event', 'Contact', 'Submit');
 				} else {
 					$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen</h2> <p>Probeer het later nog eens.</p> </div>");
 				}
@@ -136,7 +136,7 @@ $(document).ready(function() {
 
 	// Niewsbrief Form Request
 	$(".validate").validate();
-	$(document).on('submit', '#nieuwsbriefform', function() {
+	$(document).on('submit', '#nieuwsbriefform', function(e) {
 		
 		var formdata = $(this).serializeObject();
 
@@ -148,6 +148,7 @@ $(document).ready(function() {
 			success : function(data) {
 				if (data.status == 'success') {
 					$('.form-respond').html("<div class='content-message'><h2>Je inschrijving is verwerkt</h2> <p>We sturen je binnenkort onze nieuwsbrief.</p> </div>");
+					ga('send', 'event', 'Nieuwsbrief', 'Submit');
 				} else {
 					$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen</h2> <p>"+data.message+"</p> </div>");
 				}
@@ -174,13 +175,12 @@ $(document).ready(function() {
 			success : function(data) {
 				if (data == true) {
 					$('.form-respond').html("<div class='content-message'><h2>Je inschrijving is verwerkt</h2> <p>We nemen spoedig contact met je op.</p> </div>");
+					ga('send', 'event', 'Booking', 'Submit');
 				} else {
 					$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen email</h2> <p>Probeer het later nog eens.</p> </div>");
 				}
 			},
 			error : function(xhr, err) {
-				console.log(err);
-				console.log(xhr);
 				$('.form-respond').html("<div class='content-message'><h2>Er is iets fout gelopen</h2> <p>Probeer het later nog eens.</p> </div>");
 			}
 		});
@@ -526,7 +526,6 @@ jQuery('.testimonial_wrapper').slick({
 
 //button action
 $(".linkbutton").click(function(){
-	console.log("clicked");
 	var url = $(this).data("url");
 	$(location).attr('href', url);
 });
