@@ -376,10 +376,12 @@ background: #CC0000 !important;
                                 <?php echo $gekozenkantoor; ?><br />
                                 <?php echo $telefoonkantoor; ?><br />
                                 <a href="mailto:<?php echo $emailkantoor; ?>" style="color: #FBB809; text-decoration: none;"><?php echo $emailkantoor; ?></a><br /></p>
-                              <p class="left big" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 13px; margin: 0; padding: 7px 0 20px;" align="left">
-                                <a href="<?php echo $reisfiche; ?>" style="color: #FBB809; text-decoration: none;">Hier</a> vind je de productfiche om je voor te bereiden op je avontuur. <br /> 
-                                Deze fiche vind je ook op <a href="<?php echo $reisurl; ?>" style="color: #FBB809; text-decoration: none;">de bijhorende reispagina</a>.
-                              </p>
+                              <?php if (!empty($reisfiche)): ?>
+                                <p class="left big" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 13px; margin: 0; padding: 7px 0 20px;" align="left">  
+                                  <a href="<?php echo $reisfiche; ?>" style="color: #FBB809; text-decoration: none;">Hier</a> vind je de productfiche om je voor te bereiden op je avontuur. <br /> 
+                                  Deze fiche vind je ook op <a href="<?php echo $reisurl; ?>" style="color: #FBB809; text-decoration: none;">de bijhorende reispagina</a>.
+                                </p>
+                              <?php endif ?>
                               <p class="left big" style="color: rgb(137,137,137); font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; text-align: left; line-height: 19px; font-size: 13px; margin: 0; padding: 7px 0 20px;" align="left">
                                 De <a href="<?php echo $verkoopsvoorwaarden; ?>" style="color: #FBB809; text-decoration: none;">verkoopsvoorwaarden</a> en de <a href="<?php echo $reisvoorwaarden; ?>" style="color: #FBB809; text-decoration: none;">reisvoorwaarden</a> waarmee je je bij bestelling akkoord verklaarde, vind je ook op onze website.
                               </p>
