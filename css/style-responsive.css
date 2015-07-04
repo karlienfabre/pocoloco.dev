@@ -208,6 +208,26 @@ Author: Karlien Fabré
 	footer img{
 		margin-bottom: 25px;
 	}
+	.reizigers h1{
+		font-size: 25px;
+	}
+	.reizigers-box h3{
+		font-size: 15px;
+		margin-top: 10px;
+	}
+	.reizigers-box.age{
+		margin-top: 50px;
+	}
+	.reizigers-box.age i, .reizigers-box.age h4{
+		font-size: 25px;
+	}
+	.row.reizigers{
+		margin-top: 50px;
+	}
+	.reizigers i{
+		font-size: 25px;
+	}
+
 
 }
 

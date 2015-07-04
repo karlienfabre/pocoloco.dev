@@ -469,8 +469,43 @@
 		<!-- Parallax Container -->
 		<div id="one-parallax" class="parallax" style="background-image: url('<?php root() ?>img/home/background_4.jpg');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
 			<div class="parallax-overlay parallax-background-color">
-				<div class="section-content">
+				<div class="section-content reizigers">
 					<div class="container text-center" style="height:437px;">
+						<h1>Wie gaat er op reis met Poco Loco Adventures?</h1>
+						<div class="row reizigers">
+							<div class="col-md-3 col-sm-3 col-xs-3 reizigers-box">
+								<i class="fa fa-female"></i>
+								<h3>43% vrouwen</h3>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 reizigers-box">
+								<i class="fa fa-male"></i>
+								<h3>57% mannen</h3>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 reizigers-box">
+								<i class="fa fa-users"></i>
+								<h3>11% in groep</h3>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 reizigers-box">
+								<i class="fa fa-male"></i>
+								<h3>89% singles</h3>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 reizigers-box age">
+								<i class="fa fa-birthday-cake"></i><h4>18-24 jaar</h4>
+								<h3>25%</h3>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3  reizigers-box age">
+								<i class="fa fa-birthday-cake"></i><h4>25-30 jaar</h4>
+								<h3>26%</h3>
+							</div>
+								<div class="col-md-3 col-sm-3 col-xs-3  reizigers-box age">
+								<i class="fa fa-birthday-cake"></i><h4>31-35 jaar</h4>
+								<h3>24%</h3>
+							</div>
+								<div class="col-md-3 col-sm-3 col-xs-3  reizigers-box age">
+								<i class="fa fa-birthday-cake"></i><h4>+35 jaar</h4>
+								<h3>15%</h3>
+							</div>																			
+						</div>
 					</div>
 				</div>
 			</div>

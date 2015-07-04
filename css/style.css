@@ -268,11 +268,11 @@ blockquote {
 	padding-right: 0;
 }
 #brand img{
-	width: 45%;
+	width: 60%;
 }
 
 #navigation-sticky-wrapper {
-	height: 80px;
+	height: 95px;
 }
 #navigation-sticky-wrapper is-sticky {
 	position: fixed;
@@ -289,7 +289,7 @@ blockquote {
 	margin: 0 auto;
 }
 .navbar-collapse {
-	min-height: 80px !important;
+	min-height: 95px !important;
 }
 .navbar-collapse.in {
 	overflow-y: visible !important;
@@ -318,7 +318,7 @@ blockquote {
 	transition: all 0.3s ease-out 0s;
 	padding-top: 0;
 	padding-bottom: 0;
-	line-height: 80px;
+	line-height: 95px;
 }
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
@@ -1431,6 +1431,30 @@ div.mc-image {
 #map_canvas.map-bg-mobile{ background:url("../img/mobile-map-bg.jpg") no-repeat center;}
 
 /* ##### FOOTER ##### */
+.reizigers-box{
+	text-align: center;
+}
+.reizigers-box h3{
+	color: #FBB809;
+	font-size: 20px;
+}
+.reizigers-box.age{
+	margin-top: 100px;
+}
+.reizigers-box.age i, .reizigers-box.age h4{
+	font-size: 35px;
+}
+.reizigers-box.age h4{
+	font-size: 17px;
+	color: #fff;
+}
+.row.reizigers{
+	margin-top: 100px;
+}
+.reizigers i{
+	font-size: 50px;
+	color: #fff;
+}
 footer {
 	font-size: 12px;
 	padding: 50px 0 30px;
