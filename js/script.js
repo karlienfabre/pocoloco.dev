@@ -43,11 +43,9 @@ $(window).load(function() {
 	        params[nv[0]] = nv[1] || true;
 	    }
 	}
-
-	//var filter = $("button").find("[data-filter='." + params.f + "']");
 	var filter = $("button[data-filter='." + params.f + "']").parent();
-	//var parent = filter.parent();
 	filter.trigger("click");
+	
 
 	function setActive(el){
 		el.removeClass("non-active");
