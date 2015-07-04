@@ -186,4 +186,5 @@ Template Name: Reizen template
 		</div>
 		<!-- Parallax Container -->
 
+
 <?php get_footer(); ?>

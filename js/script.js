@@ -1,10 +1,10 @@
 //Page Preloader
 $(window).load(function() {
 
-
 	$(".filters span").click(function(){
+		console.log("filter click");
 		var filter = $(this).children().attr("data-filter")
-		filterItems(filter);
+		$.filterItems(filter);
 
 		var label = $(this).parent();
 		$(".label").each(function(){
@@ -14,7 +14,7 @@ $(window).load(function() {
 
 	});
 	
-	function filterItems(filter){
+	$.filterItems = function(filter){
 		var container = $('#travel-wrap');
 		container.isotope({
 			filter : filter,	
@@ -30,6 +30,24 @@ $(window).load(function() {
 			    }				
 			});		
 	}
+
+	//Check URL on parameters
+	var params = {};
+
+	if (location.search) {
+	    var parts = location.search.substring(1).split('&');
+
+	    for (var i = 0; i < parts.length; i++) {
+	        var nv = parts[i].split('=');
+	        if (!nv[0]) continue;
+	        params[nv[0]] = nv[1] || true;
+	    }
+	}
+
+	//var filter = $("button").find("[data-filter='." + params.f + "']");
+	var filter = $("button[data-filter='." + params.f + "']").parent();
+	//var parent = filter.parent();
+	filter.trigger("click");
 
 	function setActive(el){
 		el.removeClass("non-active");
@@ -49,6 +67,7 @@ $(window).load(function() {
 	        alert("There are no results");
 	    }
 	}
+
 });
 
 $(document).ready(function() {
