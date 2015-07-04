@@ -502,7 +502,7 @@ $query = new WP_Query( $args );
 				<div class="form-respond text-center"></div>
 			</div>
 
-			<input type="hidden" name="reisfiche" value="<?php echo $reisfiche = get_field('reisfiche'); echo $reisfiche['url'] ?>">
+			<input type="hidden" name="reisfiche" value="<?php $reisfiche = get_field('reisfiche'); echo $reisfiche['url'] ?>">
 			<input type="hidden" name="reisurl" value="<?php the_permalink(); ?>">
 			<input type="hidden" name="reistitel" value="<?php the_title(); ?>">
 			<input type="hidden" name="reisperiode" value="<?php echo substr($reisdata['vertrekdatum'], 6, 2) .'/'. substr($reisdata['vertrekdatum'], 4, 2); ?> - <?php echo substr($reisdata['einddatum'], 6, 2) .'/'. substr($reisdata['einddatum'], 4, 2) .'/'. substr($reisdata['einddatum'], 0, 4); ?>">

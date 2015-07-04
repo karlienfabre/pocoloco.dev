@@ -18,7 +18,7 @@ Template Name: Reizen template
 					<h1 class="item_right"><?php the_title(); ?></h1>
 
 					<p class="lead">
-						<?php get_field('intro') ?>
+						<?php echo get_field('intro') ?>
 					</p>
 				</div>
 				<!-- Section title -->
