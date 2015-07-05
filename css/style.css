@@ -1989,7 +1989,7 @@ footer img{
 .yellow-content h2{
 	text-align: left;
 }
-.yellow-content p{
+.yellow-content p, ul, li{
 	color: #666;
 }
 .row.center-vertical{

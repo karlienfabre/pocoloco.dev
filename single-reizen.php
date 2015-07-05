@@ -96,6 +96,18 @@
 						<p>
 							<?php echo get_field('tekst_onder_subtitel'); ?>
 						</p>
+						<?php
+							$keywords = get_field('keywords');
+							if (!empty($keywords)) :
+								echo '<ul>';
+								foreach($keywords as $keyword) :
+						?>
+							<li><?php echo $keyword['keyword']; ?></li>
+						<?php 
+								endforeach;
+								echo '</ul>';
+							endif;
+						 ?>
 					</div>
 
 					<div class="col-md-4">
