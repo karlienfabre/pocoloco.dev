@@ -126,6 +126,11 @@ blockquote {
 .section-title .lead {
 	margin: 45px 0 0 0;
 }
+
+.page-template-template-reizen .section-title .lead{
+	margin:15px 0 60px;
+}
+
 .section-title .lead strong {
 	color: #fff;
 	font-weight: 200;

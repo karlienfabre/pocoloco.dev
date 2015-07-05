@@ -129,6 +129,14 @@
 		<script src="<?php root() ?>js/jquery.validate.min.js"></script>
 		<script src="<?php root() ?>js/portfolio_custom.js" type="text/javascript"></script>
 		<script src="<?php root() ?>js/script.js"></script>
+		<?php if (is_page_template('template-reizen.php')): ?>
+		<script>
+			$(window).load(function() {
+				var filter = $("button[data-filter='.<?php echo get_query_var('reizen-filter'); ?>']").parent();
+				filter.trigger("click");
+			});
+		</script>
+		<?php endif ?>
 		<script src="<?php root() ?>js/retina-1.1.0.min.js"></script>
 		<!-- Js Library -->
 

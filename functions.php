@@ -45,3 +45,17 @@ function pocoloco_wp_title($input){
 
   return $output;
 }
+
+function pocoloco_rewrite_rules() {
+
+  add_rewrite_rule('^([^\/]+)-reizen/?$', 'index.php?page_id=137&reizen-filter=$matches[1]', 'top');
+  flush_rewrite_rules();
+}
+add_action('init', 'pocoloco_rewrite_rules');
+
+add_filter('query_vars', 'pocoloco_query_vars');
+
+function pocoloco_query_vars($public_query_vars) {
+  $public_query_vars[] = 'reizen-filter';
+  return $public_query_vars;
+}

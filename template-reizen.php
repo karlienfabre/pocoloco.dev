@@ -5,7 +5,6 @@ Template Name: Reizen template
 
  get_header(); ?>
 
-
 		<!-- About Section -->
 		<section id="reisaanbod" class="section-content page">
 			<div class="container">
@@ -15,10 +14,22 @@ Template Name: Reizen template
 
 				<!-- Section title -->
 				<div class="section-title text-center">
-					<h1 class="item_right"><?php the_title(); ?></h1>
+					<h1 class="item_right">
+						<?php if (get_query_var('reizen-filter')) {
+							echo 'Reisaanbod ' . str_replace('-', ' ', get_query_var('reizen-filter'));
+						}
+						else{
+							the_title();
+						} ?>
+					</h1>
 
 					<p class="lead">
-						<?php echo get_field('intro') ?>
+						<?php if (get_query_var('reizen-filter')) {
+							echo get_field(get_query_var('reizen-filter'));
+						}
+						else{
+							echo get_field('intro');
+						} ?>
 					</p>
 				</div>
 				<!-- Section title -->
