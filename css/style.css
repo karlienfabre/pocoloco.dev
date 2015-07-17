@@ -2089,6 +2089,9 @@ h2.group{
 .travel-date i.redflag{
 	color: red;
 }
+.travel-date i.greyflag{
+	color: grey;
+}
 .travel-date span.flag{
 	font-size: 11px;
 }

@@ -1,4 +1,4 @@
-﻿<?php get_header(); ?>
+<?php get_header(); ?>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-559840ae1e6a51e6" async="async"></script>
 
@@ -200,6 +200,9 @@
 											break;
 										case 'green':
 											$flagtext = 'afreis gegarandeerd';
+											break;
+                                        case 'grey':
+                                            $flagtext = 'afgesloten';
 											break;
 										default:
 											$flagtext = 'nog plaatsen beschikbaar';
