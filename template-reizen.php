@@ -37,7 +37,7 @@ Template Name: Reizen template
 				<?php endwhile; ?>
 			<?php endif; ?>
 
-				<div class="row text-center search filters" id="">
+<!-- 				<div class="row text-center search filters" id="">
 					<div class="mybutton small label col-xs-12" id="alleReizen">
 						<span>
 							<button data-filter="*" data-hover="AlleReizen"><i class="fa fa-ban"></i>Alle reizen</button>
@@ -77,7 +77,7 @@ Template Name: Reizen template
 				</div>
 				<div class="row text-center filter-info">
 					<p>Beperk je keuze volgens je interesse door bovenstaande filterknoppen te gebruiken</p>
-				</div>
+				</div> -->
 
 			<?php 
 				$args = array(
